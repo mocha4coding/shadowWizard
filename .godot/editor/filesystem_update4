@@ -1,0 +1,7 @@
+res://scenes/home_screen.tscn
+res://scenes/level_one.tscn
+res://scenes/player.tscn
+res://scenes/lamp.tscn
+res://scenes/background_blur.tscn
+res://scenes/parallax_background.tscn
+res://scenes/environment_tile_map.tscn

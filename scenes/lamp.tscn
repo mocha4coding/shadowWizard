@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwlp7kcqfynt8"]
+
+[ext_resource type="Texture2D" uid="uid://b8bxn5i7ocls7" path="res://assets/lamp/lamp_temp.png" id="1_oqg6p"]
+[ext_resource type="Script" path="res://scripts/lamp.gd" id="1_tn2n0"]
+
+[node name="Lamp" type="Node2D"]
+script = ExtResource("1_tn2n0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oqg6p")

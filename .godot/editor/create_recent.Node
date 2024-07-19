@@ -1,0 +1,13 @@
+Node2D
+CanvasLayer
+TileMap
+WorldEnvironment
+CollisionShape2D
+Area2D
+LightOccluder2D
+Sprite2D
+PointLight2D
+CanvasModulate
+Camera2D
+AnimatedSprite2D
+CharacterBody2D
