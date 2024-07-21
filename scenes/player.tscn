@@ -206,16 +206,9 @@ shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("43_ognd4")
 
-[node name="Area2D" type="Area2D" parent="Lamp"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/Area2D"]
-polygon = PackedVector2Array(4162.5, -2462.5, 11412.5, -5537.5, 13012.5, -2812.5, 13487.5, -712.5, 13112.5, 2175, 11287.5, 4850, -312.5, -425)
-
 [node name="BackgroundTemp" type="Sprite2D" parent="."]
+visible = false
 z_index = -5
 position = Vector2(575, 21)
 scale = Vector2(2, 2.37037)
 texture = ExtResource("44_5a0hk")
-
-[connection signal="area_entered" from="Lamp/Area2D" to="Lamp" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Lamp/Area2D" to="Lamp" method="_on_area_2d_body_entered"]
