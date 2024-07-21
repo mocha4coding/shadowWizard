@@ -1,1 +1,6 @@
+res://scenes/playground.tscn
+res://scenes/home_screen.tscn
+res://scenes/player.tscn
+res://scenes/environment_tile_map.tscn
+res://scenes/lamp.tscn
 res://scenes/level_1.tscn
