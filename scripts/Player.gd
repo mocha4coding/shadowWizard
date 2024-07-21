@@ -18,6 +18,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	# Gets the input direction: -1 0 1
+	@warning_ignore("narrowing_conversion")
 	var direction: int = Input.get_axis("move_left", "move_right")
 	
 	# Flip the sprite
