@@ -565,7 +565,7 @@ texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, 2.82842, 50, 1.41421, 50, 50, -50, 50)
 
 [sub_resource type="TileSet" id="TileSet_d8y83"]
 tile_size = Vector2i(100, 100)
@@ -647,7 +647,7 @@ texture = ExtResource("6_lp2hq")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
-position = Vector2(3, -14)
+position = Vector2(0, 24)
 tile_set = SubResource("TileSet_d8y83")
 format = 2
 layer_0/name = "Background"
