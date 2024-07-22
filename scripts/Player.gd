@@ -27,15 +27,6 @@ func _physics_process(delta):
 	else :
 		animated_sprite_2d.flip_h = false
 	
-	# Shoot bullets
-	#if Input.is_action_just_pressed("attack"):
-		#var bulletInstance = bullet.instantiate() as Node2D
-		#if direction == -1:
-			#bulletInstance.direction = direction
-		#else :
-			#bulletInstance.direction = 1
-		#bulletInstance.global_position = lips.global_position
-		#get_parent().add_child(bulletInstance)
 	
 	# Play animation 
 	#if is_on_floor():
@@ -43,9 +34,7 @@ func _physics_process(delta):
 		animated_sprite_2d.play("idle")
 	else :
 		animated_sprite_2d.play("walk")
-			
-	#else :
-		#animated_sprite_2d.play("Jump")
+	
 	# Applies movement
 	if direction:
 		velocity.x = direction * SPEED
