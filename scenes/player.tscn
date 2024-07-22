@@ -177,8 +177,9 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0lcy"]
-size = Vector2(94, 171)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0v0mo"]
+radius = 50.0
+height = 200.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
@@ -190,8 +191,8 @@ animation = &"walk"
 frame_progress = 0.585183
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 36.5)
-shape = SubResource("RectangleShape2D_w0lcy")
+position = Vector2(0, 35)
+shape = SubResource("CapsuleShape2D_0v0mo")
 
 [node name="Lamp" parent="." instance=ExtResource("42_nkt64")]
 position = Vector2(104, 47)
