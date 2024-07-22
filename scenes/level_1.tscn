@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=20 format=3 uid="uid://bmxi35ilssf4o"]
 
+[ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_e0o58"]
 [ext_resource type="Texture2D" uid="uid://r0u3wtw4onp3" path="res://assets/Background/-2_4x.png" id="5_3xv6e"]
@@ -562,7 +563,7 @@ texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, 5.3033, 50, 5.23403, 50, 50, -50, 50)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -7.77818, 50, -7.684, 50, 50, -50, 50)
 
 [sub_resource type="TileSet" id="TileSet_hhxbg"]
 tile_size = Vector2i(100, 100)
@@ -592,14 +593,17 @@ layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 2
 layer_2/name = "Foreground"
 layer_2/tile_data = PackedInt32Array()
 
-[node name="Player" parent="." instance=ExtResource("6_khovu")]
-z_index = 2
-position = Vector2(71, 384)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-380, -1920)
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
+position = Vector2(-5, 0)
+scale = Vector2(0.2, 0.2)
 offset = Vector2(530.5, 237)
 limit_left = -530
+script = ExtResource("1_u27cq")
+TargetNode = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("6_khovu")]
+z_index = 2
+position = Vector2(359, 384)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -658,7 +662,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_88r37")
 
 [node name="hut_-3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.4, 0)
+motion_scale = Vector2(0.4, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/hut_-3"]
 z_index = -1

@@ -7,4 +7,9 @@ func _ready():
 
 
 func _process(_delta) -> void:
-	set_position(TargetNode.get_position()) 
+	var cameraPositionX: float = TargetNode.get_position().x - 400
+	var cameraPositionY: float = get_position().y
+
+	var cameraPosition: Vector2 = Vector2(cameraPositionX, cameraPositionY)
+
+	set_position(cameraPosition) 
