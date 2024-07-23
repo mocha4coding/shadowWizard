@@ -4,3 +4,4 @@ res://scenes/lamp.tscn
 res://scenes/playground.tscn
 res://scenes/level_1.tscn
 res://scripts/CustomeCamera.gd
+res://scenes/object1.tscn

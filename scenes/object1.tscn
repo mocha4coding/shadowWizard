@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsedr5snq62op"]
+
+[ext_resource type="Texture2D" uid="uid://rqn1w4q77wc" path="res://assets/Object1_Animation/Frame 19.png" id="1_0vtr0"]
+[ext_resource type="Texture2D" uid="uid://4p3i4sjj3sup" path="res://assets/Object1_Animation/Frame 20.png" id="2_r5qeg"]
+[ext_resource type="Texture2D" uid="uid://cq16pmbyjeq2o" path="res://assets/Object1_Animation/Frame 21.png" id="3_8lbi0"]
+[ext_resource type="Texture2D" uid="uid://cl22v1vey8gyc" path="res://assets/Object1_Animation/Frame 22.png" id="4_wtmfk"]
+[ext_resource type="Texture2D" uid="uid://t7yb1t0vrp5o" path="res://assets/Object1_Animation/Frame 23.png" id="5_7gxl0"]
+[ext_resource type="Texture2D" uid="uid://ccgpses324nob" path="res://assets/Object1_Animation/Frame 24.png" id="6_j1w8k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yd8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0vtr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r5qeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8lbi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wtmfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7gxl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j1w8k")
+}],
+"loop": true,
+"name": &"rise",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3yd8y")
+animation = &"rise"
+autoplay = "rise"
+frame_progress = 0.120887
