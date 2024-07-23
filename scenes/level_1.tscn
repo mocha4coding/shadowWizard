@@ -7,14 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://682b4iepfs2h" path="res://assets/objects/woods.PNG" id="5_yt4p5"]
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="6_88r37"]
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="6_khovu"]
+[ext_resource type="PackedScene" uid="uid://d2hh5gq7sku1b" path="res://scenes/level_1_tile_map.tscn" id="9_0kfe8"]
+[ext_resource type="PackedScene" uid="uid://b5l7ucti2vmiv" path="res://scenes/object_original.tscn" id="10_l1iqm"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="11_g1bw8"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vocuk"]
-
-[sub_resource type="TileSet" id="TileSet_hhxbg"]
-tile_size = Vector2i(100, 100)
-physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_vocuk")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -22,18 +17,6 @@ polygon = PackedVector2Array(-298, 20, -310, -150, 142, -152, 152, -56, 142, 20)
 
 [node name="Level1" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-1.0]
-
-[node name="TileMap" type="TileMap" parent="."]
-z_index = -1
-position = Vector2(0, -25)
-tile_set = SubResource("TileSet_hhxbg")
-rendering_quadrant_size = 100
-format = 2
-layer_0/name = "Background"
-layer_1/name = "Midground"
-layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262174, 3, 0, 262175, 3, 0)
-layer_2/name = "Foreground"
-layer_2/tile_data = PackedInt32Array()
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
 position = Vector2(-5, 0)
@@ -111,3 +94,8 @@ z_index = -1
 position = Vector2(219, 247)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_g1bw8")
+
+[node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
+
+[node name="Object_original" parent="." instance=ExtResource("10_l1iqm")]
+position = Vector2(712, 392)
