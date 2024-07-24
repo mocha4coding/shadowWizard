@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1721810853
 icon.svg::CompressedTexture2D::6092633165420412892::1721644568::1721650787::1::::<><>::
-::res://assets/::1721666656
+::res://assets/::1721811054
 Background_temp.png::CompressedTexture2D::4617602276683045828::1721644565::1721644565::1::::<><>::
 ::res://assets/Background/::1721666322
 -1.png::CompressedTexture2D::2437827910066141883::1721644565::1721644565::1::::<><>::
@@ -1695,6 +1695,9 @@ SlimeOrange_00026.png::CompressedTexture2D::1542881550756687672::1721644567::172
 SlimeOrange_00027.png::CompressedTexture2D::330281935929567643::1721644567::1721644567::1::::<><>::
 SlimeOrange_00028.png::CompressedTexture2D::9046466998313663391::1721644567::1721644567::1::::<><>::
 SlimeOrange_00029.png::CompressedTexture2D::7753535269909273979::1721644567::1721644567::1::::<><>::
+::res://assets/sounds/::1721811132
+Dirt Walk 5.wav::AudioStreamWAV::3124729857257133636::1721752198::1721811186::1::::<><>::
+Ice Freeze 2.wav::AudioStreamWAV::5256988234141443888::1721752195::1721811186::1::::<><>::
 ::res://assets/TileMaps/::1721657732
 Floor.png::CompressedTexture2D::2757104745686707724::1721657732::1721657732::1::::<><>::
 ::res://scenes/::1721743952
