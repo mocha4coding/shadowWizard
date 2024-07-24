@@ -6,7 +6,8 @@ const JUMP_VELOCITY = -700.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var point_light = $Lamp/PointLight2D
-
+@onready var walk_audio = $walkAudio
+var walk_audio_play_finished: bool = true
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -29,11 +30,16 @@ func _physics_process(delta):
 	
 	
 	# Play animation 
-	#if is_on_floor():
-	if direction == 0:
-		animated_sprite_2d.play("idle")
-	else :
-		animated_sprite_2d.play("walk")
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite_2d.play("idle")
+		else :
+			animated_sprite_2d.play("walk")
+			if walk_audio_play_finished:
+				walk_audio.play()
+				walk_audio_play_finished = false
+	else : 
+		animated_sprite_2d.play("idle")	
 	
 	# Applies movement
 	if direction:
@@ -42,3 +48,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_walk_audio_finished():
+	print("Finished playing walk audio")
+	walk_audio_play_finished = true

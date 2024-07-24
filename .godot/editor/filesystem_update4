@@ -1,10 +1,8 @@
-res://scenes/playground.tscn
-res://scripts/ObjectRigidBody.gd
 res://scenes/home_screen.tscn
 res://scenes/lamp.tscn
+res://scenes/playground.tscn
 res://scenes/level_1.tscn
 res://scenes/player.tscn
-res://scenes/object1.tscn
 res://scenes/object_original.tscn
-res://scenes/obstacle_object1_shadow_.tscn
-res://scripts/lamp.gd
+res://scripts/Player.gd
+res://scripts/ObjectRigidBody.gd

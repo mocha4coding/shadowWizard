@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://682b4iepfs2h" path="res://assets/objects/woods.PNG" id="5_yt4p5"]
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="6_88r37"]
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="6_khovu"]
-[ext_resource type="PackedScene" uid="uid://d2hh5gq7sku1b" path="res://scenes/level_1_tile_map.tscn" id="9_0kfe8"]
-[ext_resource type="PackedScene" uid="uid://b5l7ucti2vmiv" path="res://scenes/object_original.tscn" id="10_l1iqm"]
+[ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="9_0kfe8"]
+[ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="10_l1iqm"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="11_g1bw8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
