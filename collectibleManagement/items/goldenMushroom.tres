@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CollectibleItem" load_steps=3 format=3 uid="uid://b1q7i8l8pcvxp"]
+
+[ext_resource type="Script" path="res://collectibleManagement/items/collectible.gd" id="1_q14vm"]
+[ext_resource type="Texture2D" uid="uid://ddd7ifwq44mfo" path="res://assets/UI/GoldenMushroom.png" id="2_3wbns"]
+
+[resource]
+script = ExtResource("1_q14vm")
+name = "GoldenMushroom"
+texture = ExtResource("2_3wbns")

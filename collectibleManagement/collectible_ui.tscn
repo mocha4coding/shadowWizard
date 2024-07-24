@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://rw1eei2dilc5"]
+
+[ext_resource type="Script" path="res://collectibleManagement/CollectibleUI.gd" id="1_qux65"]
+[ext_resource type="Texture2D" uid="uid://dsbr001t6cvnn" path="res://assets/UI/mushroomCounter.png" id="2_tgse2"]
+[ext_resource type="Texture2D" uid="uid://ddd7ifwq44mfo" path="res://assets/UI/GoldenMushroom.png" id="3_4k13w"]
+[ext_resource type="PackedScene" uid="uid://6d0fw0bbqjbj" path="res://collectibleManagement/collectible_slot.tscn" id="3_m1p82"]
+[ext_resource type="Texture2D" uid="uid://bg7b86hwqmlsn" path="res://assets/UI/PinkMushroom.png" id="4_djo0j"]
+[ext_resource type="Texture2D" uid="uid://davrfv1geyk5b" path="res://assets/UI/VermMushroom.png" id="5_58yuo"]
+
+[node name="CollectibleUI" type="Control"]
+custom_minimum_size = Vector2(183.47, 107)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qux65")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(183.47, 107)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_tgse2")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 3.0
+offset_right = 92.0
+offset_bottom = 43.0
+
+[node name="GoldenMushroomSlots" type="HBoxContainer" parent="NinePatchRect/BoxContainer"]
+layout_mode = 2
+
+[node name="Collectible_Slot1" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(-10, -2)
+
+[node name="Collectible_Slot2" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(10, -2)
+
+[node name="Collectible_Slot3" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(30, -2)
+
+[node name="Collectible_Slot4" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(50, -2)
+
+[node name="Collectible_Slot5" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(70, -2)
+
+[node name="GoldenMushroom" type="Sprite2D" parent="."]
+position = Vector2(23, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_4k13w")
+centered = false
+
+[node name="PinkMushroom" type="Sprite2D" parent="."]
+position = Vector2(23, 44)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_djo0j")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(23, 76)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_58yuo")
+centered = false

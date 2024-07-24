@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3w20x6uksake"]
+[gd_scene load_steps=13 format=3 uid="uid://c3w20x6uksake"]
 
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="1_q82iv"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_kagkj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://r0u3wtw4onp3" path="res://assets/Background/-2_4x.png" id="5_wib3w"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="6_0pe27"]
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="6_lp2hq"]
+[ext_resource type="PackedScene" uid="uid://rw1eei2dilc5" path="res://collectibleManagement/collectible_ui.tscn" id="11_t67gm"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="11_vnn0v"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="12_efapy"]
 [ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="14_4mwhx"]
@@ -98,3 +99,9 @@ texture = ExtResource("12_efapy")
 
 [node name="Object_original" parent="." instance=ExtResource("14_4mwhx")]
 position = Vector2(712, 392)
+
+[node name="CollectibleUI" parent="." instance=ExtResource("11_t67gm")]
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 77.0
+offset_bottom = 67.0

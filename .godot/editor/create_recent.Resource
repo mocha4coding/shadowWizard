@@ -1,0 +1,2 @@
+CollectibleManager
+CollectibleItem

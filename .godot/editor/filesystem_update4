@@ -6,3 +6,12 @@ res://scenes/player.tscn
 res://scenes/object_original.tscn
 res://scripts/Player.gd
 res://scripts/ObjectRigidBody.gd
+res://collectibleManagement/collectible.gd
+res://collectible_manager.gd
+res://collectibleManagement/collectibleManager.tres
+res://collectibleManagement/collectible_ui.tscn
+res://collectibleManagement/items/collectible.gd
+res://collectibleManagement/playerCollectibleManager.tres
+res://collectibleManagement/collectible_slot.tscn
+res://collectibleManagement/CollectibleUI.gd
+res://collectibleManagement/collectible_slot.gd

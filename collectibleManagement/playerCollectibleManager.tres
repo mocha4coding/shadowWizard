@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CollectibleManager" load_steps=3 format=3 uid="uid://cvkxmchebuq1q"]
+
+[ext_resource type="Resource" uid="uid://b1q7i8l8pcvxp" path="res://collectibleManagement/items/goldenMushroom.tres" id="1_lmwta"]
+[ext_resource type="Script" path="res://collectible_manager.gd" id="2_py2w3"]
+
+[resource]
+script = ExtResource("2_py2w3")
+items = Array[Resource("res://collectibleManagement/items/collectible.gd")]([ExtResource("1_lmwta"), ExtResource("1_lmwta"), ExtResource("1_lmwta")])
