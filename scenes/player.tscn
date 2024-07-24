@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bj4e3616laere"]
+[gd_scene load_steps=47 format=3 uid="uid://bj4e3616laere"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_h8vwx"]
 [ext_resource type="Texture2D" uid="uid://cug7jn6no8glo" path="res://assets/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00000.png" id="2_1cneq"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ribklb8oblr" path="res://assets/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00019.png" id="41_hf5uf"]
 [ext_resource type="PackedScene" uid="uid://bwlp7kcqfynt8" path="res://scenes/lamp.tscn" id="42_nkt64"]
 [ext_resource type="Texture2D" uid="uid://dat4ar820o6qt" path="res://assets/lamp/light.png" id="43_ognd4"]
+[ext_resource type="AudioStream" uid="uid://bkrv3x6h7lw41" path="res://assets/sounds/Dirt Walk 5.wav" id="44_c6u4c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pj0av"]
 animations = [{
@@ -221,4 +222,8 @@ target_position = Vector2(-14.9999, 800)
 position = Vector2(-162, -389)
 target_position = Vector2(-14.9999, 800)
 
+[node name="walkAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("44_c6u4c")
+
 [connection signal="body_entered" from="Lamp/PointLight2D/Area2D" to="Lamp" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
