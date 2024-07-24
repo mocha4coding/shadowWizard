@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsedr5snq62op"]
+[gd_scene load_steps=8 format=3 uid="uid://cxvdco8lq7lhf"]
 
 [ext_resource type="Texture2D" uid="uid://rqn1w4q77wc" path="res://assets/Object1_Animation/Frame 19.png" id="1_0vtr0"]
 [ext_resource type="Texture2D" uid="uid://4p3i4sjj3sup" path="res://assets/Object1_Animation/Frame 20.png" id="2_r5qeg"]
@@ -31,10 +31,17 @@ animations = [{
 "loop": true,
 "name": &"rise",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j1w8k")
+}],
+"loop": true,
+"name": &"steady_shadow",
+"speed": 5.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_3yd8y")
-animation = &"rise"
+animation = &"steady_shadow"
 autoplay = "rise"
-frame_progress = 0.120887

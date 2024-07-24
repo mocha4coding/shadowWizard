@@ -205,3 +205,20 @@ energy = 16.0
 shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("43_ognd4")
+
+[node name="Area2D" type="Area2D" parent="Lamp/PointLight2D"]
+position = Vector2(-613, 33)
+scale = Vector2(0.08, 0.08)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/PointLight2D/Area2D"]
+polygon = PackedVector2Array(-487.502, -525, 11262.5, -5525, 12950, -2900, 13325, -712.5, 13012.5, 2100, 11200, 4850)
+
+[node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
+position = Vector2(288, -394)
+target_position = Vector2(-14.9999, 800)
+
+[node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
+position = Vector2(-162, -389)
+target_position = Vector2(-14.9999, 800)
+
+[connection signal="body_entered" from="Lamp/PointLight2D/Area2D" to="Lamp" method="_on_area_2d_body_entered"]
