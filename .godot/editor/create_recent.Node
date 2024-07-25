@@ -1,4 +1,9 @@
+CanvasLayer
+Sprite2D
+AnimatedSprite2D
 Node2D
+CollisionShape2D
+Area2D
 PanelContainer
 MarginContainer
 HBoxContainer
@@ -7,8 +12,3 @@ BoxContainer
 GridContainer
 FlowContainer
 VFlowContainer
-Sprite2D
-Panel
-Control
-NinePatchRect
-ColorRect

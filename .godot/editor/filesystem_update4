@@ -8,3 +8,11 @@ res://scenes/player.tscn
 res://scenes/object_original.tscn
 res://collectibleManagement/collectible_slot.tscn
 res://collectibleManagement/items/collectible.tscn
+res://scripts/collectible_object_area.gd
+res://scenes/collectible_object_area.tscn
+res://scenes/golden_mushroom.tscn
+res://scripts/golden_mushroom.gd
+res://scenes/pink_mushroom.tscn
+res://scripts/pink_mushroom.gd
+res://scripts/verm_mushroom.gd
+res://scenes/verm_mushroom.tscn

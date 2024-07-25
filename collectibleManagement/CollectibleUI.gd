@@ -10,23 +10,16 @@ extends Control
 
 func update_slots():
 	var totalTypeOfMushrooms: int = collectibleManager.items.size()
-	print("Total types of mushroom ", totalTypeOfMushrooms)
 	for typeOfMushroom in range(0, totalTypeOfMushrooms):
 		var filledSlotsCount: int = collectibleManager.items[typeOfMushroom].count
-		#dummyForTesting
-		print("FilledSlotsCount = ", filledSlotsCount)
-		#dummyForTesting
-		filledSlotsCount += 5
 		for i in range(0, filledSlotsCount):
-			var temp = ((i % 2) == 0)
-			print("Checking if filled at index: ", i)
 			match typeOfMushroom:
 				0:
-					goldenMushroomSlots[i].isFilled = temp
+					goldenMushroomSlots[i].isFilled = true
 				1:
-					pinkMushroomSlots[i].isFilled = !temp
+					pinkMushroomSlots[i].isFilled = true
 				2:
-					vermMushroomSlots[i].isFilled = temp
+					vermMushroomSlots[i].isFilled = true
 	
 func _ready():
 	update_slots()

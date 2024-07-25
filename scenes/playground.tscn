@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3w20x6uksake"]
+[gd_scene load_steps=16 format=3 uid="uid://c3w20x6uksake"]
 
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="1_q82iv"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_kagkj"]
@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://rw1eei2dilc5" path="res://collectibleManagement/collectible_ui.tscn" id="11_t67gm"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="11_vnn0v"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="12_efapy"]
+[ext_resource type="PackedScene" uid="uid://cvekxib2fi8yx" path="res://scenes/golden_mushroom.tscn" id="12_yo14c"]
+[ext_resource type="PackedScene" uid="uid://u5q7yb02y40c" path="res://scenes/pink_mushroom.tscn" id="13_ahs06"]
 [ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="14_4mwhx"]
+[ext_resource type="PackedScene" uid="uid://d0kj27bx5eu5a" path="res://scenes/verm_mushroom.tscn" id="14_s7462"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ak4wf"]
 cull_mode = 2
@@ -100,8 +103,40 @@ texture = ExtResource("12_efapy")
 [node name="Object_original" parent="." instance=ExtResource("14_4mwhx")]
 position = Vector2(712, 392)
 
-[node name="CollectibleUI" parent="." instance=ExtResource("11_t67gm")]
+[node name="GoldenMushroom" parent="." instance=ExtResource("12_yo14c")]
+position = Vector2(837, 399)
+
+[node name="GoldenMushroom2" parent="." instance=ExtResource("12_yo14c")]
+position = Vector2(1151, 395)
+
+[node name="GoldenMushroom3" parent="." instance=ExtResource("12_yo14c")]
+position = Vector2(1292, 396)
+
+[node name="GoldenMushroom4" parent="." instance=ExtResource("12_yo14c")]
+position = Vector2(1432, 392)
+
+[node name="GoldenMushroom5" parent="." instance=ExtResource("12_yo14c")]
+position = Vector2(1569, 391)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CollectibleUI" parent="UI" instance=ExtResource("11_t67gm")]
 offset_left = 37.0
 offset_top = 27.0
-offset_right = 77.0
-offset_bottom = 67.0
+offset_right = 220.47
+offset_bottom = 134.0
+
+[node name="PinkMushroom" parent="." instance=ExtResource("13_ahs06")]
+position = Vector2(1712, 393)
+
+[node name="PinkMushroom2" parent="." instance=ExtResource("13_ahs06")]
+position = Vector2(156, 395)
+
+[node name="PinkMushroom3" parent="." instance=ExtResource("13_ahs06")]
+position = Vector2(726, 361)
+
+[node name="VermMushroom" parent="." instance=ExtResource("14_s7462")]
+position = Vector2(643, 361)
+
+[node name="VermMushroom2" parent="." instance=ExtResource("14_s7462")]
+position = Vector2(279, 388)

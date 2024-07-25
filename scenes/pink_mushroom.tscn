@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://u5q7yb02y40c"]
+
+[ext_resource type="Script" path="res://scripts/pink_mushroom.gd" id="1_5olxh"]
+[ext_resource type="PackedScene" uid="uid://bh1o30m77fjn2" path="res://scenes/collectible_object_area.tscn" id="1_bv656"]
+[ext_resource type="Texture2D" uid="uid://bg7b86hwqmlsn" path="res://assets/UI/PinkMushroom.png" id="2_y53fe"]
+
+[node name="PinkMushroom" type="Node2D"]
+script = ExtResource("1_5olxh")
+
+[node name="CollectibleObjectArea" parent="." instance=ExtResource("1_bv656")]
+
+[node name="Sprite2D" type="Sprite2D" parent="CollectibleObjectArea"]
+position = Vector2(-1, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_y53fe")
