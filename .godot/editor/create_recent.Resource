@@ -1,2 +1,2 @@
-CollectibleManager
 CollectibleItem
+CollectibleManager
