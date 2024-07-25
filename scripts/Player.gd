@@ -1,22 +1,40 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -700.0
+const JUMP_VELOCITY = -350.0
+
+@export var playerCollectibleManager: CollectibleManager
+
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var point_light = $Lamp/PointLight2D
 @onready var walk_audio = $walkAudio
+@onready var jump_audio = $jumpAudio
+
+
+
 var walk_audio_play_finished: bool = true
-	
+var jump_audio_play_finished:bool = true
+var didJump: bool = false
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	else :
+		if didJump:
+			if walk_audio_play_finished && !jump_audio_play_finished:
+				print("Play jump audio")
+				jump_audio.play()
+			
+			didJump = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		didJump = true
+		jump_audio_play_finished = false
 
 	# Gets the input direction: -1 0 1
 	@warning_ignore("narrowing_conversion")
@@ -35,11 +53,14 @@ func _physics_process(delta):
 			animated_sprite_2d.play("idle")
 		else :
 			animated_sprite_2d.play("walk")
-			if walk_audio_play_finished:
+			if walk_audio_play_finished && jump_audio_play_finished:
 				walk_audio.play()
 				walk_audio_play_finished = false
+		
+		
 	else : 
 		animated_sprite_2d.play("idle")	
+		
 	
 	# Applies movement
 	if direction:
@@ -53,3 +74,7 @@ func _physics_process(delta):
 func _on_walk_audio_finished():
 	print("Finished playing walk audio")
 	walk_audio_play_finished = true
+
+
+func _on_jump_audio_finished():
+	jump_audio_play_finished = true

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://6d0fw0bbqjbj"]
+
+[ext_resource type="Texture2D" uid="uid://b6s7xckraldgx" path="res://assets/UI/EmptySlot.png" id="1_ebny0"]
+[ext_resource type="Script" path="res://collectibleManagement/collectible_slot.gd" id="1_xo6oy"]
+[ext_resource type="Texture2D" uid="uid://vpuvwoxeijp2" path="res://assets/UI/FilledSlot.png" id="2_ifw0l"]
+
+[node name="Collectible_Slot" type="Node2D"]
+script = ExtResource("1_xo6oy")
+
+[node name="Empty" type="Sprite2D" parent="."]
+position = Vector2(15, 15)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ebny0")
+centered = false
+
+[node name="Filled" type="Sprite2D" parent="."]
+position = Vector2(15, 15)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ifw0l")
+centered = false

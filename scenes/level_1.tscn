@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=13 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="6_khovu"]
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="9_0kfe8"]
 [ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="10_l1iqm"]
+[ext_resource type="PackedScene" uid="uid://rw1eei2dilc5" path="res://collectibleManagement/collectible_ui.tscn" id="11_63hif"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="11_g1bw8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
@@ -99,3 +100,11 @@ texture = ExtResource("11_g1bw8")
 
 [node name="Object_original" parent="." instance=ExtResource("10_l1iqm")]
 position = Vector2(712, 392)
+
+[node name="LevelOneUI" type="CanvasLayer" parent="."]
+
+[node name="CollectibleUI" parent="LevelOneUI" instance=ExtResource("11_63hif")]
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 77.0
+offset_bottom = 67.0

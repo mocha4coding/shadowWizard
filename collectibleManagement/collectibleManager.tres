@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CollectibleManager" load_steps=3 format=3 uid="uid://bs6boupd8ctci"]
+
+[ext_resource type="Resource" uid="uid://b1q7i8l8pcvxp" path="res://collectibleManagement/items/goldenMushroom.tres" id="1_i6eax"]
+[ext_resource type="Script" path="res://collectible_manager.gd" id="1_rwheg"]
+
+[resource]
+script = ExtResource("1_rwheg")
+items = Array[Resource("res://collectibleManagement/items/collectible.gd")]([ExtResource("1_i6eax"), ExtResource("1_i6eax"), ExtResource("1_i6eax"), ExtResource("1_i6eax"), ExtResource("1_i6eax"), null, null, null, null, null, null, null, null, null, null])
