@@ -26,29 +26,70 @@ patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 1
 
-[node name="BoxContainer" type="BoxContainer" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 52.0
+[node name="GoldenMushroomSlots" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 50.0
 offset_top = 3.0
-offset_right = 92.0
+offset_right = 50.0
 offset_bottom = 43.0
 
-[node name="GoldenMushroomSlots" type="HBoxContainer" parent="NinePatchRect/BoxContainer"]
-layout_mode = 2
-
-[node name="Collectible_Slot1" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+[node name="Collectible_Slot1" parent="NinePatchRect/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
 position = Vector2(-10, -2)
 
-[node name="Collectible_Slot2" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+[node name="Collectible_Slot2" parent="NinePatchRect/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
 position = Vector2(10, -2)
 
-[node name="Collectible_Slot3" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+[node name="Collectible_Slot3" parent="NinePatchRect/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
 position = Vector2(30, -2)
 
-[node name="Collectible_Slot4" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+[node name="Collectible_Slot4" parent="NinePatchRect/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
 position = Vector2(50, -2)
 
-[node name="Collectible_Slot5" parent="NinePatchRect/BoxContainer/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+[node name="Collectible_Slot5" parent="NinePatchRect/GoldenMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(70, -2)
+
+[node name="PinkMushroomSlots" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 65.0
+offset_bottom = 80.0
+
+[node name="Collectible_Slot1" parent="NinePatchRect/PinkMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(-10, -2)
+
+[node name="Collectible_Slot2" parent="NinePatchRect/PinkMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(10, -2)
+
+[node name="Collectible_Slot3" parent="NinePatchRect/PinkMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(30, -2)
+
+[node name="Collectible_Slot4" parent="NinePatchRect/PinkMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(50, -2)
+
+[node name="Collectible_Slot5" parent="NinePatchRect/PinkMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(70, -2)
+
+[node name="VermMushroomSlots" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 72.0
+offset_right = 50.0
+offset_bottom = 112.0
+
+[node name="Collectible_Slot1" parent="NinePatchRect/VermMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(-10, -2)
+
+[node name="Collectible_Slot2" parent="NinePatchRect/VermMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(10, -2)
+
+[node name="Collectible_Slot3" parent="NinePatchRect/VermMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(30, -2)
+
+[node name="Collectible_Slot4" parent="NinePatchRect/VermMushroomSlots" instance=ExtResource("3_m1p82")]
+position = Vector2(50, -2)
+
+[node name="Collectible_Slot5" parent="NinePatchRect/VermMushroomSlots" instance=ExtResource("3_m1p82")]
 position = Vector2(70, -2)
 
 [node name="GoldenMushroom" type="Sprite2D" parent="."]
