@@ -1,8 +1,8 @@
-ProgressBar
+AnimatedSprite2D
 AudioStreamPlayer2D
+ProgressBar
 CanvasLayer
 Sprite2D
-AnimatedSprite2D
 Node2D
 CollisionShape2D
 Area2D
@@ -12,4 +12,3 @@ HBoxContainer
 VBoxContainer
 BoxContainer
 GridContainer
-FlowContainer

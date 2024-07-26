@@ -6,3 +6,6 @@ res://scripts/collectible_object_area.gd
 res://scenes/level_1.tscn
 res://scripts/HealthBar.gd
 res://scenes/object_original.tscn
+res://scripts/ObjectRigidBody.gd
+res://scenes/golden_mushroom.tscn
+res://scripts/golden_mushroom.gd

@@ -7,7 +7,9 @@ var shadowCreated: bool = false
 @onready var obstacle_object_1_shadow =$"../ObjectShadowRigidBody"
 @onready var animated_sprite_shadow = $"../ObjectShadowRigidBody/AnimatedSprite2D"
 @onready var collision_shape_shadow = $"../ObjectShadowRigidBody/CollisionShape2D2"
+@onready var play_shadow_form_sound = $"../ObjectShadowRigidBody/playShadowFormSound"
 
+var isShadowCreatedAudioPlayed : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,8 +23,14 @@ func _process(_delta):
 	#print(lightFell)
 	if lightFell && !shadowCreated:
 		obstacle_shadow_show()
-		animated_sprite_shadow.play("rise")
-		shadowCreated = true
+		
+		
+		if !isShadowCreatedAudioPlayed:
+			animated_sprite_shadow.play("rise")
+			play_shadow_form_sound.play()
+			isShadowCreatedAudioPlayed = true
+			shadowCreated = true
+		
 		
 
 
