@@ -1,8 +1,15 @@
 extends CharacterBody2D
 
 class_name Player
+
+signal healthChanged
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -350.0
+
+var currentHealth = 100
+var maxHealth = 100
+
 
 @export var playerCollectibleManager: CollectibleManager
 
@@ -32,6 +39,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	else :
 		if didJump:
+			decreaseHealth()
 			if walk_audio_play_finished && !jump_audio_play_finished:
 				print("Play jump audio")
 				jump_audio.play()
@@ -43,6 +51,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		didJump = true
 		jump_audio_play_finished = false
+		
 
 	# Gets the input direction: -1 0 1
 	@warning_ignore("narrowing_conversion")
@@ -86,3 +95,9 @@ func _on_walk_audio_finished():
 
 func _on_jump_audio_finished():
 	jump_audio_play_finished = true
+
+func decreaseHealth():
+	
+	currentHealth -= 10
+	print("Decreasing health to ", currentHealth)
+	healthChanged.emit()
