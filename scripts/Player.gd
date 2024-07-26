@@ -12,12 +12,18 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var point_light = $Lamp/PointLight2D
 @onready var walk_audio = $walkAudio
 @onready var jump_audio = $jumpAudio
+@onready var item_collected_audio = $itemCollectedAudio
+
+@onready var background_music = $BackgroundMusic
 
 
 
 var walk_audio_play_finished: bool = true
 var jump_audio_play_finished:bool = true
 var didJump: bool = false
+func _ready():
+	background_music.play()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

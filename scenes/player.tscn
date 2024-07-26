@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bj4e3616laere"]
+[gd_scene load_steps=51 format=3 uid="uid://bj4e3616laere"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_h8vwx"]
 [ext_resource type="Texture2D" uid="uid://cug7jn6no8glo" path="res://assets/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00000.png" id="2_1cneq"]
@@ -46,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://dat4ar820o6qt" path="res://assets/lamp/light.png" id="43_ognd4"]
 [ext_resource type="AudioStream" uid="uid://b4vskakjdf58p" path="res://assets/sounds/GrassFootstep.mp3" id="45_31vv3"]
 [ext_resource type="AudioStream" uid="uid://bo0ftbm5407g" path="res://assets/sounds/DirtWalk.mp3" id="46_fjp0r"]
+[ext_resource type="AudioStream" uid="uid://bswpo07sgbs6y" path="res://assets/sounds/jingleAudio.mp3" id="47_1i5w8"]
+[ext_resource type="AudioStream" uid="uid://cxi8u727gcpv" path="res://assets/sounds/backgroundMusic.mp3" id="48_fy1th"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pj0av"]
 animations = [{
@@ -230,6 +232,13 @@ stream = ExtResource("45_31vv3")
 
 [node name="jumpAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("46_fjp0r")
+
+[node name="itemCollectedAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_1i5w8")
+pitch_scale = 1.05
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("48_fy1th")
 
 [connection signal="body_entered" from="Lamp/PointLight2D/Area2D" to="Lamp" method="_on_area_2d_body_entered"]
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
