@@ -113,9 +113,9 @@ offset_top = 27.0
 offset_right = 77.0
 offset_bottom = 67.0
 
-[node name="Node2D" type="Node2D" parent="LevelOneUI"]
+[node name="HealthBar" type="Node2D" parent="LevelOneUI"]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="LevelOneUI/Node2D" node_paths=PackedStringArray("player")]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="LevelOneUI/HealthBar" node_paths=PackedStringArray("player")]
 clip_contents = true
 anchors_preset = 1
 anchor_left = 1.0
@@ -131,13 +131,13 @@ script = ExtResource("13_0mdg4")
 player = NodePath("../../../Player")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelOneUI/Node2D"]
+[node name="HealthbarEmpty" type="Sprite2D" parent="LevelOneUI/HealthBar"]
 z_index = -1
 position = Vector2(921, 48)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_tuvbx")
 
-[node name="Sprite2D2" type="Sprite2D" parent="LevelOneUI/Node2D"]
+[node name="HealthBarHeartIcon" type="Sprite2D" parent="LevelOneUI/HealthBar"]
 position = Vector2(870, 45)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_1n4mu")
