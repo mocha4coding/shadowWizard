@@ -147,6 +147,7 @@ scale = Vector2(0.25, 0.25)
 texture_progress = ExtResource("13_2xtip")
 script = ExtResource("13_6vtg3")
 player = NodePath("../../../Player")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/Node2D"]
 z_index = -1
