@@ -64,7 +64,7 @@ mass = 0.02
 gravity_scale = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ObjectShadowRigidBody"]
-position = Vector2(260, -33)
+position = Vector2(258, -29)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_5g8tv")
 animation = &"rise"

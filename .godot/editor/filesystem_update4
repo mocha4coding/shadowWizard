@@ -5,3 +5,4 @@ res://scenes/playground.tscn
 res://scripts/collectible_object_area.gd
 res://scenes/level_1.tscn
 res://scripts/HealthBar.gd
+res://scenes/object_original.tscn
