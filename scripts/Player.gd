@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name Player
 const SPEED = 300.0
 const JUMP_VELOCITY = -350.0
 
@@ -22,7 +23,8 @@ var walk_audio_play_finished: bool = true
 var jump_audio_play_finished:bool = true
 var didJump: bool = false
 func _ready():
-	background_music.play()
+	#background_music.play()
+	pass
 
 func _physics_process(delta):
 	# Add the gravity.
