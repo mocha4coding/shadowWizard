@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://mh2bp1q2mimx" path="res://assets/sounds/shadowFormsAudio.mp3" id="9_o0lhi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8p31"]
-size = Vector2(193, 37)
+size = Vector2(277.333, 54.3333)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5g8tv"]
 animations = [{
@@ -50,30 +50,33 @@ animations = [{
 [node name="Object_original" type="Node2D"]
 
 [node name="ObjectRigidBody" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
 script = ExtResource("1_cso46")
 
 [node name="Sprite2D" type="Sprite2D" parent="ObjectRigidBody"]
-scale = Vector2(0.25, 0.25)
+position = Vector2(-3.8147e-06, -1.90735e-06)
+scale = Vector2(0.372002, 0.372002)
 texture = ExtResource("1_opeeb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectRigidBody"]
-position = Vector2(-10.5, 3.5)
+position = Vector2(-11.3333, 6.66667)
 shape = SubResource("RectangleShape2D_f8p31")
 
 [node name="ObjectShadowRigidBody" type="RigidBody2D" parent="."]
+position = Vector2(-98, -6)
 mass = 0.02
 gravity_scale = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ObjectShadowRigidBody"]
-position = Vector2(258, -29)
-scale = Vector2(0.25, 0.25)
+position = Vector2(497.333, -41.3333)
+scale = Vector2(0.360221, 0.360221)
 sprite_frames = SubResource("SpriteFrames_5g8tv")
 animation = &"rise"
 frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjectShadowRigidBody"]
-position = Vector2(271, 3.5)
+position = Vector2(520.667, 8)
 shape = SubResource("RectangleShape2D_f8p31")
 
 [node name="playShadowFormSound" type="AudioStreamPlayer2D" parent="ObjectShadowRigidBody"]

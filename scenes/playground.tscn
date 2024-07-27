@@ -38,7 +38,8 @@ TargetNode = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_kb3wm")]
 z_index = 2
-position = Vector2(359, 384)
+position = Vector2(434, 352)
+scale = Vector2(0.45, 0.45)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -106,7 +107,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_efapy")
 
 [node name="Object_original" parent="." instance=ExtResource("14_4mwhx")]
-position = Vector2(712, 392)
+position = Vector2(647, 372)
 
 [node name="GoldenMushroom" parent="." instance=ExtResource("12_yo14c")]
 position = Vector2(837, 399)
