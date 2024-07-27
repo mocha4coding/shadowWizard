@@ -39,9 +39,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	else :
 		if didJump:
-			decreaseHealth()
 			if walk_audio_play_finished && !jump_audio_play_finished:
-				print("Play jump audio")
+				#print("Play jump audio")
 				jump_audio.play()
 			
 			didJump = false
@@ -89,7 +88,7 @@ func _physics_process(delta):
 
 
 func _on_walk_audio_finished():
-	print("Finished playing walk audio")
+	#print("Finished playing walk audio")
 	walk_audio_play_finished = true
 
 
@@ -98,6 +97,6 @@ func _on_jump_audio_finished():
 
 func decreaseHealth():
 	
-	currentHealth -= 10
-	print("Decreasing health to ", currentHealth)
+	currentHealth -= 0.05
+	#print("Decreasing health to ", currentHealth)
 	healthChanged.emit()

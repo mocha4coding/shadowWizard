@@ -44,6 +44,8 @@ height = 200.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_h8vwx")
 playerCollectibleManager = ExtResource("2_pre05")
 
@@ -59,11 +61,11 @@ position = Vector2(0, 35)
 shape = SubResource("CapsuleShape2D_0v0mo")
 
 [node name="Lamp" parent="." instance=ExtResource("42_nkt64")]
-position = Vector2(104, 47)
-scale = Vector2(0.08, 0.08)
+position = Vector2(100, -15)
+scale = Vector2(0.25, 0.25)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lamp"]
-position = Vector2(7787.5, -350)
+position = Vector2(8160, -440)
 scale = Vector2(12.5, 12.5)
 energy = 16.0
 shadow_enabled = true

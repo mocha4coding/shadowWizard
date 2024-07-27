@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwlp7kcqfynt8"]
+[gd_scene load_steps=5 format=3 uid="uid://bwlp7kcqfynt8"]
 
-[ext_resource type="Texture2D" uid="uid://b8bxn5i7ocls7" path="res://assets/lamp/lamp_temp.png" id="1_oqg6p"]
 [ext_resource type="Script" path="res://scripts/lamp.gd" id="1_tn2n0"]
+[ext_resource type="Texture2D" uid="uid://bb7b1v3i14bgp" path="res://assets/wizardAnimations/wandNormal/Magic Wand Normal 1.png" id="2_qk35l"]
+[ext_resource type="Texture2D" uid="uid://chkm1hw4u4idb" path="res://assets/wizardAnimations/wandNormal/Magic Wand Normal 2.png" id="3_17h57"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfbqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qk35l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_17h57")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Lamp" type="Node2D"]
 script = ExtResource("1_tn2n0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_oqg6p")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sfbqj")
+autoplay = "default"

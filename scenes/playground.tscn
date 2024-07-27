@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3w20x6uksake"]
+[gd_scene load_steps=21 format=3 uid="uid://c3w20x6uksake"]
 
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="1_q82iv"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_kagkj"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="14_4mwhx"]
 [ext_resource type="PackedScene" uid="uid://d0kj27bx5eu5a" path="res://scenes/verm_mushroom.tscn" id="14_s7462"]
 [ext_resource type="Texture2D" uid="uid://ddw1mergi83pk" path="res://assets/healthBar/Frame 64.png" id="16_w5yi1"]
+[ext_resource type="PackedScene" uid="uid://cmjn51hvpeexj" path="res://scenes/enemy_bee.tscn" id="19_j1e0l"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ak4wf"]
 cull_mode = 2
@@ -107,10 +108,11 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_efapy")
 
 [node name="Object_original" parent="." instance=ExtResource("14_4mwhx")]
-position = Vector2(647, 372)
+z_index = 100
+position = Vector2(656, 381)
 
 [node name="GoldenMushroom" parent="." instance=ExtResource("12_yo14c")]
-position = Vector2(837, 399)
+position = Vector2(848, 392)
 
 [node name="GoldenMushroom2" parent="." instance=ExtResource("12_yo14c")]
 position = Vector2(1151, 395)
@@ -168,10 +170,13 @@ position = Vector2(1712, 393)
 position = Vector2(156, 395)
 
 [node name="PinkMushroom3" parent="." instance=ExtResource("13_ahs06")]
-position = Vector2(726, 361)
+position = Vector2(687, 337)
 
 [node name="VermMushroom" parent="." instance=ExtResource("14_s7462")]
-position = Vector2(643, 361)
+position = Vector2(574, 338)
 
 [node name="VermMushroom2" parent="." instance=ExtResource("14_s7462")]
 position = Vector2(279, 388)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("19_j1e0l")]
+position = Vector2(995, 292)
