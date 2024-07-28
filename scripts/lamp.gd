@@ -5,8 +5,7 @@ extends Node2D
 @onready var object_detector_2 = $PointLight2D/ObjectDetector2
 
 func _physics_process(_delta):
-	# Add the gravity.
-	look_at(get_global_mouse_position())
+
 	handle_collision_with_objects()
 
 

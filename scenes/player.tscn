@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bj4e3616laere"]
+[gd_scene load_steps=17 format=3 uid="uid://bj4e3616laere"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_h8vwx"]
 [ext_resource type="Resource" uid="uid://cvkxmchebuq1q" path="res://collectibleManagement/playerCollectibleManager.tres" id="2_pre05"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dygsk1fda16ys" path="res://assets/wizardAnimations/Idle/Idle 2.png" id="4_jl7o5"]
 [ext_resource type="Texture2D" uid="uid://jm7k3c3bn3xe" path="res://assets/wizardAnimations/walk/Walk 1.png" id="5_for85"]
 [ext_resource type="Texture2D" uid="uid://m6kt81b4rbjr" path="res://assets/wizardAnimations/walk/Walk 2.png" id="6_nanhf"]
+[ext_resource type="Script" path="res://scripts/LampScript.gd" id="9_axib0"]
+[ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="13_d06j2"]
 [ext_resource type="PackedScene" uid="uid://bwlp7kcqfynt8" path="res://scenes/lamp.tscn" id="42_nkt64"]
 [ext_resource type="Texture2D" uid="uid://dat4ar820o6qt" path="res://assets/lamp/light.png" id="43_ognd4"]
 [ext_resource type="AudioStream" uid="uid://b4vskakjdf58p" path="res://assets/sounds/GrassFootstep.mp3" id="45_31vv3"]
@@ -65,26 +67,29 @@ position = Vector2(100, -15)
 scale = Vector2(0.25, 0.25)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lamp"]
-position = Vector2(8160, -440)
-scale = Vector2(12.5, 12.5)
+position = Vector2(20.0001, -520)
+scale = Vector2(2.08232, 2.08232)
 energy = 16.0
 shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("43_ognd4")
+offset = Vector2(600, 0)
+script = ExtResource("9_axib0")
 
 [node name="Area2D" type="Area2D" parent="Lamp/PointLight2D"]
-position = Vector2(-613, 33)
+position = Vector2(-219.209, 1223.97)
 scale = Vector2(0.08, 0.08)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/PointLight2D/Area2D"]
+position = Vector2(2665.06, -14855)
 polygon = PackedVector2Array(-487.502, -525, 11262.5, -5525, 12950, -2900, 13325, -712.5, 13012.5, 2100, 11200, 4850)
 
 [node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(288, -394)
+position = Vector2(249.722, -364.978)
 target_position = Vector2(-14.9999, 800)
 
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(27.9999, -409)
+position = Vector2(-153.675, -393.792)
 target_position = Vector2(-14.9999, 800)
 
 [node name="walkAudio" type="AudioStreamPlayer2D" parent="."]
@@ -99,6 +104,12 @@ pitch_scale = 1.05
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("48_fy1th")
+
+[node name="BackgroundTemp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(420, 175)
+scale = Vector2(2.18316, 2.3071)
+texture = ExtResource("13_d06j2")
 
 [connection signal="body_entered" from="Lamp/PointLight2D/Area2D" to="Lamp" method="_on_area_2d_body_entered"]
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
