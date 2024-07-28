@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -350.0
 
 var currentHealth = 100
 var maxHealth = 100
-
+var direction: int = 0
 
 @export var playerCollectibleManager: CollectibleManager
 
@@ -24,6 +24,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var item_collected_audio = $itemCollectedAudio
 
 @onready var background_music = $BackgroundMusic
+@onready var lamp_right_facing_position = $LampRightFacingPosition
+@onready var lamp_left_facing_position = $LampLeftFacingPosition
 
 
 
@@ -32,6 +34,7 @@ var jump_audio_play_finished:bool = true
 var didJump: bool = false
 func _ready():
 	point_light.hide()
+	lamp.global_position = lamp_right_facing_position.global_position
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -53,13 +56,15 @@ func _physics_process(delta):
 
 	# Gets the input direction: -1 0 1
 	@warning_ignore("narrowing_conversion")
-	var direction: int = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	
 	# Flip the sprite
 	if direction < 0 :
 		animated_sprite_2d.flip_h = true
+		lamp.global_position = lamp_left_facing_position.global_position
 	else :
 		animated_sprite_2d.flip_h = false
+		lamp.global_position = lamp_right_facing_position.global_position
 	
 	
 	# Play animation 

@@ -51,6 +51,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_h8vwx")
 playerCollectibleManager = ExtResource("2_pre05")
+metadata/_edit_vertical_guides_ = [20.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(10, -15)
@@ -58,6 +59,7 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_pj0av")
 animation = &"walk"
 frame_progress = 0.427725
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 35)
@@ -83,7 +85,7 @@ scale = Vector2(2.18316, 2.3071)
 texture = ExtResource("13_d06j2")
 
 [node name="Lamp" parent="." instance=ExtResource("42_nkt64")]
-position = Vector2(100, -15)
+position = Vector2(-70, -15)
 scale = Vector2(0.25, 0.25)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lamp"]
@@ -112,6 +114,12 @@ target_position = Vector2(-14.9999, 800)
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
 position = Vector2(364.977, -393.792)
 target_position = Vector2(-14.9999, 800)
+
+[node name="LampRightFacingPosition" type="Marker2D" parent="."]
+position = Vector2(100, -15)
+
+[node name="LampLeftFacingPosition" type="Marker2D" parent="."]
+position = Vector2(-70, -15)
 
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
 [connection signal="finished" from="jumpAudio" to="." method="_on_jump_audio_finished"]
