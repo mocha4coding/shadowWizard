@@ -41,6 +41,7 @@ TargetNode = NodePath("../Player")
 z_index = 2
 position = Vector2(434, 352)
 scale = Vector2(0.45, 0.45)
+metadata/_edit_vertical_guides_ = [20.0]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 

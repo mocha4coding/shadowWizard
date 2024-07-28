@@ -51,7 +51,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_h8vwx")
 playerCollectibleManager = ExtResource("2_pre05")
-metadata/_edit_vertical_guides_ = [20.0]
+metadata/_edit_vertical_guides_ = [20.0, -14.0, -8.0, -8.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(10, -15)
@@ -83,13 +83,14 @@ position = Vector2(420, 175)
 scale = Vector2(2.18316, 2.3071)
 texture = ExtResource("13_d06j2")
 
-[node name="Lamp" parent="." instance=ExtResource("42_nkt64")]
+[node name="Lamp" parent="." node_paths=PackedStringArray("player") instance=ExtResource("42_nkt64")]
 position = Vector2(-70, -15)
 scale = Vector2(0.25, 0.25)
+player = NodePath("..")
 
 [node name="PointLight2D" type="PointLight2D" parent="Lamp"]
 position = Vector2(120, -540)
-energy = 2.42
+energy = 0.0
 shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("13_meq6i")

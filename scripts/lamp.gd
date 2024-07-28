@@ -25,7 +25,14 @@ func _physics_process(_delta):
 		lampState %= 3 
 		print("Lamp state updated to", lampState)
 		lampStateChanged.emit()
-
+	# Flip the sprite
+	if player != null:
+		if player.direction < 0 :
+			lights.flip_h = true
+		elif player.direction > 0:
+			lights.flip_h = false
+			
+	
 
 
 func handle_lamp_animation():

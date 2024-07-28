@@ -7,3 +7,4 @@ res://scenes/golden_mushroom.tscn
 res://scenes/lamp.tscn
 res://scripts/Player.gd
 res://scripts/lamp.gd
+res://scripts/LampScript.gd
