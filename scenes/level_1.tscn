@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=17 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="10_l1iqm"]
 [ext_resource type="PackedScene" uid="uid://rw1eei2dilc5" path="res://collectibleManagement/collectible_ui.tscn" id="11_63hif"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="11_g1bw8"]
+[ext_resource type="Texture2D" uid="uid://d3n2qexa7jrab" path="res://assets/healthBar/HealthBarInsideFull.png" id="12_6jc3d"]
+[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="13_0mdg4"]
+[ext_resource type="Texture2D" uid="uid://y4fy0uotvp3m" path="res://assets/healthBar/Frame 65.png" id="14_tuvbx"]
+[ext_resource type="Texture2D" uid="uid://ddw1mergi83pk" path="res://assets/healthBar/Frame 64.png" id="15_1n4mu"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -108,3 +112,32 @@ offset_left = 37.0
 offset_top = 27.0
 offset_right = 77.0
 offset_bottom = 67.0
+
+[node name="HealthBar" type="Node2D" parent="LevelOneUI"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="LevelOneUI/HealthBar" node_paths=PackedStringArray("player")]
+clip_contents = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 845.0
+offset_top = 36.0
+offset_right = 1624.0
+offset_bottom = 228.0
+grow_horizontal = 0
+scale = Vector2(0.25, 0.25)
+texture_progress = ExtResource("12_6jc3d")
+script = ExtResource("13_0mdg4")
+player = NodePath("../../../Player")
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthbarEmpty" type="Sprite2D" parent="LevelOneUI/HealthBar"]
+z_index = -1
+position = Vector2(921, 48)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_tuvbx")
+
+[node name="HealthBarHeartIcon" type="Sprite2D" parent="LevelOneUI/HealthBar"]
+position = Vector2(870, 45)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15_1n4mu")

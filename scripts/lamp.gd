@@ -18,5 +18,5 @@ func handle_collision_with_objects():
 	if collisionObject is ObstacleObject && object_detector_2.get_collider() == collisionObject:
 		#print("Collision detected")
 		collisionObject.lightFell = true
-		
 	
+

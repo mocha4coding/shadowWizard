@@ -1,5 +1,13 @@
 res://scenes/player.tscn
+res://scripts/HealthBar.gd
 res://collectibleManagement/playerCollectibleManager.tres
-res://scripts/Player.gd
 res://scenes/playground.tscn
+res://scenes/level_1.tscn
+res://scenes/object_original.tscn
+res://scenes/golden_mushroom.tscn
+res://scripts/lamp.gd
+res://scenes/enemy_bee.tscn
+res://scripts/enemy.gd
+res://scripts/Player.gd
 res://scripts/collectible_object_area.gd
+res://scenes/lamp.tscn
