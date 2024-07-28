@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://b30txr00huab"]
+[gd_scene load_steps=15 format=3 uid="uid://b30txr00huab"]
 
 [ext_resource type="Script" path="res://scripts/ObjectRigidBody.gd" id="1_cso46"]
 [ext_resource type="Texture2D" uid="uid://b37lixo1w0au" path="res://assets/objects/stone_1_original.png" id="1_opeeb"]
 [ext_resource type="Texture2D" uid="uid://rqn1w4q77wc" path="res://assets/Object1_Animation/Frame 19.png" id="3_qx4v0"]
-[ext_resource type="Script" path="res://scripts/ObjectShadowRigidBody.gd" id="3_u0aqi"]
 [ext_resource type="Texture2D" uid="uid://4p3i4sjj3sup" path="res://assets/Object1_Animation/Frame 20.png" id="4_7i5jx"]
 [ext_resource type="Texture2D" uid="uid://cq16pmbyjeq2o" path="res://assets/Object1_Animation/Frame 21.png" id="5_5e4rs"]
 [ext_resource type="Texture2D" uid="uid://cl22v1vey8gyc" path="res://assets/Object1_Animation/Frame 22.png" id="6_ttgl2"]
@@ -78,7 +77,6 @@ z_index = 5
 position = Vector2(-96, -155)
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("3_u0aqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ObjectShadowRigidBody"]
 position = Vector2(497.333, -41.3333)

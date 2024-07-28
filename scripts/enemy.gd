@@ -10,18 +10,18 @@ func _physics_process(delta):
 	if playerChase:
 		animated_sprite_2d.play("attack")
 		position += (player.position - position)/timeTakenToMove
-		print("Bee positon after player detected " , position )
+		#print("Bee positon after player detected " , position )
 		
 	else :
 		animated_sprite_2d.play("idle")
-		print("Bee position without player ", position)
+		#print("Bee position without player ", position)
 		
 	if attackModeOn:
 		player.decreaseHealth()
 
 func _on_detetction_area_body_entered(body):
 	if body is Player:
-		print("Player detected")
+		#print("Player detected")
 		player = body
 		playerChase = true
 

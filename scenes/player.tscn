@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bj4e3616laere"]
+[gd_scene load_steps=18 format=3 uid="uid://bj4e3616laere"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_h8vwx"]
 [ext_resource type="Resource" uid="uid://cvkxmchebuq1q" path="res://collectibleManagement/playerCollectibleManager.tres" id="2_pre05"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://jm7k3c3bn3xe" path="res://assets/wizardAnimations/walk/Walk 1.png" id="5_for85"]
 [ext_resource type="Texture2D" uid="uid://m6kt81b4rbjr" path="res://assets/wizardAnimations/walk/Walk 2.png" id="6_nanhf"]
 [ext_resource type="Script" path="res://scripts/LampScript.gd" id="9_axib0"]
+[ext_resource type="Script" path="res://scripts/Area2D.gd" id="10_agepm"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="13_d06j2"]
 [ext_resource type="PackedScene" uid="uid://bwlp7kcqfynt8" path="res://scenes/lamp.tscn" id="42_nkt64"]
 [ext_resource type="Texture2D" uid="uid://dat4ar820o6qt" path="res://assets/lamp/light.png" id="43_ognd4"]
@@ -79,6 +80,7 @@ script = ExtResource("9_axib0")
 [node name="Area2D" type="Area2D" parent="Lamp/PointLight2D"]
 position = Vector2(-219.209, 1223.97)
 scale = Vector2(0.08, 0.08)
+script = ExtResource("10_agepm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/PointLight2D/Area2D"]
 position = Vector2(2665.06, -14855)
@@ -111,6 +113,7 @@ position = Vector2(420, 175)
 scale = Vector2(2.18316, 2.3071)
 texture = ExtResource("13_d06j2")
 
-[connection signal="body_entered" from="Lamp/PointLight2D/Area2D" to="Lamp" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Lamp/PointLight2D/Area2D" to="Lamp/PointLight2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Lamp/PointLight2D/Area2D" to="Lamp/PointLight2D" method="_on_area_2d_area_exited"]
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
 [connection signal="finished" from="jumpAudio" to="." method="_on_jump_audio_finished"]
