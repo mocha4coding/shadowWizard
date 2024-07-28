@@ -62,7 +62,7 @@ func _physics_process(delta):
 	if direction < 0 :
 		animated_sprite_2d.flip_h = true
 		lamp.global_position = lamp_left_facing_position.global_position
-	else :
+	elif direction > 0:
 		animated_sprite_2d.flip_h = false
 		lamp.global_position = lamp_right_facing_position.global_position
 	

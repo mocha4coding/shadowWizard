@@ -4,8 +4,6 @@ res://collectibleManagement/playerCollectibleManager.tres
 res://scenes/playground.tscn
 res://scenes/level_1.tscn
 res://scenes/golden_mushroom.tscn
-res://scenes/enemy_bee.tscn
 res://scenes/lamp.tscn
-res://scenes/object_original.tscn
-res://scripts/lamp.gd
 res://scripts/Player.gd
+res://scripts/lamp.gd

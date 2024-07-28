@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://scripts/LampScript.gd" id="9_axib0"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="10_agepm"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="13_d06j2"]
+[ext_resource type="Texture2D" uid="uid://bf83u12cr2vn4" path="res://assets/wizardAnimations/lightRay.png" id="13_meq6i"]
 [ext_resource type="PackedScene" uid="uid://bwlp7kcqfynt8" path="res://scenes/lamp.tscn" id="42_nkt64"]
-[ext_resource type="Texture2D" uid="uid://dat4ar820o6qt" path="res://assets/lamp/light.png" id="43_ognd4"]
 [ext_resource type="AudioStream" uid="uid://b4vskakjdf58p" path="res://assets/sounds/GrassFootstep.mp3" id="45_31vv3"]
 [ext_resource type="AudioStream" uid="uid://bo0ftbm5407g" path="res://assets/sounds/DirtWalk.mp3" id="46_fjp0r"]
 [ext_resource type="AudioStream" uid="uid://bswpo07sgbs6y" path="res://assets/sounds/jingleAudio.mp3" id="47_1i5w8"]
@@ -59,7 +59,6 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_pj0av")
 animation = &"walk"
 frame_progress = 0.427725
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 35)
@@ -89,23 +88,23 @@ position = Vector2(-70, -15)
 scale = Vector2(0.25, 0.25)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lamp"]
-position = Vector2(20.0001, -520)
-scale = Vector2(2.08232, 2.08232)
-energy = 16.0
+position = Vector2(120, -540)
+energy = 2.42
 shadow_enabled = true
 shadow_item_cull_mask = 2
-texture = ExtResource("43_ognd4")
-offset = Vector2(600, 0)
+texture = ExtResource("13_meq6i")
+offset = Vector2(740, 0)
+texture_scale = 0.8
 script = ExtResource("9_axib0")
 
 [node name="Area2D" type="Area2D" parent="Lamp/PointLight2D"]
-position = Vector2(-219.209, 1223.97)
+position = Vector2(-260, 1240)
 scale = Vector2(0.08, 0.08)
 script = ExtResource("10_agepm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/PointLight2D/Area2D"]
 position = Vector2(2665.06, -14855)
-polygon = PackedVector2Array(-487.502, -525, 11262.5, -5525, 12950, -2900, 13325, -712.5, 13012.5, 2100, 11200, 4850)
+polygon = PackedVector2Array(334.94, -1145, 17584.9, -7395, 17334.9, 6105, 584.94, -145.001)
 
 [node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
 position = Vector2(864.42, -403.396)
@@ -115,11 +114,23 @@ target_position = Vector2(-14.9999, 800)
 position = Vector2(364.977, -393.792)
 target_position = Vector2(-14.9999, 800)
 
+[node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]
+z_index = -2
+position = Vector2(660, 0)
+scale = Vector2(0.72655, 0.72655)
+texture = ExtResource("13_meq6i")
+
 [node name="LampRightFacingPosition" type="Marker2D" parent="."]
 position = Vector2(100, -15)
 
 [node name="LampLeftFacingPosition" type="Marker2D" parent="."]
 position = Vector2(-70, -15)
+
+[node name="BackgroundTemp2" type="Sprite2D" parent="."]
+visible = false
+z_index = -100
+position = Vector2(170, -125)
+texture = ExtResource("13_d06j2")
 
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
 [connection signal="finished" from="jumpAudio" to="." method="_on_jump_audio_finished"]

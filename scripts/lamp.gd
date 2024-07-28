@@ -4,7 +4,7 @@ class_name LampOfWizard
 
 signal lampStateChanged
 
-
+@export var player: Player = null
 @onready var lights = $Lights
 
 @onready var object_detector_1 = $PointLight2D/ObjectDetector1
