@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwlp7kcqfynt8"]
+[gd_scene load_steps=9 format=3 uid="uid://bwlp7kcqfynt8"]
 
 [ext_resource type="Script" path="res://scripts/lamp.gd" id="1_tn2n0"]
+[ext_resource type="Texture2D" uid="uid://65t8dyexpkeb" path="res://assets/wizardAnimations/wandAttack/Magic Wand Attack 1.png" id="2_8rra3"]
 [ext_resource type="Texture2D" uid="uid://bb7b1v3i14bgp" path="res://assets/wizardAnimations/wandNormal/Magic Wand Normal 1.png" id="2_qk35l"]
 [ext_resource type="Texture2D" uid="uid://chkm1hw4u4idb" path="res://assets/wizardAnimations/wandNormal/Magic Wand Normal 2.png" id="3_17h57"]
+[ext_resource type="Texture2D" uid="uid://b01ghrudho8eb" path="res://assets/wizardAnimations/wandAttack/Magic Wand Attack 2.png" id="3_eanw6"]
+[ext_resource type="Texture2D" uid="uid://pp7lctj5omco" path="res://assets/wizardAnimations/wandLightThrow/Magic Wand Light 1.png" id="6_p4nyl"]
+[ext_resource type="Texture2D" uid="uid://yqjrqtw7xce" path="res://assets/wizardAnimations/wandLightThrow/Magic Wand Light 2.png" id="7_7ys5k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sfbqj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8rra3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eanw6")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_qk35l")
@@ -16,11 +31,24 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_p4nyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ys5k")
+}],
+"loop": true,
+"name": &"lightThrow",
+"speed": 5.0
 }]
 
 [node name="Lamp" type="Node2D"]
 script = ExtResource("1_tn2n0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Lights" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sfbqj")
+animation = &"lightThrow"
 autoplay = "default"
+frame_progress = 0.989124

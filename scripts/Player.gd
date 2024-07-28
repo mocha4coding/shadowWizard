@@ -13,6 +13,7 @@ var maxHealth = 100
 
 @export var playerCollectibleManager: CollectibleManager
 
+@onready var lamp = $Lamp
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -30,8 +31,7 @@ var walk_audio_play_finished: bool = true
 var jump_audio_play_finished:bool = true
 var didJump: bool = false
 func _ready():
-	#background_music.play()
-	pass
+	point_light.hide()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -50,7 +50,6 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		didJump = true
 		jump_audio_play_finished = false
-		
 
 	# Gets the input direction: -1 0 1
 	@warning_ignore("narrowing_conversion")
@@ -100,3 +99,11 @@ func decreaseHealth():
 	currentHealth -= 0.05
 	#print("Decreasing health to ", currentHealth)
 	healthChanged.emit()
+
+
+func _on_lamp_lamp_state_changed():
+		print("Lamp state : ", lamp.lampState)
+		if lamp.lampState == lamp.lampStateLightThrow:
+			point_light.show()
+		else:
+			point_light.hide()

@@ -63,6 +63,25 @@ frame_progress = 0.427725
 position = Vector2(0, 35)
 shape = SubResource("CapsuleShape2D_0v0mo")
 
+[node name="walkAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("45_31vv3")
+
+[node name="jumpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("46_fjp0r")
+
+[node name="itemCollectedAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_1i5w8")
+pitch_scale = 1.05
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("48_fy1th")
+
+[node name="BackgroundTemp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(420, 175)
+scale = Vector2(2.18316, 2.3071)
+texture = ExtResource("13_d06j2")
+
 [node name="Lamp" parent="." instance=ExtResource("42_nkt64")]
 position = Vector2(100, -15)
 scale = Vector2(0.25, 0.25)
@@ -87,33 +106,15 @@ position = Vector2(2665.06, -14855)
 polygon = PackedVector2Array(-487.502, -525, 11262.5, -5525, 12950, -2900, 13325, -712.5, 13012.5, 2100, 11200, 4850)
 
 [node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(249.722, -364.978)
+position = Vector2(864.42, -403.396)
 target_position = Vector2(-14.9999, 800)
 
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(-153.675, -393.792)
+position = Vector2(364.977, -393.792)
 target_position = Vector2(-14.9999, 800)
 
-[node name="walkAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("45_31vv3")
-
-[node name="jumpAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("46_fjp0r")
-
-[node name="itemCollectedAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("47_1i5w8")
-pitch_scale = 1.05
-
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("48_fy1th")
-
-[node name="BackgroundTemp" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(420, 175)
-scale = Vector2(2.18316, 2.3071)
-texture = ExtResource("13_d06j2")
-
-[connection signal="area_entered" from="Lamp/PointLight2D/Area2D" to="Lamp/PointLight2D" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Lamp/PointLight2D/Area2D" to="Lamp/PointLight2D" method="_on_area_2d_area_exited"]
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
 [connection signal="finished" from="jumpAudio" to="." method="_on_jump_audio_finished"]
+[connection signal="lampStateChanged" from="Lamp" to="." method="_on_lamp_lamp_state_changed"]
+[connection signal="area_entered" from="Lamp/PointLight2D/Area2D" to="Lamp/PointLight2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Lamp/PointLight2D/Area2D" to="Lamp/PointLight2D" method="_on_area_2d_area_exited"]

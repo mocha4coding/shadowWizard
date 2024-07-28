@@ -7,7 +7,5 @@ res://scenes/golden_mushroom.tscn
 res://scenes/enemy_bee.tscn
 res://scenes/lamp.tscn
 res://scenes/object_original.tscn
-res://scripts/LampScript.gd
+res://scripts/lamp.gd
 res://scripts/Player.gd
-res://scripts/enemy.gd
-res://scripts/Area2D.gd
