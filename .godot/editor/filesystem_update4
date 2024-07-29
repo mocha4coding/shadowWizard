@@ -17,3 +17,4 @@ res://scripts/ObjectRigidBody.gd
 res://scenes/object_shadow_rigid_body.tscn
 res://scripts/Shadow.gd
 res://scripts/CustomeCamera.gd
+res://scripts/level_1.gd

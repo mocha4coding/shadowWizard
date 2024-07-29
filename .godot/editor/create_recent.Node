@@ -1,7 +1,7 @@
-Marker2D
-Timer
 CollisionShape2D
 Area2D
+Marker2D
+Timer
 Window
 AnimatedSprite2D
 Button

@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=26 format=3 uid="uid://bmxi35ilssf4o"]
 
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_e0o58"]
@@ -20,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cvekxib2fi8yx" path="res://scenes/golden_mushroom.tscn" id="17_sckeh"]
 [ext_resource type="Script" path="res://scripts/CollectMushroomInstructions.gd" id="18_jgxil"]
 [ext_resource type="Texture2D" uid="uid://lej6tyws7g1w" path="res://assets/UI/CollectMushroomInstruction.png" id="19_61s8p"]
+[ext_resource type="Texture2D" uid="uid://b1b3vrghfkl53" path="res://assets/UI/SpaceBarForMagicLightInstruction.png" id="22_ic1hs"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -28,7 +30,11 @@ polygon = PackedVector2Array(-298, 20, -310, -150, 142, -152, 152, -56, 142, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_x650g"]
 radius = 199.198
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k5qus"]
+radius = 319.428
+
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_lq41e")
 metadata/_edit_vertical_guides_ = [-1.0]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
@@ -110,6 +116,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_g1bw8")
 
 [node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
+layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262174, 3, 0, 262175, 3, 0, 262176, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0)
 
 [node name="Object_original" parent="." instance=ExtResource("10_l1iqm")]
 position = Vector2(2166, 371)
@@ -181,5 +188,20 @@ visible = false
 position = Vector2(1315, 312)
 texture = ExtResource("19_61s8p")
 
+[node name="SpaceForMagicLightInstructionArea2D" type="Area2D" parent="."]
+position = Vector2(2337, 270)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceForMagicLightInstructionArea2D"]
+position = Vector2(-171, 17)
+shape = SubResource("CircleShape2D_k5qus")
+
+[node name="SpaceBarForMagicLightInstruction" type="Sprite2D" parent="SpaceForMagicLightInstructionArea2D"]
+visible = false
+texture = ExtResource("22_ic1hs")
+
+[connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]
+[connection signal="body_entered" from="CollectMushroomInstructionDetector" to="." method="_on_collect_mushroom_instruction_detector_body_entered"]
 [connection signal="body_entered" from="CollectMushroomInstructionDetector" to="CollectMushroomInstructionDetector" method="_on_body_entered"]
+[connection signal="body_entered" from="SpaceForMagicLightInstructionArea2D" to="." method="_on_space_for_magic_light_instruction_area_2d_body_entered"]
+[connection signal="body_exited" from="SpaceForMagicLightInstructionArea2D" to="." method="_on_space_for_magic_light_instruction_area_2d_body_exited"]

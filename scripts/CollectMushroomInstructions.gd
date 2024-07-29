@@ -1,7 +1,6 @@
 extends Area2D
 
-@onready var collect_mushroom_instruction =$"../CollectMushroomInstruction"
-@onready var golden_mushroom_tutorial = $"../GoldenMushroomTutorial"
+
 @onready var collect_mushroom_ui_board_instruction = $"../LevelOneUI/CollectMushroomUiBoardInstruction"
 
 # Called when the node enters the scene tree for the first time.
@@ -11,16 +10,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if golden_mushroom_tutorial !=  null:
-		if golden_mushroom_tutorial.isCollected:
-			collect_mushroom_instruction.hide()
-			collect_mushroom_ui_board_instruction.show()
-			$"../LevelOneUI/CollectMushroomUiBoardInstruction/Timer".start()
-
+	pass
 
 func _on_body_entered(body):
-	if body is Player:
-		collect_mushroom_instruction.show()
+	pass
 
 
 func _on_timer_timeout():
