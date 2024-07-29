@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_e0o58"]
 [ext_resource type="Texture2D" uid="uid://r0u3wtw4onp3" path="res://assets/Background/-2_4x.png" id="5_3xv6e"]
-[ext_resource type="Texture2D" uid="uid://682b4iepfs2h" path="res://assets/objects/woods.PNG" id="5_yt4p5"]
+[ext_resource type="Texture2D" uid="uid://682b4iepfs2h" path="res://scenes/objects/woods.PNG" id="5_yt4p5"]
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="6_88r37"]
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="6_khovu"]
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="9_0kfe8"]

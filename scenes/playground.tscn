@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="1_q82iv"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_kagkj"]
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="4_kb3wm"]
-[ext_resource type="Texture2D" uid="uid://682b4iepfs2h" path="res://assets/objects/woods.PNG" id="5_8xytv"]
+[ext_resource type="Texture2D" uid="uid://682b4iepfs2h" path="res://scenes/objects/woods.PNG" id="5_8xytv"]
 [ext_resource type="Texture2D" uid="uid://r0u3wtw4onp3" path="res://assets/Background/-2_4x.png" id="5_wib3w"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="6_0pe27"]
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="6_lp2hq"]
@@ -37,10 +37,12 @@ limit_left = -530
 script = ExtResource("11_vnn0v")
 TargetNode = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource("4_kb3wm")]
+[node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("4_kb3wm")]
 z_index = 2
 position = Vector2(434, 352)
 scale = Vector2(0.45, 0.45)
+currentScene = NodePath("..")
+metadata/_edit_vertical_guides_ = [20.0]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -109,7 +111,7 @@ texture = ExtResource("12_efapy")
 
 [node name="Object_original" parent="." instance=ExtResource("14_4mwhx")]
 z_index = 100
-position = Vector2(656, 381)
+position = Vector2(658, 372)
 
 [node name="GoldenMushroom" parent="." instance=ExtResource("12_yo14c")]
 position = Vector2(848, 392)
@@ -180,3 +182,12 @@ position = Vector2(279, 388)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("19_j1e0l")]
 position = Vector2(995, 292)
+
+[node name="enemy" parent="." instance=ExtResource("19_j1e0l")]
+position = Vector2(1229, 138)
+
+[node name="enemy2" parent="." instance=ExtResource("19_j1e0l")]
+position = Vector2(1361, 336)
+
+[node name="enemy3" parent="." instance=ExtResource("19_j1e0l")]
+position = Vector2(589, 140)

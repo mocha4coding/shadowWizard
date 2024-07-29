@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b37lixo1w0au"
-path="res://.godot/imported/stone_1_original.png-67a7a8761f759c16b5333a45ecf67a34.ctex"
+uid="uid://cxqejcg0t3xu3"
+path="res://.godot/imported/Death 3.png-5fd130c0aa6fa43bc4e73d5f2155a267.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/stone_1_original.png"
-dest_files=["res://.godot/imported/stone_1_original.png-67a7a8761f759c16b5333a45ecf67a34.ctex"]
+source_file="res://assets/wizardAnimations/wizardDeath/Death 3.png"
+dest_files=["res://.godot/imported/Death 3.png-5fd130c0aa6fa43bc4e73d5f2155a267.ctex"]
 
 [params]
 

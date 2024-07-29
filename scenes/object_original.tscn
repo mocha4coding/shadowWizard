@@ -1,55 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://b30txr00huab"]
+[gd_scene load_steps=5 format=3 uid="uid://b30txr00huab"]
 
 [ext_resource type="Script" path="res://scripts/ObjectRigidBody.gd" id="1_cso46"]
-[ext_resource type="Texture2D" uid="uid://b37lixo1w0au" path="res://assets/objects/stone_1_original.png" id="1_opeeb"]
-[ext_resource type="Texture2D" uid="uid://rqn1w4q77wc" path="res://assets/Object1_Animation/Frame 19.png" id="3_qx4v0"]
-[ext_resource type="Texture2D" uid="uid://4p3i4sjj3sup" path="res://assets/Object1_Animation/Frame 20.png" id="4_7i5jx"]
-[ext_resource type="Texture2D" uid="uid://cq16pmbyjeq2o" path="res://assets/Object1_Animation/Frame 21.png" id="5_5e4rs"]
-[ext_resource type="Texture2D" uid="uid://cl22v1vey8gyc" path="res://assets/Object1_Animation/Frame 22.png" id="6_ttgl2"]
-[ext_resource type="Texture2D" uid="uid://t7yb1t0vrp5o" path="res://assets/Object1_Animation/Frame 23.png" id="7_wwym5"]
-[ext_resource type="Texture2D" uid="uid://ccgpses324nob" path="res://assets/Object1_Animation/Frame 24.png" id="8_jhgha"]
-[ext_resource type="AudioStream" uid="uid://mh2bp1q2mimx" path="res://assets/sounds/shadowFormsAudio.mp3" id="9_o0lhi"]
+[ext_resource type="Texture2D" uid="uid://b37lixo1w0au" path="res://scenes/objects/stone_1_original.png" id="1_opeeb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fck8"]
+rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8p31"]
 size = Vector2(277.333, 54.3333)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5g8tv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_jhgha")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_qx4v0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7i5jx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_5e4rs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ttgl2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_wwym5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jhgha")
-}],
-"loop": false,
-"name": &"rise",
-"speed": 7.0
-}]
-
 [node name="Object_original" type="Node2D"]
 
 [node name="ObjectRigidBody" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_0fck8")
 gravity_scale = 0.0
 script = ExtResource("1_cso46")
 
@@ -61,25 +24,3 @@ texture = ExtResource("1_opeeb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectRigidBody"]
 position = Vector2(-11.3333, 6.66667)
 shape = SubResource("RectangleShape2D_f8p31")
-
-[node name="ObjectShadowRigidBody" type="RigidBody2D" parent="."]
-position = Vector2(-98, -6)
-mass = 0.02
-gravity_scale = 0.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ObjectShadowRigidBody"]
-position = Vector2(497.333, -41.3333)
-scale = Vector2(0.360221, 0.360221)
-sprite_frames = SubResource("SpriteFrames_5g8tv")
-animation = &"rise"
-frame = 5
-frame_progress = 1.0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjectShadowRigidBody"]
-position = Vector2(520.667, 8)
-shape = SubResource("RectangleShape2D_f8p31")
-
-[node name="playShadowFormSound" type="AudioStreamPlayer2D" parent="ObjectShadowRigidBody"]
-stream = ExtResource("9_o0lhi")
-
-[connection signal="animation_finished" from="ObjectShadowRigidBody/AnimatedSprite2D" to="ObjectRigidBody" method="_on_animated_sprite_2d_animation_finished"]
