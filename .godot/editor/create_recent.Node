@@ -1,7 +1,8 @@
+StaticBody2D
+CollisionPolygon2D
 AnimatedSprite2D
 Node
 CollisionShape2D
-StaticBody2D
 Area2D
 Marker2D
 Timer
@@ -11,4 +12,3 @@ Sprite2D
 TextureButton
 CharacterBody2D
 Node2D
-TextureProgressBar

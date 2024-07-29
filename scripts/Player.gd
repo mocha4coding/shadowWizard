@@ -4,7 +4,7 @@ class_name Player
 
 signal healthChanged
 const SPEED = 300.0
-const JUMP_VELOCITY = -350.0
+const JUMP_VELOCITY = -450.0
 
 var currentHealth = 100
 var maxHealth = 100

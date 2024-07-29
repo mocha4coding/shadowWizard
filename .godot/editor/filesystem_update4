@@ -18,3 +18,4 @@ res://scenes/object_shadow_rigid_body.tscn
 res://scripts/Shadow.gd
 res://scripts/CustomeCamera.gd
 res://scripts/level_1.gd
+res://scenes/enemy_bee.tscn

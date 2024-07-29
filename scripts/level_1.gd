@@ -5,6 +5,7 @@ extends Node2D
 @onready var space_bar_for_magic_light_instruction = $SpaceForMagicLightInstructionArea2D/SpaceBarForMagicLightInstruction
 @onready var push_shadow_instruction = $PushShadowInstruction
 @onready var object_original = $Object_original
+@onready var attack_instruction = $AttackInstruction
 
 
 @onready var golden_mushroom_tutorial = $GoldenMushroomTutorial
@@ -46,3 +47,7 @@ func _on_space_for_magic_light_instruction_area_2d_body_exited(body):
 	if body is Player:
 		$SpaceForMagicLightInstructionArea2D.queue_free()
 		
+
+
+func _on_tutorial_bee_tree_exiting():
+	attack_instruction.hide()

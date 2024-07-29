@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=42 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
@@ -24,6 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://b1b3vrghfkl53" path="res://assets/UI/SpaceBarForMagicLightInstruction.png" id="22_ic1hs"]
 [ext_resource type="Texture2D" uid="uid://bsw3skyssuvpl" path="res://assets/UI/PushShadowInstruction.png" id="23_13lv6"]
 [ext_resource type="Texture2D" uid="uid://dvit6weo5r71t" path="res://assets/Background/obstacles/burning_loop_1.png" id="24_d2v5n"]
+[ext_resource type="Texture2D" uid="uid://dm7vlieoixpl5" path="res://assets/UI/AttackInstruction.png" id="25_ilpn7"]
+[ext_resource type="PackedScene" uid="uid://cmjn51hvpeexj" path="res://scenes/enemy_bee.tscn" id="26_6ufor"]
+[ext_resource type="PackedScene" uid="uid://u5q7yb02y40c" path="res://scenes/pink_mushroom.tscn" id="27_xesnl"]
+[ext_resource type="Texture2D" uid="uid://snpw68htstp7" path="res://assets/Background/Platform.png" id="28_tvfdc"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -114,10 +118,11 @@ limit_left = -530
 script = ExtResource("1_u27cq")
 TargetNode = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource("6_khovu")]
+[node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("6_khovu")]
 z_index = 2
-position = Vector2(449, 355)
+position = Vector2(4966, 355)
 scale = Vector2(0.5, 0.5)
+currentScene = NodePath("..")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -185,7 +190,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_g1bw8")
 
 [node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
-layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0)
+layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262186, 3, 0, 262185, 3, 0, 262187, 3, 0, 262188, 3, 0, 262189, 3, 0, 262190, 3, 0, 262191, 3, 0, 262192, 3, 0, 262193, 3, 0, 262194, 3, 0, 262195, 3, 0, 262196, 3, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 3, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 3, 0, 262209, 3, 0, 262210, 3, 0, 262211, 3, 0, 262212, 3, 0)
 
 [node name="Object_original" parent="." instance=ExtResource("10_l1iqm")]
 position = Vector2(2166, 371)
@@ -339,9 +344,41 @@ sprite_frames = SubResource("SpriteFrames_ltjpf")
 autoplay = "default"
 frame_progress = 0.878273
 
+[node name="AttackInstruction" type="Sprite2D" parent="."]
+position = Vector2(3529, 115)
+texture = ExtResource("25_ilpn7")
+
+[node name="TutorialBee" parent="." instance=ExtResource("26_6ufor")]
+position = Vector2(3758, 204)
+
+[node name="TutorialBee2" parent="." instance=ExtResource("26_6ufor")]
+position = Vector2(3807, 138)
+
+[node name="GoldenMushroom2" parent="." instance=ExtResource("17_sckeh")]
+position = Vector2(5353, 259)
+
+[node name="PinkMushroom1" parent="." instance=ExtResource("27_xesnl")]
+position = Vector2(5508, 307)
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(5356, 318)
+texture = ExtResource("28_tvfdc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform/StaticBody2D"]
+polygon = PackedVector2Array(-202, 8, -100, 8, -100, -41, 103, -40, 104, -31, 104, 5, 204, 4, 203, 50, -204, 54)
+
+[node name="enemy" parent="." instance=ExtResource("26_6ufor")]
+position = Vector2(5390, 114)
+
+[node name="enemy2" parent="." instance=ExtResource("26_6ufor")]
+position = Vector2(5233, 219)
+
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]
 [connection signal="body_entered" from="CollectMushroomInstructionDetector" to="." method="_on_collect_mushroom_instruction_detector_body_entered"]
 [connection signal="body_entered" from="CollectMushroomInstructionDetector" to="CollectMushroomInstructionDetector" method="_on_body_entered"]
 [connection signal="body_entered" from="SpaceForMagicLightInstructionArea2D" to="." method="_on_space_for_magic_light_instruction_area_2d_body_entered"]
 [connection signal="body_exited" from="SpaceForMagicLightInstructionArea2D" to="." method="_on_space_for_magic_light_instruction_area_2d_body_exited"]
+[connection signal="tree_exiting" from="TutorialBee" to="." method="_on_tutorial_bee_tree_exiting"]
