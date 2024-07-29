@@ -8,3 +8,12 @@ res://scenes/level_1.tscn
 res://scripts/LevelOneUIScript.gd
 res://scenes/home_screen.tscn
 res://scenes/lamp.tscn
+res://scenes/golden_mushroom.tscn
+res://scripts/Window.gd
+res://scenes/window.tscn
+res://scripts/CollectMushroomInstructions.gd
+res://scripts/golden_mushroom.gd
+res://scripts/ObjectRigidBody.gd
+res://scenes/object_shadow_rigid_body.tscn
+res://scripts/Shadow.gd
+res://scripts/CustomeCamera.gd

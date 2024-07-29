@@ -24,3 +24,6 @@ texture = ExtResource("1_opeeb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectRigidBody"]
 position = Vector2(-11.3333, 6.66667)
 shape = SubResource("RectangleShape2D_f8p31")
+
+[node name="ShadowSpawnPosition" type="Marker2D" parent="."]
+position = Vector2(722, -3)

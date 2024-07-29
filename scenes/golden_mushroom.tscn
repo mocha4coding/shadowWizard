@@ -41,6 +41,7 @@ animations = [{
 }]
 
 [node name="GoldenMushroom" type="Node2D"]
+scale = Vector2(1.245, 1.245)
 script = ExtResource("1_x4np8")
 
 [node name="CollectibleObjectArea" parent="." instance=ExtResource("1_ak63p")]

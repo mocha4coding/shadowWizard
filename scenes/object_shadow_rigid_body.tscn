@@ -54,13 +54,13 @@ size = Vector2(145, 49)
 
 [node name="ObjectShadowRigidBody" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(-148, -10)
+position = Vector2(-4, -6)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ke7iy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(497.333, -41.3333)
+position = Vector2(-10, -43)
 scale = Vector2(0.360221, 0.360221)
 sprite_frames = SubResource("SpriteFrames_5g8tv")
 animation = &"rise"
@@ -68,23 +68,25 @@ frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(520.667, 8)
+position = Vector2(4, 6)
 shape = SubResource("RectangleShape2D_f8p31")
 
 [node name="playShadowFormSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_f2cqo")
 
 [node name="LeftDetector" type="Area2D" parent="."]
+position = Vector2(3, 5)
 
 [node name="LeftDetectCollisionShape" type="CollisionShape2D" parent="LeftDetector"]
-position = Vector2(441.5, 7)
+position = Vector2(-70, 0)
 shape = SubResource("RectangleShape2D_tssgj")
 debug_color = Color(0.472281, 0.568371, 0.448081, 0.42)
 
 [node name="RightDetector" type="Area2D" parent="."]
+position = Vector2(5, 2)
 
 [node name="RightDetectCollisionShape" type="CollisionShape2D" parent="RightDetector"]
-position = Vector2(593.5, 7.5)
+position = Vector2(79, 8)
 shape = SubResource("RectangleShape2D_k7twh")
 debug_color = Color(0.758351, 0.324728, 0.800418, 0.42)
 

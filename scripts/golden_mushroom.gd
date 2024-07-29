@@ -4,7 +4,6 @@ extends Node2D
 @onready var golden_mushroom_solid = $CollectibleObjectArea/GoldenMushroomSolid
 @onready var mushroom_animations = $MushroomAnimations
 
-
 var isCollected: bool = false
 
 func _ready():
@@ -21,7 +20,7 @@ func get_collected_by_player():
 	print("Got collected by player. Mushroom disappearing")
 	isCollected = true
 	#golden_mushroom_solid.queue_free()
-	mushroom_animations.set_deferred("disabled", false)
+	#mushroom_animations.set_deferred("disabled", false)
 	mushroom_animations.play("disappear")
 	collectibleManager.items[0].count += 1
 	
@@ -29,3 +28,4 @@ func get_collected_by_player():
 
 func _on_mushroom_animations_animation_finished():
 	queue_free()
+	

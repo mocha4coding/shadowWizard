@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=23 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
@@ -11,15 +11,22 @@
 [ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="10_l1iqm"]
 [ext_resource type="PackedScene" uid="uid://rw1eei2dilc5" path="res://collectibleManagement/collectible_ui.tscn" id="11_63hif"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="11_g1bw8"]
+[ext_resource type="Texture2D" uid="uid://bh8rh4sk0ln8d" path="res://assets/UI/CollectMushroomUIBoardInstruction.png" id="11_sdy01"]
 [ext_resource type="Texture2D" uid="uid://d3n2qexa7jrab" path="res://assets/healthBar/HealthBarInsideFull.png" id="12_6jc3d"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="13_0mdg4"]
 [ext_resource type="Texture2D" uid="uid://y4fy0uotvp3m" path="res://assets/healthBar/Frame 65.png" id="14_tuvbx"]
 [ext_resource type="Texture2D" uid="uid://ddw1mergi83pk" path="res://assets/healthBar/Frame 64.png" id="15_1n4mu"]
 [ext_resource type="Texture2D" uid="uid://ckg7mun815g0k" path="res://assets/UI/Settings.png" id="16_5vwuo"]
+[ext_resource type="PackedScene" uid="uid://cvekxib2fi8yx" path="res://scenes/golden_mushroom.tscn" id="17_sckeh"]
+[ext_resource type="Script" path="res://scripts/CollectMushroomInstructions.gd" id="18_jgxil"]
+[ext_resource type="Texture2D" uid="uid://lej6tyws7g1w" path="res://assets/UI/CollectMushroomInstruction.png" id="19_61s8p"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
 polygon = PackedVector2Array(-298, 20, -310, -150, 142, -152, 152, -56, 142, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x650g"]
+radius = 199.198
 
 [node name="Level1" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-1.0]
@@ -105,9 +112,17 @@ texture = ExtResource("11_g1bw8")
 [node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
 
 [node name="Object_original" parent="." instance=ExtResource("10_l1iqm")]
-position = Vector2(712, 392)
+position = Vector2(2166, 371)
 
 [node name="LevelOneUI" type="CanvasLayer" parent="."]
+
+[node name="CollectMushroomUiBoardInstruction" type="Sprite2D" parent="LevelOneUI"]
+visible = false
+position = Vector2(277, 195)
+texture = ExtResource("11_sdy01")
+
+[node name="Timer" type="Timer" parent="LevelOneUI/CollectMushroomUiBoardInstruction"]
+wait_time = 3.0
 
 [node name="Settings" type="Sprite2D" parent="LevelOneUI"]
 position = Vector2(1029, 46)
@@ -148,3 +163,23 @@ texture = ExtResource("14_tuvbx")
 position = Vector2(870, 45)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_1n4mu")
+
+[node name="GoldenMushroomTutorial" parent="." instance=ExtResource("17_sckeh")]
+position = Vector2(1209, 409)
+
+[node name="CollectMushroomInstructionDetector" type="Area2D" parent="."]
+position = Vector2(1213, 401)
+scale = Vector2(1.245, 1.245)
+script = ExtResource("18_jgxil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectMushroomInstructionDetector"]
+position = Vector2(-8.03213, -3.21285)
+shape = SubResource("CircleShape2D_x650g")
+
+[node name="CollectMushroomInstruction" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1315, 312)
+texture = ExtResource("19_61s8p")
+
+[connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]
+[connection signal="body_entered" from="CollectMushroomInstructionDetector" to="CollectMushroomInstructionDetector" method="_on_body_entered"]
