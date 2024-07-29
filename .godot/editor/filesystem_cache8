@@ -1729,7 +1729,7 @@ GoldenMushroom.png::CompressedTexture2D::7377979242744667936::1721922134::172192
 mushroomCounter.png::CompressedTexture2D::8425803802196069371::1721922134::1721922134::1::::<><>::
 PinkMushroom.png::CompressedTexture2D::2873735121901767293::1721922134::1721922134::1::::<><>::
 VermMushroom.png::CompressedTexture2D::7203656245195294437::1721922134::1721922134::1::::<><>::
-::res://assets/wizardAnimations/::1722253484
+::res://assets/wizardAnimations/::1722262424
 LightRay2.png::CompressedTexture2D::7722130154147876024::1722182335::1722182341::1::::<><>::
 lightRay.png::CompressedTexture2D::2807226566874291987::1722175999::1722176004::1::::<><>::
 ::res://assets/wizardAnimations/bullets/::1722185414
@@ -1757,6 +1757,9 @@ Death 3.png::CompressedTexture2D::6420473870720043856::1722253458::1722253491::1
 Death 4.png::CompressedTexture2D::7752362180515681927::1722253458::1722253491::1::::<><>::
 Death 5.png::CompressedTexture2D::6718105702574844771::1722253458::1722253491::1::::<><>::
 Death 6.png::CompressedTexture2D::3011889818880520212::1722253458::1722253491::1::::<><>::
+::res://assets/wizardAnimations/wizardHit/::1722262424
+Hit 1.png::CompressedTexture2D::1822880243713104273::1722262406::1722262429::1::::<><>::
+Hit 2.png::CompressedTexture2D::8421533999069900625::1722262406::1722262429::1::::<><>::
 ::res://collectibleManagement/::1722247998
 collectibleManager.tres::Resource/Resource::3713902371480547160::1721922134::0::1::::<><>::uid://b1q7i8l8pcvxp::::res://collectibleManagement/items/goldenMushroom.tres<>res://collectible_manager.gd
 CollectibleUI.gd::GDScript::-1::1721922134::0::1::::<>Control<>::
@@ -1769,7 +1772,7 @@ collectible.gd::GDScript::-1::1721922134::0::1::::CollectibleItem<>Resource<>::
 goldenMushroom.tres::Resource/Resource::4246319644249586513::1721924942::0::1::::<><>::res://collectibleManagement/items/collectible.gd<>uid://ddd7ifwq44mfo::::res://assets/UI/GoldenMushroom.png
 pinkMushroom.tres::Resource/Resource::8755568456557699667::1721924942::0::1::::<><>::res://collectibleManagement/items/collectible.gd<>uid://bg7b86hwqmlsn::::res://assets/UI/PinkMushroom.png
 vermMushroom.tres::Resource/Resource::8366229625706000423::1721924942::0::1::::<><>::res://collectibleManagement/items/collectible.gd<>uid://davrfv1geyk5b::::res://assets/UI/VermMushroom.png
-::res://scenes/::1722258462
+::res://scenes/::1722262240
 background_blur.tscn::PackedScene::8254284508156044982::1721644568::0::1::::<><>::uid://cy62qd8vfvwb5::::res://assets/Mossy Assets/Mossy Tileset/Mossy - BackgroundDecoration.png<>uid://bfpiy6ampfx8m::::res://assets/Mossy Assets/Mossy Tileset/Mossy - Decorations&Hazards.png<>uid://du8bvl3yder0k::::res://assets/Mossy Assets/Mossy Tileset/Mossy - TileSet.png
 bullet.tscn::PackedScene::3840594037805034302::1722257963::0::1::::<><>::res://scripts/bullet.gd<>uid://b57qebupxd0rr::::res://assets/wizardAnimations/bullets/Bullet 1.png<>uid://c5v4wjx8mp8ve::::res://assets/wizardAnimations/bullets/Bullet 2.png
 collectible_object_area.tscn::PackedScene::2932317784011259809::1721924910::0::1::::<><>::res://scripts/collectible_object_area.gd
@@ -1782,16 +1785,17 @@ level_1.tscn::PackedScene::3276704822447830924::1722258462::0::1::::<><>::res://
 level_1_tile_map.tscn::PackedScene::-1::1721811547::0::1::::<><>::
 level_platform_tile_map.tscn::PackedScene::7340104536669311166::1721644568::0::1::::<><>::uid://du8bvl3yder0k::::res://assets/Mossy Assets/Mossy Tileset/Mossy - TileSet.png
 object1.tscn::PackedScene::6430723213290200895::1721811547::0::1::::<><>::uid://rqn1w4q77wc::::res://assets/Object1_Animation/Frame 19.png<>uid://4p3i4sjj3sup::::res://assets/Object1_Animation/Frame 20.png<>uid://cq16pmbyjeq2o::::res://assets/Object1_Animation/Frame 21.png<>uid://cl22v1vey8gyc::::res://assets/Object1_Animation/Frame 22.png<>uid://t7yb1t0vrp5o::::res://assets/Object1_Animation/Frame 23.png<>uid://ccgpses324nob::::res://assets/Object1_Animation/Frame 24.png
-object_original.tscn::PackedScene::129544511123381369::1722258462::0::1::::<><>::res://scripts/ObjectRigidBody.gd<>uid://b37lixo1w0au::::res://scenes/objects/stone_1_original.png<>uid://rqn1w4q77wc::::res://assets/Object1_Animation/Frame 19.png<>uid://4p3i4sjj3sup::::res://assets/Object1_Animation/Frame 20.png<>uid://cq16pmbyjeq2o::::res://assets/Object1_Animation/Frame 21.png<>uid://cl22v1vey8gyc::::res://assets/Object1_Animation/Frame 22.png<>uid://t7yb1t0vrp5o::::res://assets/Object1_Animation/Frame 23.png<>uid://ccgpses324nob::::res://assets/Object1_Animation/Frame 24.png<>uid://mh2bp1q2mimx::::res://assets/sounds/shadowFormsAudio.mp3
+object_original.tscn::PackedScene::129544511123381369::1722261104::0::1::::<><>::res://scripts/ObjectRigidBody.gd<>uid://b37lixo1w0au::::res://scenes/objects/stone_1_original.png
 parallax_background.tscn::PackedScene::3018610008025975889::1721644568::0::1::::<><>::uid://bnomvlennl1so::::res://scenes/environment_tile_map.tscn
 pink_mushroom.tscn::PackedScene::1466738085949813272::1721924910::0::1::::<><>::res://scripts/pink_mushroom.gd<>uid://bh1o30m77fjn2::::res://scenes/collectible_object_area.tscn<>uid://bg7b86hwqmlsn::::res://assets/UI/PinkMushroom.png
-player.tscn::PackedScene::3078281771315501286::1722257963::0::1::::<><>::res://scripts/Player.gd<>uid://cvkxmchebuq1q::::res://collectibleManagement/playerCollectibleManager.tres<>uid://pijv43mfp1h6::::res://assets/wizardAnimations/wizardDeath/Death 1.png<>uid://blkgfxrph44am::::res://assets/wizardAnimations/Idle/Idle 1.png<>uid://dygsk1fda16ys::::res://assets/wizardAnimations/Idle/Idle 2.png<>uid://r5k0p1jf2pk::::res://assets/wizardAnimations/wizardDeath/Death 2.png<>uid://jm7k3c3bn3xe::::res://assets/wizardAnimations/walk/Walk 1.png<>uid://cxqejcg0t3xu3::::res://assets/wizardAnimations/wizardDeath/Death 3.png<>uid://dipkji8rh8l88::::res://assets/wizardAnimations/wizardDeath/Death 4.png<>uid://m6kt81b4rbjr::::res://assets/wizardAnimations/walk/Walk 2.png<>uid://c2ykhpvb6812n::::res://assets/wizardAnimations/wizardDeath/Death 5.png<>uid://bi58ndm28tds3::::res://assets/wizardAnimations/wizardDeath/Death 6.png<>res://scripts/LampScript.gd<>res://scripts/Area2D.gd<>uid://b612h8q2v3k1y::::res://assets/Background_temp.png<>uid://bf83u12cr2vn4::::res://assets/wizardAnimations/lightRay.png<>uid://bwlp7kcqfynt8::::res://scenes/lamp.tscn<>uid://b4vskakjdf58p::::res://assets/sounds/GrassFootstep.mp3<>uid://bo0ftbm5407g::::res://assets/sounds/DirtWalk.mp3<>uid://bswpo07sgbs6y::::res://assets/sounds/jingleAudio.mp3<>uid://cxi8u727gcpv::::res://assets/sounds/backgroundMusic.mp3
-playground.tscn::PackedScene::6785230560341510728::1722258462::0::1::::<><>::res://scenes/level_1_tile_map.tscn<>uid://5ftuga636gc8::::res://assets/Background/-3_4x.png<>uid://bj4e3616laere::::res://scenes/player.tscn<>uid://682b4iepfs2h::::res://scenes/objects/woods.PNG<>uid://r0u3wtw4onp3::::res://assets/Background/-2_4x.png<>uid://b612h8q2v3k1y::::res://assets/Background_temp.png<>uid://cs0q7bbrmmk82::::res://assets/Background/-1_4x.png<>uid://rw1eei2dilc5::::res://collectibleManagement/collectible_ui.tscn<>res://scripts/CustomeCamera.gd<>uid://y4fy0uotvp3m::::res://assets/healthBar/Frame 65.png<>uid://e7jb2i7ph4xa::::res://assets/Background/wizardhut/treehouse_4x.png<>uid://cvekxib2fi8yx::::res://scenes/golden_mushroom.tscn<>uid://d3n2qexa7jrab::::res://assets/healthBar/HealthBarInsideFull.png<>res://scripts/HealthBar.gd<>uid://u5q7yb02y40c::::res://scenes/pink_mushroom.tscn<>uid://b30txr00huab::::res://scenes/object_original.tscn<>uid://d0kj27bx5eu5a::::res://scenes/verm_mushroom.tscn<>uid://ddw1mergi83pk::::res://assets/healthBar/Frame 64.png<>uid://cmjn51hvpeexj::::res://scenes/enemy_bee.tscn
+player.tscn::PackedScene::3078281771315501286::1722262240::0::1::::<><>::res://scripts/Player.gd<>uid://cvkxmchebuq1q::::res://collectibleManagement/playerCollectibleManager.tres<>uid://pijv43mfp1h6::::res://assets/wizardAnimations/wizardDeath/Death 1.png<>uid://blkgfxrph44am::::res://assets/wizardAnimations/Idle/Idle 1.png<>uid://dygsk1fda16ys::::res://assets/wizardAnimations/Idle/Idle 2.png<>uid://r5k0p1jf2pk::::res://assets/wizardAnimations/wizardDeath/Death 2.png<>uid://jm7k3c3bn3xe::::res://assets/wizardAnimations/walk/Walk 1.png<>uid://cxqejcg0t3xu3::::res://assets/wizardAnimations/wizardDeath/Death 3.png<>uid://dipkji8rh8l88::::res://assets/wizardAnimations/wizardDeath/Death 4.png<>uid://m6kt81b4rbjr::::res://assets/wizardAnimations/walk/Walk 2.png<>uid://c2ykhpvb6812n::::res://assets/wizardAnimations/wizardDeath/Death 5.png<>uid://bi58ndm28tds3::::res://assets/wizardAnimations/wizardDeath/Death 6.png<>res://scripts/LampScript.gd<>res://scripts/Area2D.gd<>uid://b612h8q2v3k1y::::res://assets/Background_temp.png<>uid://bf83u12cr2vn4::::res://assets/wizardAnimations/lightRay.png<>uid://bwlp7kcqfynt8::::res://scenes/lamp.tscn<>uid://b4vskakjdf58p::::res://assets/sounds/GrassFootstep.mp3<>uid://bo0ftbm5407g::::res://assets/sounds/DirtWalk.mp3<>uid://bswpo07sgbs6y::::res://assets/sounds/jingleAudio.mp3<>uid://cxi8u727gcpv::::res://assets/sounds/backgroundMusic.mp3
+playground.tscn::PackedScene::6785230560341510728::1722261105::0::1::::<><>::res://scenes/level_1_tile_map.tscn<>uid://5ftuga636gc8::::res://assets/Background/-3_4x.png<>uid://bj4e3616laere::::res://scenes/player.tscn<>uid://682b4iepfs2h::::res://scenes/objects/woods.PNG<>uid://r0u3wtw4onp3::::res://assets/Background/-2_4x.png<>uid://b612h8q2v3k1y::::res://assets/Background_temp.png<>uid://cs0q7bbrmmk82::::res://assets/Background/-1_4x.png<>uid://rw1eei2dilc5::::res://collectibleManagement/collectible_ui.tscn<>res://scripts/CustomeCamera.gd<>uid://y4fy0uotvp3m::::res://assets/healthBar/Frame 65.png<>uid://e7jb2i7ph4xa::::res://assets/Background/wizardhut/treehouse_4x.png<>uid://cvekxib2fi8yx::::res://scenes/golden_mushroom.tscn<>uid://d3n2qexa7jrab::::res://assets/healthBar/HealthBarInsideFull.png<>res://scripts/HealthBar.gd<>uid://u5q7yb02y40c::::res://scenes/pink_mushroom.tscn<>uid://b30txr00huab::::res://scenes/object_original.tscn<>uid://d0kj27bx5eu5a::::res://scenes/verm_mushroom.tscn<>uid://ddw1mergi83pk::::res://assets/healthBar/Frame 64.png<>uid://cmjn51hvpeexj::::res://scenes/enemy_bee.tscn
+object_shadow_rigid_body.tscn::PackedScene::2723750168334515213::1722261105::0::1::::<><>::res://scripts/Shadow.gd<>uid://ccgpses324nob::::res://assets/Object1_Animation/Frame 24.png<>uid://rqn1w4q77wc::::res://assets/Object1_Animation/Frame 19.png<>uid://4p3i4sjj3sup::::res://assets/Object1_Animation/Frame 20.png<>uid://cq16pmbyjeq2o::::res://assets/Object1_Animation/Frame 21.png<>uid://cl22v1vey8gyc::::res://assets/Object1_Animation/Frame 22.png<>uid://t7yb1t0vrp5o::::res://assets/Object1_Animation/Frame 23.png<>uid://mh2bp1q2mimx::::res://assets/sounds/shadowFormsAudio.mp3
 verm_mushroom.tscn::PackedScene::8935223272318336108::1721924910::0::1::::<><>::res://scripts/verm_mushroom.gd<>uid://bh1o30m77fjn2::::res://scenes/collectible_object_area.tscn<>uid://davrfv1geyk5b::::res://assets/UI/VermMushroom.png
-::res://scenes/objects/::1721811547
+::res://scenes/objects/::1722258464
 stone_1_original.png::CompressedTexture2D::129954464642223816::1721811547::1722258464::1::::<><>::
 woods.PNG::CompressedTexture2D::2245621298999170429::1721644568::1722258464::1::::<><>::
-::res://scripts/::1722257960
+::res://scripts/::1722262240
 Area2D.gd::GDScript::-1::1722165216::0::1::::LightArea<>Area2D<>::
 bullet.gd::GDScript::-1::1722251508::0::1::::<>Node2D<>::
 collectible_object_area.gd::GDScript::-1::1722112950::0::1::::<>Area2D<>::
@@ -1799,9 +1803,10 @@ CustomeCamera.gd::GDScript::-1::1722257960::0::1::::<>Camera2D<>::
 enemy.gd::GDScript::-1::1722253108::0::1::::Enemy<>CharacterBody2D<>::
 golden_mushroom.gd::GDScript::-1::1722253264::0::1::::<>Node2D<>::
 HealthBar.gd::GDScript::-1::1722247998::0::1::::<>TextureProgressBar<>::
-lamp.gd::GDScript::-1::1722237151::0::1::::LampOfWizard<>Node2D<>::
+lamp.gd::GDScript::-1::1722259625::0::1::::LampOfWizard<>Node2D<>::
 LampScript.gd::GDScript::-1::1722248398::0::1::::<>PointLight2D<>::
-ObjectRigidBody.gd::GDScript::-1::1722161290::0::1::::ObstacleObject<>RigidBody2D<>::
+ObjectRigidBody.gd::GDScript::-1::1722260982::0::1::::ObstacleObject<>RigidBody2D<>::
 pink_mushroom.gd::GDScript::-1::1721922134::0::1::::<>Node2D<>::
-Player.gd::GDScript::-1::1722257702::0::1::::Player<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1722262240::0::1::::Player<>CharacterBody2D<>::
+Shadow.gd::GDScript::-1::1722260878::0::1::::Shadow<>CharacterBody2D<>::
 verm_mushroom.gd::GDScript::-1::1721922134::0::1::::<>Node2D<>::

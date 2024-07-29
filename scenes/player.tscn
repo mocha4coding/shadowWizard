@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bj4e3616laere"]
+[gd_scene load_steps=26 format=3 uid="uid://bj4e3616laere"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_h8vwx"]
 [ext_resource type="Resource" uid="uid://cvkxmchebuq1q" path="res://collectibleManagement/playerCollectibleManager.tres" id="2_pre05"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c2ykhpvb6812n" path="res://assets/wizardAnimations/wizardDeath/Death 5.png" id="7_ycsj4"]
 [ext_resource type="Texture2D" uid="uid://bi58ndm28tds3" path="res://assets/wizardAnimations/wizardDeath/Death 6.png" id="8_qawa4"]
 [ext_resource type="Script" path="res://scripts/LampScript.gd" id="9_axib0"]
+[ext_resource type="Texture2D" uid="uid://08aton5qijuf" path="res://assets/wizardAnimations/wizardHit/Hit 1.png" id="9_gfu7l"]
+[ext_resource type="Texture2D" uid="uid://dr8po1mcnxehl" path="res://assets/wizardAnimations/wizardHit/Hit 2.png" id="10_66w3h"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="10_agepm"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="13_d06j2"]
 [ext_resource type="Texture2D" uid="uid://bf83u12cr2vn4" path="res://assets/wizardAnimations/lightRay.png" id="13_meq6i"]
@@ -45,6 +47,17 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gfu7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_66w3h")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 5.0
 }, {
 "frames": [{
@@ -87,7 +100,6 @@ position = Vector2(10, -15)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_pj0av")
 animation = &"death"
-frame_progress = 0.631941
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 35)

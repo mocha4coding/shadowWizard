@@ -20,9 +20,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	print("Light fell on stone", lightFell)
+	#print("Light fell on stone", lightFell)
 	if lightFell && !shadowCreated:
-		print("About to create shadwo")
+		#print("About to create shadwo")
 		obstacle_shadow_show()
 		if !isShadowCreatedAudioPlayed:
 			shadow.playRiseAnimation()
