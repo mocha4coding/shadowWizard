@@ -46,9 +46,12 @@ animations = [{
 
 [node name="Lamp" type="Node2D"]
 script = ExtResource("1_tn2n0")
+metadata/_edit_vertical_guides_ = [-120.0]
+metadata/_edit_horizontal_guides_ = [-509.0]
 
 [node name="Lights" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sfbqj")
 animation = &"lightThrow"
 autoplay = "default"
 frame_progress = 0.989124
+flip_h = true

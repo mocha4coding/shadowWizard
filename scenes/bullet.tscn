@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://buyoa1huthkha"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_0kgn6"]
+[ext_resource type="Texture2D" uid="uid://b57qebupxd0rr" path="res://assets/wizardAnimations/bullets/Bullet 1.png" id="1_6y7er"]
+[ext_resource type="Texture2D" uid="uid://c5v4wjx8mp8ve" path="res://assets/wizardAnimations/bullets/Bullet 2.png" id="2_lodp2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6kq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6y7er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lodp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii77d"]
+radius = 39.6232
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_0kgn6")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_a6kq6")
+autoplay = "default"
+frame_progress = 0.95805
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_ii77d")

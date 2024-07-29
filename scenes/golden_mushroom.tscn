@@ -50,10 +50,11 @@ visible = false
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_dnyml")
 
-[node name="MushroomAnimations" type="AnimatedSprite2D" parent="CollectibleObjectArea"]
+[node name="MushroomAnimations" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -11)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_y55bc")
 animation = &"disappear"
 autoplay = "appear"
 
-[connection signal="animation_finished" from="CollectibleObjectArea/MushroomAnimations" to="." method="_on_mushroom_animations_animation_finished"]
+[connection signal="animation_finished" from="MushroomAnimations" to="." method="_on_mushroom_animations_animation_finished"]

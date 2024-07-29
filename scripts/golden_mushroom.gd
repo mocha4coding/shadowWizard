@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var collectibleManager: CollectibleManager = preload("res://collectibleManagement/playerCollectibleManager.tres")
 @onready var golden_mushroom_solid = $CollectibleObjectArea/GoldenMushroomSolid
-@onready var mushroom_animations = $CollectibleObjectArea/MushroomAnimations
+@onready var mushroom_animations = $MushroomAnimations
+
 
 var isCollected: bool = false
 

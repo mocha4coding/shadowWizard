@@ -4,6 +4,7 @@ class_name LampOfWizard
 
 signal lampStateChanged
 
+@export var currentScene: Node2D = null
 @export var player: Player = null
 @onready var lights = $Lights
 
@@ -14,6 +15,10 @@ const lampStateDefault  = 0
 const lampStateLightThrow = 1
 const lampStateAttack = 2
 var lampState = lampStateDefault
+
+
+
+
 func _physics_process(_delta):
 
 	handle_collision_with_objects()
@@ -57,4 +62,5 @@ func handle_collision_with_objects():
 			#print("Collision detected")
 			collisionObject.lightFell = true
 		
+
 

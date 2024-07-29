@@ -37,10 +37,11 @@ limit_left = -530
 script = ExtResource("11_vnn0v")
 TargetNode = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource("4_kb3wm")]
+[node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("4_kb3wm")]
 z_index = 2
 position = Vector2(434, 352)
 scale = Vector2(0.45, 0.45)
+currentScene = NodePath("..")
 metadata/_edit_vertical_guides_ = [20.0]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

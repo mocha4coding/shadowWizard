@@ -3,7 +3,6 @@ extends CharacterBody2D
 class_name Player
 
 signal healthChanged
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -350.0
 
@@ -12,7 +11,7 @@ var maxHealth = 100
 var direction: int = 0
 
 @export var playerCollectibleManager: CollectibleManager
-
+@export var currentScene: Node2D = null
 @onready var lamp = $Lamp
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -28,7 +27,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var lamp_left_facing_position = $LampLeftFacingPosition
 
 
-
+const BULLET_PATH = preload("res://scenes/bullet.tscn")
 var walk_audio_play_finished: bool = true
 var jump_audio_play_finished:bool = true
 var didJump: bool = false
@@ -47,7 +46,10 @@ func _physics_process(delta):
 				jump_audio.play()
 			
 			didJump = false
-
+	
+	if lamp.lampState == lamp.lampStateAttack:
+		if Input.is_action_just_pressed("shoot"):
+			shoot()
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -112,3 +114,22 @@ func _on_lamp_lamp_state_changed():
 			point_light.show()
 		else:
 			point_light.hide()
+
+
+func shoot():
+
+	var bullet_spawn_point_right = $BulletSpawnPointRight.global_position
+	var bullet_spawn_point_left = $BulletSpawnPointLeft.global_position
+	print("Right point : ", bullet_spawn_point_right)
+	print("Left point : ", bullet_spawn_point_left)
+	var bullet = BULLET_PATH.instantiate()
+	var bulletSpawnPosition : Vector2 
+	bullet.apply_scale(Vector2(0.15, 0.15))
+	
+	if direction >= 0:
+		bulletSpawnPosition = bullet_spawn_point_right
+	elif direction <= 0:
+		bulletSpawnPosition = bullet_spawn_point_left
+	currentScene.add_child(bullet)
+	bullet.position = Vector2(lamp.global_position.x, lamp.global_position.y - 60.0)
+	

@@ -133,6 +133,14 @@ z_index = -100
 position = Vector2(170, -125)
 texture = ExtResource("13_d06j2")
 
+[node name="BulletSpawnPointRight" type="Marker2D" parent="."]
+position = Vector2(100, -150)
+scale = Vector2(0.25, 0.25)
+
+[node name="BulletSpawnPointLeft" type="Marker2D" parent="."]
+position = Vector2(-100, -150)
+scale = Vector2(0.25, 0.25)
+
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
 [connection signal="finished" from="jumpAudio" to="." method="_on_jump_audio_finished"]
 [connection signal="lampStateChanged" from="Lamp" to="." method="_on_lamp_lamp_state_changed"]
