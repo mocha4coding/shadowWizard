@@ -72,9 +72,9 @@ func _physics_process(delta):
 	
 	# Play animation 
 	if is_on_floor():
-		if isHit:
+		if isHit && currentHealth >= 0:
 			animated_sprite_2d.play("hit")
-		else:
+		elif isHit == false:
 			if direction == 0 && currentHealth > 0:
 				animated_sprite_2d.play("idle")
 			else :
@@ -87,6 +87,9 @@ func _physics_process(delta):
 					
 					gravity = 0
 					animated_sprite_2d.play("death")
+		else:
+			gravity = 0
+			animated_sprite_2d.play("death")
 	else : 
 		animated_sprite_2d.play("idle")	
 		
