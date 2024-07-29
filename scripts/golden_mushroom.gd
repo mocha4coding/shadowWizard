@@ -20,7 +20,7 @@ func _process(delta):
 func get_collected_by_player(): 
 	print("Got collected by player. Mushroom disappearing")
 	isCollected = true
-	golden_mushroom_solid.queue_free()
+	#golden_mushroom_solid.queue_free()
 	mushroom_animations.set_deferred("disabled", false)
 	mushroom_animations.play("disappear")
 	collectibleManager.items[0].count += 1
