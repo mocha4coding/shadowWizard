@@ -59,7 +59,7 @@ func handle_collision_with_objects():
 	var collisionObject = object_detector_1.get_collider()
 	if lampState == lampStateLightThrow:
 		if collisionObject is ObstacleObject && object_detector_2.get_collider() == collisionObject:
-			#print("Collision detected")
+			print("Collision detected")
 			collisionObject.lightFell = true
 		
 

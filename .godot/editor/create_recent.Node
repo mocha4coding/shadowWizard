@@ -1,9 +1,9 @@
+CharacterBody2D
 Timer
 CollisionShape2D
 Area2D
 Marker2D
 AnimatedSprite2D
-CharacterBody2D
 Node2D
 Sprite2D
 TextureProgressBar
@@ -12,4 +12,3 @@ ProgressBar
 CanvasLayer
 PanelContainer
 MarginContainer
-HBoxContainer

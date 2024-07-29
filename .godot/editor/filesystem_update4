@@ -13,3 +13,8 @@ res://scenes/lamp.tscn
 res://scripts/LampScript.gd
 res://scripts/golden_mushroom.gd
 res://scripts/CustomeCamera.gd
+res://scripts/Shadow.gd
+res://scripts/ObjectRigidBody.gd
+res://scenes/object_original.tscn
+res://scripts/lamp.gd
+res://scenes/object_shadow_rigid_body.tscn

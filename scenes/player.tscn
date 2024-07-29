@@ -137,17 +137,16 @@ position = Vector2(2665.06, -14855)
 polygon = PackedVector2Array(334.94, -1145, 17584.9, -7395, 17334.9, 6105, 584.94, -145.001)
 
 [node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(864.42, -403.396)
-target_position = Vector2(-14.9999, 800)
+position = Vector2(1780, -760)
+target_position = Vector2(20.0002, 1500)
 
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(364.977, -393.792)
-target_position = Vector2(-14.9999, 800)
+position = Vector2(1520, -720)
+target_position = Vector2(20, 1480)
 
 [node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]
 z_index = -2
-position = Vector2(660, 0)
-scale = Vector2(0.72655, 0.72655)
+position = Vector2(900, 0)
 texture = ExtResource("13_meq6i")
 
 [node name="LampRightFacingPosition" type="Marker2D" parent="."]
