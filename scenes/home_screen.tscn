@@ -1,3 +1,110 @@
-[gd_scene format=3 uid="uid://chlwpnv2qinkd"]
+[gd_scene load_steps=14 format=3 uid="uid://chlwpnv2qinkd"]
+
+[ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_qj6ue"]
+[ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="3_6x82d"]
+[ext_resource type="Texture2D" uid="uid://r0u3wtw4onp3" path="res://assets/Background/-2_4x.png" id="4_ps7ye"]
+[ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="5_tgx5w"]
+[ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="6_jrdxo"]
+[ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="7_2a7vy"]
+[ext_resource type="Script" path="res://scripts/LevelOneUIScript.gd" id="8_6ikfq"]
+[ext_resource type="Texture2D" uid="uid://beignqr8f63we" path="res://assets/UI/PlayButton.png" id="9_yatob"]
+[ext_resource type="Texture2D" uid="uid://dmd131op67ng0" path="res://assets/UI/Title.png" id="11_kxm1k"]
+[ext_resource type="Texture2D" uid="uid://ckg7mun815g0k" path="res://assets/UI/Settings.png" id="12_4vslv"]
+[ext_resource type="Texture2D" uid="uid://blkgfxrph44am" path="res://assets/wizardAnimations/Idle/Idle 1.png" id="18_2deq3"]
+[ext_resource type="Texture2D" uid="uid://dygsk1fda16ys" path="res://assets/wizardAnimations/Idle/Idle 2.png" id="19_lfyt0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h36an"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_2deq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lfyt0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="HomeScreen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5, 0)
+scale = Vector2(0.2, 0.2)
+offset = Vector2(530.5, 237)
+limit_left = -530
+script = ExtResource("1_qj6ue")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="layer-1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(1061, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer-1"]
+z_index = -3
+position = Vector2(530.5, 237)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_6x82d")
+
+[node name="-2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.15, 0)
+motion_mirroring = Vector2(1061, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/-2"]
+z_index = -2
+position = Vector2(530.5, 237)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_ps7ye")
+
+[node name="layer-3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(1061, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer-3"]
+z_index = -1
+position = Vector2(530.5, 237)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_tgx5w")
+
+[node name="hut_-3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/hut_-3"]
+z_index = -1
+position = Vector2(219, 247)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_jrdxo")
+
+[node name="TileMap" parent="." instance=ExtResource("7_2a7vy")]
+
+[node name="LevelOneUI" type="CanvasLayer" parent="."]
+script = ExtResource("8_6ikfq")
+
+[node name="TextureButton" type="TextureButton" parent="LevelOneUI"]
+offset_left = 418.0
+offset_top = 168.0
+offset_right = 577.0
+offset_bottom = 228.0
+action_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelOneUI/TextureButton"]
+position = Vector2(105, 33)
+texture = ExtResource("9_yatob")
+
+[node name="Settings" type="Sprite2D" parent="LevelOneUI"]
+position = Vector2(1029, 46)
+texture = ExtResource("12_4vslv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(430, 346)
+scale = Vector2(0.123759, 0.123759)
+sprite_frames = SubResource("SpriteFrames_h36an")
+autoplay = "default"
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(524, 107)
+texture = ExtResource("11_kxm1k")
+
+[connection signal="button_down" from="LevelOneUI/TextureButton" to="LevelOneUI" method="_on_texture_button_button_down"]

@@ -54,4 +54,3 @@ sprite_frames = SubResource("SpriteFrames_sfbqj")
 animation = &"lightThrow"
 autoplay = "default"
 frame_progress = 0.989124
-flip_h = true

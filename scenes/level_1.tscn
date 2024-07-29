@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=18 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="13_0mdg4"]
 [ext_resource type="Texture2D" uid="uid://y4fy0uotvp3m" path="res://assets/healthBar/Frame 65.png" id="14_tuvbx"]
 [ext_resource type="Texture2D" uid="uid://ddw1mergi83pk" path="res://assets/healthBar/Frame 64.png" id="15_1n4mu"]
+[ext_resource type="Texture2D" uid="uid://ckg7mun815g0k" path="res://assets/UI/Settings.png" id="16_5vwuo"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -33,7 +34,8 @@ TargetNode = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("6_khovu")]
 z_index = 2
-position = Vector2(359, 384)
+position = Vector2(449, 355)
+scale = Vector2(0.5, 0.5)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -107,11 +109,16 @@ position = Vector2(712, 392)
 
 [node name="LevelOneUI" type="CanvasLayer" parent="."]
 
+[node name="Settings" type="Sprite2D" parent="LevelOneUI"]
+position = Vector2(1029, 46)
+texture = ExtResource("16_5vwuo")
+
 [node name="CollectibleUI" parent="LevelOneUI" instance=ExtResource("11_63hif")]
 offset_left = 37.0
 offset_top = 27.0
 offset_right = 77.0
 offset_bottom = 67.0
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="Node2D" parent="LevelOneUI"]
 

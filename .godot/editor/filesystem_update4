@@ -4,3 +4,7 @@ res://scripts/HealthBar.gd
 res://scenes/playground.tscn
 res://scenes/player.tscn
 res://scripts/Player.gd
+res://scenes/level_1.tscn
+res://scripts/LevelOneUIScript.gd
+res://scenes/home_screen.tscn
+res://scenes/lamp.tscn
