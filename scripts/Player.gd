@@ -71,15 +71,18 @@ func _physics_process(delta):
 	
 	# Play animation 
 	if is_on_floor():
-		if direction == 0:
+		if direction == 0 && currentHealth > 0:
 			animated_sprite_2d.play("idle")
 		else :
-			animated_sprite_2d.play("walk")
-			if walk_audio_play_finished && jump_audio_play_finished:
-				walk_audio.play()
-				walk_audio_play_finished = false
-		
-		
+			if currentHealth > 0:
+				animated_sprite_2d.play("walk")
+				if walk_audio_play_finished && jump_audio_play_finished:
+					walk_audio.play()
+					walk_audio_play_finished = false
+			else:
+				
+				gravity = 0
+				animated_sprite_2d.play("death")
 	else : 
 		animated_sprite_2d.play("idle")	
 		
@@ -106,6 +109,7 @@ func decreaseHealth():
 	currentHealth -= 0.05
 	#print("Decreasing health to ", currentHealth)
 	healthChanged.emit()
+	
 
 
 func _on_lamp_lamp_state_changed():
@@ -134,3 +138,8 @@ func shoot():
 	bullet.position = Vector2(lamp.global_position.x, lamp.global_position.y - 60.0)
 	bullet.direction = bullet.global_position.direction_to(get_global_mouse_position())
 	
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if currentHealth <= 0:
+		queue_free()

@@ -122,6 +122,7 @@ collision_layer = 4
 shape = SubResource("CircleShape2D_t3bsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
 sprite_frames = SubResource("SpriteFrames_h4ybv")
 animation = &"hit"
 autoplay = "idle"

@@ -1,11 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://bj4e3616laere"]
+[gd_scene load_steps=24 format=3 uid="uid://bj4e3616laere"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_h8vwx"]
 [ext_resource type="Resource" uid="uid://cvkxmchebuq1q" path="res://collectibleManagement/playerCollectibleManager.tres" id="2_pre05"]
+[ext_resource type="Texture2D" uid="uid://pijv43mfp1h6" path="res://assets/wizardAnimations/wizardDeath/Death 1.png" id="3_4dkdp"]
 [ext_resource type="Texture2D" uid="uid://blkgfxrph44am" path="res://assets/wizardAnimations/Idle/Idle 1.png" id="3_sd2ip"]
 [ext_resource type="Texture2D" uid="uid://dygsk1fda16ys" path="res://assets/wizardAnimations/Idle/Idle 2.png" id="4_jl7o5"]
+[ext_resource type="Texture2D" uid="uid://r5k0p1jf2pk" path="res://assets/wizardAnimations/wizardDeath/Death 2.png" id="4_prhk1"]
 [ext_resource type="Texture2D" uid="uid://jm7k3c3bn3xe" path="res://assets/wizardAnimations/walk/Walk 1.png" id="5_for85"]
+[ext_resource type="Texture2D" uid="uid://cxqejcg0t3xu3" path="res://assets/wizardAnimations/wizardDeath/Death 3.png" id="5_y2u54"]
+[ext_resource type="Texture2D" uid="uid://dipkji8rh8l88" path="res://assets/wizardAnimations/wizardDeath/Death 4.png" id="6_kfd5k"]
 [ext_resource type="Texture2D" uid="uid://m6kt81b4rbjr" path="res://assets/wizardAnimations/walk/Walk 2.png" id="6_nanhf"]
+[ext_resource type="Texture2D" uid="uid://c2ykhpvb6812n" path="res://assets/wizardAnimations/wizardDeath/Death 5.png" id="7_ycsj4"]
+[ext_resource type="Texture2D" uid="uid://bi58ndm28tds3" path="res://assets/wizardAnimations/wizardDeath/Death 6.png" id="8_qawa4"]
 [ext_resource type="Script" path="res://scripts/LampScript.gd" id="9_axib0"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="10_agepm"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="13_d06j2"]
@@ -18,6 +24,29 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pj0av"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4dkdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_prhk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y2u54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kfd5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ycsj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qawa4")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_sd2ip")
@@ -57,8 +86,8 @@ metadata/_edit_vertical_guides_ = [20.0, -14.0, -8.0, -8.0]
 position = Vector2(10, -15)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_pj0av")
-animation = &"walk"
-frame_progress = 0.427725
+animation = &"death"
+frame_progress = 0.631941
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 35)
@@ -141,6 +170,7 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(-100, -150)
 scale = Vector2(0.25, 0.25)
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="finished" from="walkAudio" to="." method="_on_walk_audio_finished"]
 [connection signal="finished" from="jumpAudio" to="." method="_on_jump_audio_finished"]
 [connection signal="lampStateChanged" from="Lamp" to="." method="_on_lamp_lamp_state_changed"]

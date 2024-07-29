@@ -12,3 +12,4 @@ res://scenes/golden_mushroom.tscn
 res://scenes/lamp.tscn
 res://scripts/LampScript.gd
 res://scripts/golden_mushroom.gd
+res://scripts/CustomeCamera.gd
