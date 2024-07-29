@@ -1,14 +1,14 @@
+AnimatedSprite2D
+Node
 CollisionShape2D
+StaticBody2D
 Area2D
 Marker2D
 Timer
 Window
-AnimatedSprite2D
 Button
 Sprite2D
 TextureButton
 CharacterBody2D
 Node2D
 TextureProgressBar
-AudioStreamPlayer2D
-ProgressBar

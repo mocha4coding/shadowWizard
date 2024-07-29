@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=38 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
@@ -22,6 +22,8 @@
 [ext_resource type="Script" path="res://scripts/CollectMushroomInstructions.gd" id="18_jgxil"]
 [ext_resource type="Texture2D" uid="uid://lej6tyws7g1w" path="res://assets/UI/CollectMushroomInstruction.png" id="19_61s8p"]
 [ext_resource type="Texture2D" uid="uid://b1b3vrghfkl53" path="res://assets/UI/SpaceBarForMagicLightInstruction.png" id="22_ic1hs"]
+[ext_resource type="Texture2D" uid="uid://bsw3skyssuvpl" path="res://assets/UI/PushShadowInstruction.png" id="23_13lv6"]
+[ext_resource type="Texture2D" uid="uid://dvit6weo5r71t" path="res://assets/Background/obstacles/burning_loop_1.png" id="24_d2v5n"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -32,6 +34,73 @@ radius = 199.198
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k5qus"]
 radius = 319.428
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moode"]
+size = Vector2(404, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrubm"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys0v0"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ugwb"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm25j"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfiuv"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg44v"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7smgr"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mht2"]
+atlas = ExtResource("24_d2v5n")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltjpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrubm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys0v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ugwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm25j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfiuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg44v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7smgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mht2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_lq41e")
@@ -116,7 +185,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_g1bw8")
 
 [node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
-layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262174, 3, 0, 262175, 3, 0, 262176, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0)
+layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0)
 
 [node name="Object_original" parent="." instance=ExtResource("10_l1iqm")]
 position = Vector2(2166, 371)
@@ -198,6 +267,77 @@ shape = SubResource("CircleShape2D_k5qus")
 [node name="SpaceBarForMagicLightInstruction" type="Sprite2D" parent="SpaceForMagicLightInstructionArea2D"]
 visible = false
 texture = ExtResource("22_ic1hs")
+
+[node name="PushShadowInstruction" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2961, 282)
+texture = ExtResource("23_13lv6")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(3025, 440)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(120, 92)
+shape = SubResource("RectangleShape2D_moode")
+
+[node name="FireBridge" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FireBridge"]
+z_index = -1
+position = Vector2(3020, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FireBridge"]
+position = Vector2(3061, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FireBridge"]
+position = Vector2(3098, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FireBridge"]
+position = Vector2(3132, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FireBridge"]
+position = Vector2(3176, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FireBridge"]
+position = Vector2(3217, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FireBridge"]
+position = Vector2(3254, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FireBridge"]
+position = Vector2(3281, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
 
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]
