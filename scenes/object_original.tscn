@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b30txr00huab"]
+[gd_scene load_steps=5 format=3 uid="uid://b30txr00huab"]
 
 [ext_resource type="Script" path="res://scripts/ObjectRigidBody.gd" id="1_cso46"]
 [ext_resource type="Texture2D" uid="uid://b37lixo1w0au" path="res://scenes/objects/stone_1_original.png" id="1_opeeb"]
-[ext_resource type="PackedScene" uid="uid://be2n1dbbqm6gf" path="res://scenes/object_shadow_rigid_body.tscn" id="3_784kh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fck8"]
 rough = true
@@ -25,6 +24,3 @@ texture = ExtResource("1_opeeb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectRigidBody"]
 position = Vector2(-11.3333, 6.66667)
 shape = SubResource("RectangleShape2D_f8p31")
-
-[node name="ObjectShadowRigidBody" parent="." instance=ExtResource("3_784kh")]
-visible = false
