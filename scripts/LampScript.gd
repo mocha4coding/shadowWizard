@@ -18,6 +18,6 @@ func _physics_process(delta):
 	elif global_rotation_degrees >= maxRotationDegree :
 		global_rotation_degrees = maxRotationDegree
 
-	print("Global_rotation_degrees : ", global_rotation_degrees)
+	#print("Global_rotation_degrees : ", global_rotation_degrees)
 	
 	

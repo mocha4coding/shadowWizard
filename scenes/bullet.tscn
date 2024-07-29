@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://buyoa1huthkha"]
+[gd_scene load_steps=7 format=3 uid="uid://buyoa1huthkha"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_0kgn6"]
 [ext_resource type="Texture2D" uid="uid://b57qebupxd0rr" path="res://assets/wizardAnimations/bullets/Bullet 1.png" id="1_6y7er"]
@@ -21,6 +21,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ii77d"]
 radius = 39.6232
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtldh"]
+radius = 76.4853
+
 [node name="Bullet" type="Node2D"]
 script = ExtResource("1_0kgn6")
 
@@ -35,3 +38,15 @@ frame_progress = 0.95805
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_ii77d")
+
+[node name="BulletDamangeArea" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/BulletDamangeArea"]
+shape = SubResource("CircleShape2D_wtldh")
+debug_color = Color(0.448586, 0.58991, 0.259066, 0.42)
+
+[node name="Timer" type="Timer" parent="CharacterBody2D"]
+
+[connection signal="body_entered" from="CharacterBody2D/BulletDamangeArea" to="." method="_on_bullet_damange_area_body_entered"]

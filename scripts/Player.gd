@@ -46,7 +46,7 @@ func _physics_process(delta):
 				jump_audio.play()
 			
 			didJump = false
-	
+	#
 	if lamp.lampState == lamp.lampStateAttack:
 		if Input.is_action_just_pressed("shoot"):
 			shoot()
@@ -132,4 +132,5 @@ func shoot():
 		bulletSpawnPosition = bullet_spawn_point_left
 	currentScene.add_child(bullet)
 	bullet.position = Vector2(lamp.global_position.x, lamp.global_position.y - 60.0)
+	bullet.direction = bullet.global_position.direction_to(get_global_mouse_position())
 	
