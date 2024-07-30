@@ -29,6 +29,7 @@ func playShadowFormSound():
 	play_shadow_form_sound.play()
 
 func playRiseAnimation():
+	
 	animated_sprite_2d.play("rise")
 	
 func playDefaultAnimation():

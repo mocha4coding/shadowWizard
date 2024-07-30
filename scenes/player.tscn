@@ -153,7 +153,7 @@ position = Vector2(1780, -760)
 target_position = Vector2(20.0002, 1500)
 
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(1520, -720)
+position = Vector2(1800, -740)
 target_position = Vector2(20, 1480)
 
 [node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]

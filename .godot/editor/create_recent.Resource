@@ -1,2 +1,4 @@
+ShadowableObject
+Resource
 CollectibleItem
 CollectibleManager

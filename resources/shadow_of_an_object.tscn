@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bedeeobbhg21u"]
+
+[ext_resource type="Script" path="res://resources/ShadowOfAnObject.gd" id="1_bnwf5"]
+[ext_resource type="AudioStream" uid="uid://mh2bp1q2mimx" path="res://assets/sounds/shadowFormsAudio.mp3" id="2_g6de5"]
+
+[node name="ShadowOfAnObject" type="CharacterBody2D"]
+script = ExtResource("1_bnwf5")
+
+[node name="playShadowFormSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_g6de5")

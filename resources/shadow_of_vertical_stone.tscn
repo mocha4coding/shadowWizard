@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://cy3e4s6sc5v3i"]
+
+[ext_resource type="Script" path="res://resources/ShadowOfAnObject.gd" id="1_uw147"]
+[ext_resource type="Texture2D" uid="uid://ccgpses324nob" path="res://assets/Object1_Animation/Frame 24.png" id="2_vnkhs"]
+[ext_resource type="Texture2D" uid="uid://rqn1w4q77wc" path="res://assets/Object1_Animation/Frame 19.png" id="3_c4meu"]
+[ext_resource type="Texture2D" uid="uid://4p3i4sjj3sup" path="res://assets/Object1_Animation/Frame 20.png" id="4_ritee"]
+[ext_resource type="Texture2D" uid="uid://cq16pmbyjeq2o" path="res://assets/Object1_Animation/Frame 21.png" id="5_yycga"]
+[ext_resource type="Texture2D" uid="uid://cl22v1vey8gyc" path="res://assets/Object1_Animation/Frame 22.png" id="6_kw8k5"]
+[ext_resource type="Texture2D" uid="uid://t7yb1t0vrp5o" path="res://assets/Object1_Animation/Frame 23.png" id="7_sue48"]
+[ext_resource type="Script" path="res://resources/ShadowOfVerticalStonePushDetectors.gd" id="8_v0roe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lrl2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vnkhs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c4meu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ritee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yycga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kw8k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sue48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vnkhs")
+}],
+"loop": false,
+"name": &"rise",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_powjo"]
+size = Vector2(787, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm12d"]
+size = Vector2(415, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8e7q"]
+size = Vector2(379, 171)
+
+[node name="ShadowOfVerticalStone" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
+script = ExtResource("1_uw147")
+animatedSprite = NodePath("AnimatedSprite2D")
+positionXSpawnPointOffSet = 800
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-71, -143)
+sprite_frames = SubResource("SpriteFrames_4lrl2")
+autoplay = "rise"
+
+[node name="ShadowCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-18.5, -5)
+shape = SubResource("RectangleShape2D_powjo")
+
+[node name="PushDetectors" type="Node2D" parent="."]
+script = ExtResource("8_v0roe")
+
+[node name="LeftDetector" type="Area2D" parent="PushDetectors"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetectors/LeftDetector"]
+position = Vector2(-217.5, -5.5)
+shape = SubResource("RectangleShape2D_lm12d")
+debug_color = Color(0.507941, 0.569383, 0.2989, 0.42)
+
+[node name="RightDetector" type="Area2D" parent="PushDetectors"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetectors/RightDetector"]
+position = Vector2(197.5, -3.5)
+shape = SubResource("RectangleShape2D_a8e7q")
+debug_color = Color(0.660012, 0.501814, 0.323462, 0.42)
+
+[connection signal="body_entered" from="PushDetectors/LeftDetector" to="PushDetectors" method="_on_left_detector_body_entered"]
+[connection signal="body_exited" from="PushDetectors/LeftDetector" to="PushDetectors" method="_on_left_detector_body_exited"]
+[connection signal="body_entered" from="PushDetectors/RightDetector" to="PushDetectors" method="_on_right_detector_body_entered"]
+[connection signal="body_exited" from="PushDetectors/RightDetector" to="PushDetectors" method="_on_right_detector_body_exited"]

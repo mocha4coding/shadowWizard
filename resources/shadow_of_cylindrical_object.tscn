@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://0ud6co4x6mne"]
+
+[ext_resource type="Script" path="res://resources/ShadowOfAnObject.gd" id="1_hl2rt"]
+[ext_resource type="Texture2D" uid="uid://byeeh540bcuuc" path="res://assets/Background/obstacles/cylinderAnimation/Frame 165.png" id="2_82vgn"]
+[ext_resource type="Texture2D" uid="uid://cjbn2op8ohpqt" path="res://assets/Background/obstacles/cylinderAnimation/Frame 166.png" id="3_5olvq"]
+[ext_resource type="Texture2D" uid="uid://dibarvyhnu0mj" path="res://assets/Background/obstacles/cylinderAnimation/Frame 167.png" id="4_ct3ky"]
+[ext_resource type="Texture2D" uid="uid://cvg0t6jpr6kku" path="res://assets/Background/obstacles/cylinderAnimation/Frame 168.png" id="5_arwmr"]
+[ext_resource type="Texture2D" uid="uid://y5m043jk618s" path="res://assets/Background/obstacles/cylinderAnimation/Frame 169.png" id="6_pajyt"]
+[ext_resource type="Texture2D" uid="uid://rh0gqltqcg8n" path="res://assets/Background/obstacles/cylinderAnimation/Frame 170.png" id="7_02drs"]
+[ext_resource type="Script" path="res://resources/ShadowOfCylindricalStonePushDetector.gd" id="8_p3bfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wpg2"]
+size = Vector2(40, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oql0g"]
+size = Vector2(39, 97)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xucm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_82vgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5olvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ct3ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_arwmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pajyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_02drs")
+}],
+"loop": false,
+"name": &"rise",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tsw7"]
+size = Vector2(96, 103)
+
+[node name="ShadowOfCylindricalObject" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
+script = ExtResource("1_hl2rt")
+animatedSprite = NodePath("AnimatedSprite2D")
+positionXSpawnPointOffSet = 200
+
+[node name="PushDetectors" type="Node2D" parent="."]
+script = ExtResource("8_p3bfn")
+
+[node name="LeftDetector" type="Area2D" parent="PushDetectors"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetectors/LeftDetector"]
+position = Vector2(-38, -53)
+shape = SubResource("RectangleShape2D_3wpg2")
+debug_color = Color(0.61815, 0.521028, 0.349182, 0.42)
+
+[node name="RightDetector" type="Area2D" parent="PushDetectors"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetectors/RightDetector"]
+position = Vector2(27.5, -52.5)
+shape = SubResource("RectangleShape2D_oql0g")
+debug_color = Color(0.37171, 0.607901, 0.275084, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -118)
+sprite_frames = SubResource("SpriteFrames_8xucm")
+animation = &"rise"
+autoplay = "rise"
+frame = 5
+frame_progress = 1.0
+
+[node name="ShadowCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -53.5)
+shape = SubResource("RectangleShape2D_6tsw7")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="PushDetectors/LeftDetector" to="PushDetectors" method="_on_left_detector_body_entered"]
+[connection signal="body_exited" from="PushDetectors/LeftDetector" to="PushDetectors" method="_on_left_detector_body_exited"]
+[connection signal="body_entered" from="PushDetectors/RightDetector" to="PushDetectors" method="_on_right_detector_body_entered"]
+[connection signal="body_exited" from="PushDetectors/RightDetector" to="PushDetectors" method="_on_right_detector_body_exited"]

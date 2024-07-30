@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c3w20x6uksake"]
+[gd_scene load_steps=23 format=3 uid="uid://c3w20x6uksake"]
 
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="1_q82iv"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_kagkj"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://d0kj27bx5eu5a" path="res://scenes/verm_mushroom.tscn" id="14_s7462"]
 [ext_resource type="Texture2D" uid="uid://ddw1mergi83pk" path="res://assets/healthBar/Frame 64.png" id="16_w5yi1"]
 [ext_resource type="PackedScene" uid="uid://cmjn51hvpeexj" path="res://scenes/enemy_bee.tscn" id="19_j1e0l"]
+[ext_resource type="PackedScene" uid="uid://gxk6i8egfd0g" path="res://resources/vertical_stone_object.tscn" id="20_v7tbs"]
+[ext_resource type="PackedScene" uid="uid://4uwgdce0wrqb" path="res://resources/cylindrical_stone_object.tscn" id="21_60w65"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ak4wf"]
 cull_mode = 2
@@ -39,7 +41,7 @@ TargetNode = NodePath("../Player")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("4_kb3wm")]
 z_index = 2
-position = Vector2(434, 352)
+position = Vector2(2159, 324)
 scale = Vector2(0.45, 0.45)
 currentScene = NodePath("..")
 metadata/_edit_vertical_guides_ = [20.0]
@@ -191,3 +193,10 @@ position = Vector2(1361, 336)
 
 [node name="enemy3" parent="." instance=ExtResource("19_j1e0l")]
 position = Vector2(589, 140)
+
+[node name="VerticalStoneObject" parent="." instance=ExtResource("20_v7tbs")]
+position = Vector2(1967, 392)
+scale = Vector2(0.25, 0.25)
+
+[node name="CylindricalStoneObject" parent="." instance=ExtResource("21_60w65")]
+position = Vector2(2728, 356)
