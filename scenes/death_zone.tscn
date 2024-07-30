@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dob258eu7oq6c"]
+
+[ext_resource type="Script" path="res://DeathZone.gd" id="1_paxto"]
+
+[node name="DeathZone" type="Area2D"]
+script = ExtResource("1_paxto")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

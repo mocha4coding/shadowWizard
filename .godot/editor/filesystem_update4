@@ -23,3 +23,8 @@ res://resources/stone_two.tscn
 res://resources/StoneTwoObject.gd
 res://resources/shadow_of_stone_two.tscn
 res://resources/ShadowOfStoneTwoPushDetector.gd
+res://scripts/DeathZone.gd
+res://scenes/enemy_bee.tscn
+res://scripts/enemy.gd
+res://scenes/enemy_boar.tscn
+res://DeathZone.gd

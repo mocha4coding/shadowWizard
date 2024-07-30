@@ -1,8 +1,8 @@
-res://resources
-res://assets/Background/obstacles
-res://scripts
 res://scenes
 res://assets/enemies
+res://scripts
+res://resources
+res://assets/Background/obstacles
 res://collectibleManagement/items
 res://collectibleManagement
 res://assets/Mossy Assets/Mossy Tileset

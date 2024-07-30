@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=50 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b1b3vrghfkl53" path="res://assets/UI/SpaceBarForMagicLightInstruction.png" id="22_ic1hs"]
 [ext_resource type="Texture2D" uid="uid://bsw3skyssuvpl" path="res://assets/UI/PushShadowInstruction.png" id="23_13lv6"]
 [ext_resource type="Texture2D" uid="uid://dvit6weo5r71t" path="res://assets/Background/obstacles/burning_loop_1.png" id="24_d2v5n"]
+[ext_resource type="PackedScene" uid="uid://dob258eu7oq6c" path="res://scenes/death_zone.tscn" id="24_vkx0q"]
 [ext_resource type="Texture2D" uid="uid://dm7vlieoixpl5" path="res://assets/UI/AttackInstruction.png" id="25_ilpn7"]
 [ext_resource type="PackedScene" uid="uid://cmjn51hvpeexj" path="res://scenes/enemy_bee.tscn" id="26_6ufor"]
 [ext_resource type="PackedScene" uid="uid://u5q7yb02y40c" path="res://scenes/pink_mushroom.tscn" id="27_xesnl"]
@@ -44,7 +45,10 @@ radius = 199.198
 radius = 319.428
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moode"]
-size = Vector2(404, 114)
+size = Vector2(922, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofybv"]
+size = Vector2(296, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrubm"]
 atlas = ExtResource("24_d2v5n")
@@ -109,6 +113,9 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wpbl"]
+size = Vector2(795, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bxfd"]
 size = Vector2(613, 49)
@@ -197,7 +204,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_g1bw8")
 
 [node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
-layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262186, 3, 0, 262185, 3, 0, 262187, 3, 0, 262188, 3, 0, 262189, 3, 0, 262190, 3, 0, 262191, 3, 0, 262192, 3, 0, 262193, 3, 0, 262194, 3, 0, 262195, 3, 0, 262196, 3, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 3, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 3, 0, 262209, 3, 0, 262210, 3, 0, 262211, 3, 0, 262212, 3, 0)
+layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262186, 3, 0, 262185, 3, 0, 262187, 3, 0, 262188, 3, 0, 262189, 3, 0, 262190, 3, 0, 262191, 3, 0, 262192, 3, 0, 262193, 3, 0, 262194, 3, 0, 262195, 3, 0, 262196, 3, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 3, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 3, 0, 262209, 3, 0, 262210, 3, 0, 262211, 3, 0, 262212, 3, 0, 262221, 3, 0, 262222, 3, 0, 262223, 3, 0, 262224, 3, 0, 262225, 3, 0, 262226, 3, 0, 262227, 3, 0, 262228, 3, 0, 262229, 3, 0, 262230, 3, 0, 262231, 3, 0, 262232, 3, 0, 262233, 3, 0, 262234, 3, 0, 262235, 3, 0, 262236, 3, 0, 262237, 3, 0, 262238, 3, 0, 262239, 3, 0, 262240, 3, 0, 262241, 3, 0, 262242, 3, 0, 262243, 3, 0, 262244, 3, 0, 262245, 3, 0, 262246, 3, 0, 262247, 3, 0, 262248, 3, 0, 262249, 3, 0, 262250, 3, 0, 262251, 3, 0, 262252, 3, 0, 262253, 3, 0, 262254, 3, 0, 262255, 3, 0, 262256, 3, 0, 262257, 3, 0, 262258, 3, 0, 262259, 3, 0, 262260, 3, 0, 262261, 3, 0, 262262, 3, 0, 262263, 3, 0, 262264, 3, 0, 262265, 3, 0, 262266, 3, 0, 262267, 3, 0, 262268, 3, 0, 262269, 3, 0, 262270, 3, 0, 262271, 3, 0, 262272, 3, 0, 262273, 3, 0, 262274, 3, 0, 262275, 3, 0)
 
 [node name="LevelOneUI" type="CanvasLayer" parent="."]
 
@@ -289,7 +296,17 @@ position = Vector2(3025, 440)
 position = Vector2(120, 92)
 shape = SubResource("RectangleShape2D_moode")
 
-[node name="FireBridge" type="Node" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
+position = Vector2(4257, 92)
+shape = SubResource("RectangleShape2D_moode")
+
+[node name="FireBridge" type="Node2D" parent="."]
+
+[node name="DeathZone" parent="FireBridge" instance=ExtResource("24_vkx0q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireBridge/DeathZone"]
+position = Vector2(3150, 454.5)
+shape = SubResource("RectangleShape2D_ofybv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FireBridge"]
 z_index = -1
@@ -347,6 +364,188 @@ scale = Vector2(3.43, 3.43)
 sprite_frames = SubResource("SpriteFrames_ltjpf")
 autoplay = "default"
 frame_progress = 0.878273
+
+[node name="FireBridge2" type="Node2D" parent="."]
+position = Vector2(3902, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FireBridge2"]
+z_index = -1
+position = Vector2(3020, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3061, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3098, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3132, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3176, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3217, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3254, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3281, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FireBridge2"]
+z_index = -1
+position = Vector2(3312.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3353.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3390.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3424.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3468.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3509.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3546.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FireBridge2"]
+z_index = -10
+position = Vector2(3798, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FireBridge2"]
+z_index = -1
+position = Vector2(3496.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3537.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3574.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3608.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3652.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3693.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3730.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="FireBridge2"]
+position = Vector2(3757.16, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.878273
+
+[node name="DeathZone" parent="FireBridge2" instance=ExtResource("24_vkx0q")]
+position = Vector2(3373, 335)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireBridge2/DeathZone"]
+position = Vector2(27.5, 118)
+shape = SubResource("RectangleShape2D_6wpbl")
 
 [node name="AttackInstruction" type="Sprite2D" parent="."]
 position = Vector2(3529, 115)
