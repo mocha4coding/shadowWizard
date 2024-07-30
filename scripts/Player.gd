@@ -32,6 +32,7 @@ var walk_audio_play_finished: bool = true
 var jump_audio_play_finished:bool = true
 var didJump: bool = false
 var isHit: bool = false
+var isPushing: bool = false
 func _ready():
 	point_light.hide()
 	lamp.global_position = lamp_right_facing_position.global_position
@@ -72,6 +73,8 @@ func _physics_process(delta):
 	
 	# Play animation 
 	if is_on_floor():
+		
+			
 		if isHit && currentHealth >= 0:
 			animated_sprite_2d.play("hit")
 		elif isHit == false:
@@ -79,7 +82,10 @@ func _physics_process(delta):
 				animated_sprite_2d.play("idle")
 			else :
 				if currentHealth > 0:
-					animated_sprite_2d.play("walk")
+					if isPushing:
+						animated_sprite_2d.play("push")
+					else:
+						animated_sprite_2d.play("walk")
 					if walk_audio_play_finished && jump_audio_play_finished:
 						walk_audio.play()
 						walk_audio_play_finished = false

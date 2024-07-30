@@ -28,3 +28,5 @@ res://scenes/enemy_bee.tscn
 res://scripts/enemy.gd
 res://scenes/enemy_boar.tscn
 res://DeathZone.gd
+res://scripts/Player.gd
+res://scenes/death_zone.tscn

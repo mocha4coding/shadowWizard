@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bj4e3616laere"]
+[gd_scene load_steps=28 format=3 uid="uid://bj4e3616laere"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_h8vwx"]
 [ext_resource type="Resource" uid="uid://cvkxmchebuq1q" path="res://collectibleManagement/playerCollectibleManager.tres" id="2_pre05"]
@@ -18,6 +18,8 @@
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="10_agepm"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="13_d06j2"]
 [ext_resource type="Texture2D" uid="uid://bf83u12cr2vn4" path="res://assets/wizardAnimations/lightRay.png" id="13_meq6i"]
+[ext_resource type="Texture2D" uid="uid://cj846aicsixh6" path="res://assets/wizardAnimations/wizardPushAnimation/Push 1.png" id="13_tc33n"]
+[ext_resource type="Texture2D" uid="uid://dbjq7b4y3hlxf" path="res://assets/wizardAnimations/wizardPushAnimation/Push 2.png" id="14_u1ca1"]
 [ext_resource type="PackedScene" uid="uid://bwlp7kcqfynt8" path="res://scenes/lamp.tscn" id="42_nkt64"]
 [ext_resource type="AudioStream" uid="uid://b4vskakjdf58p" path="res://assets/sounds/GrassFootstep.mp3" id="45_31vv3"]
 [ext_resource type="AudioStream" uid="uid://bo0ftbm5407g" path="res://assets/sounds/DirtWalk.mp3" id="46_fjp0r"]
@@ -73,6 +75,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_tc33n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_u1ca1")
+}],
+"loop": true,
+"name": &"push",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_for85")
 }, {
 "duration": 1.0,
@@ -99,7 +112,7 @@ metadata/_edit_vertical_guides_ = [20.0, -14.0, -8.0, -8.0]
 position = Vector2(10, -15)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_pj0av")
-animation = &"idle"
+animation = &"push"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 35)

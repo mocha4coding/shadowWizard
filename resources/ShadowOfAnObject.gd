@@ -27,21 +27,25 @@ func _physics_process(delta):
 
 func onLeftPush(body):
 	if body is Player:
+		body.isPushing = true
 		push = true
 		direction = body.direction
 
 
 func onRightPush(body):
 	if body is Player:
+		body.isPushing = true
 		push = true
 		direction = body.direction
 
 
 func onRihgtPushStop(body):
 	if body is Player:
+		body.isPushing = false
 		push = false
 
 
 func onLeftPushStop(body):
 	if body is Player:
+		body.isPushing = false
 		push = false
