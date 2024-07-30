@@ -171,7 +171,7 @@ target_position = Vector2(-40, 4160)
 
 [node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]
 z_index = -2
-position = Vector2(2160, -40.0001)
+position = Vector2(2060, 20)
 scale = Vector2(0.639054, 0.639054)
 texture = ExtResource("23_dmmwa")
 
