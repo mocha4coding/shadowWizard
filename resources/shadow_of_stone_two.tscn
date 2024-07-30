@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckggcf8dlw6yl"]
+
+[ext_resource type="Script" path="res://resources/ShadowOfAnObject.gd" id="1_qsl0n"]
+[ext_resource type="Texture2D" uid="uid://btnbx28sn5hv2" path="res://assets/Background/obstacles/StoneTwoShadow.png" id="2_557r7"]
+[ext_resource type="Script" path="res://resources/ShadowOfStoneTwoPushDetector.gd" id="3_1btgf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gs5g3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_557r7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hr6a3"]
+size = Vector2(189, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4crtt"]
+size = Vector2(96, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktcp4"]
+size = Vector2(102, 49)
+
+[node name="ShadowOfStoneTwo" type="CharacterBody2D"]
+script = ExtResource("1_qsl0n")
+positionXSpawnPointOffSet = 300
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -31)
+sprite_frames = SubResource("SpriteFrames_gs5g3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, -30)
+shape = SubResource("RectangleShape2D_hr6a3")
+
+[node name="PushDetector" type="Node2D" parent="."]
+script = ExtResource("3_1btgf")
+
+[node name="LeftDetector" type="Area2D" parent="PushDetector"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetector/LeftDetector"]
+position = Vector2(-59, -29.5)
+shape = SubResource("RectangleShape2D_4crtt")
+debug_color = Color(0.155496, 0.623315, 0.475714, 0.42)
+
+[node name="RightDetector" type="Area2D" parent="PushDetector"]
+position = Vector2(39, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetector/RightDetector"]
+position = Vector2(6, -4.5)
+shape = SubResource("RectangleShape2D_ktcp4")
+debug_color = Color(0.942899, 0.191258, 0.373125, 0.42)
+
+[connection signal="body_entered" from="PushDetector/LeftDetector" to="PushDetector" method="_on_left_detector_body_entered"]
+[connection signal="body_exited" from="PushDetector/LeftDetector" to="PushDetector" method="_on_left_detector_body_exited"]
+[connection signal="body_entered" from="PushDetector/RightDetector" to="PushDetector" method="_on_right_detector_body_entered"]
+[connection signal="body_exited" from="PushDetector/RightDetector" to="PushDetector" method="_on_right_detector_body_exited"]

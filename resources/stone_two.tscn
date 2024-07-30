@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://p2pejanntj3u"]
+
+[ext_resource type="Texture2D" uid="uid://nhu7comnuyj3" path="res://assets/Background/obstacles/StoneTwo.png" id="1_0x5wp"]
+[ext_resource type="Script" path="res://resources/StoneTwoObject.gd" id="1_4s8or"]
+[ext_resource type="Resource" uid="uid://cs2amo32hi0vh" path="res://resources/stoneTwo.tres" id="2_i6gcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0kip"]
+size = Vector2(183, 56)
+
+[node name="StoneTwo" type="StaticBody2D"]
+script = ExtResource("1_4s8or")
+shadowableObject = ExtResource("2_i6gcu")
+
+[node name="StoneTwo" type="Sprite2D" parent="."]
+position = Vector2(3, -31)
+texture = ExtResource("1_0x5wp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, -30)
+shape = SubResource("RectangleShape2D_j0kip")

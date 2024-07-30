@@ -19,3 +19,7 @@ res://CylindricalStoneObject.gd
 res://resources/cylindrical_stone_object.tscn
 res://resources/shadow_of_cylindrical_object.tscn
 res://resources/ShadowOfCylindricalStonePushDetector.gd
+res://resources/stone_two.tscn
+res://resources/StoneTwoObject.gd
+res://resources/shadow_of_stone_two.tscn
+res://resources/ShadowOfStoneTwoPushDetector.gd

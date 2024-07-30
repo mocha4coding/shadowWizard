@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=47 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="6_88r37"]
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="6_khovu"]
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="9_0kfe8"]
-[ext_resource type="PackedScene" uid="uid://b30txr00huab" path="res://scenes/object_original.tscn" id="10_l1iqm"]
 [ext_resource type="PackedScene" uid="uid://rw1eei2dilc5" path="res://collectibleManagement/collectible_ui.tscn" id="11_63hif"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="11_g1bw8"]
 [ext_resource type="Texture2D" uid="uid://bh8rh4sk0ln8d" path="res://assets/UI/CollectMushroomUIBoardInstruction.png" id="11_sdy01"]
@@ -28,6 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://cmjn51hvpeexj" path="res://scenes/enemy_bee.tscn" id="26_6ufor"]
 [ext_resource type="PackedScene" uid="uid://u5q7yb02y40c" path="res://scenes/pink_mushroom.tscn" id="27_xesnl"]
 [ext_resource type="Texture2D" uid="uid://snpw68htstp7" path="res://assets/Background/Platform.png" id="28_tvfdc"]
+[ext_resource type="Texture2D" uid="uid://c3fg111bjdj5j" path="res://assets/Background/Platform2.png" id="29_jqvbw"]
+[ext_resource type="PackedScene" uid="uid://gxk6i8egfd0g" path="res://resources/vertical_stone_object.tscn" id="29_srhy8"]
+[ext_resource type="PackedScene" uid="uid://4uwgdce0wrqb" path="res://resources/cylindrical_stone_object.tscn" id="30_0p0yd"]
+[ext_resource type="PackedScene" uid="uid://d0kj27bx5eu5a" path="res://scenes/verm_mushroom.tscn" id="31_2gami"]
+[ext_resource type="PackedScene" uid="uid://p2pejanntj3u" path="res://resources/stone_two.tscn" id="32_f182e"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -106,6 +110,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bxfd"]
+size = Vector2(613, 49)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_lq41e")
 metadata/_edit_vertical_guides_ = [-1.0]
@@ -120,7 +127,7 @@ TargetNode = NodePath("../Player")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("6_khovu")]
 z_index = 2
-position = Vector2(4966, 355)
+position = Vector2(6727, 160)
 scale = Vector2(0.5, 0.5)
 currentScene = NodePath("..")
 
@@ -191,9 +198,6 @@ texture = ExtResource("11_g1bw8")
 
 [node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
 layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262186, 3, 0, 262185, 3, 0, 262187, 3, 0, 262188, 3, 0, 262189, 3, 0, 262190, 3, 0, 262191, 3, 0, 262192, 3, 0, 262193, 3, 0, 262194, 3, 0, 262195, 3, 0, 262196, 3, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 3, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 3, 0, 262209, 3, 0, 262210, 3, 0, 262211, 3, 0, 262212, 3, 0)
-
-[node name="Object_original" parent="." instance=ExtResource("10_l1iqm")]
-position = Vector2(2166, 371)
 
 [node name="LevelOneUI" type="CanvasLayer" parent="."]
 
@@ -374,6 +378,29 @@ position = Vector2(5390, 114)
 
 [node name="enemy2" parent="." instance=ExtResource("26_6ufor")]
 position = Vector2(5233, 219)
+
+[node name="VerticalStoneObject" parent="." instance=ExtResource("29_srhy8")]
+position = Vector2(2692, 376)
+scale = Vector2(0.35, 0.35)
+
+[node name="Platform2" type="Sprite2D" parent="."]
+position = Vector2(6969, 265)
+texture = ExtResource("29_jqvbw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2/StaticBody2D"]
+position = Vector2(-2.5, 4.5)
+shape = SubResource("RectangleShape2D_7bxfd")
+
+[node name="CylindricalStoneObject" parent="." instance=ExtResource("30_0p0yd")]
+position = Vector2(6148, 357)
+
+[node name="VermMushroom" parent="." instance=ExtResource("31_2gami")]
+position = Vector2(6995, 172)
+
+[node name="StoneTwo" parent="." instance=ExtResource("32_f182e")]
+position = Vector2(6993, 242)
 
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]

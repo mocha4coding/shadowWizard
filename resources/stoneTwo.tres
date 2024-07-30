@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ShadowableObject" load_steps=2 format=3 uid="uid://cs2amo32hi0vh"]
+
+[ext_resource type="Script" path="res://resources/ShadowableObject.gd" id="1_wqp6e"]
+
+[resource]
+script = ExtResource("1_wqp6e")
+name = "StoneTwo"

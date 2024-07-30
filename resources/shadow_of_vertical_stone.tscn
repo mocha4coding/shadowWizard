@@ -55,7 +55,7 @@ size = Vector2(379, 171)
 [node name="ShadowOfVerticalStone" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
 script = ExtResource("1_uw147")
 animatedSprite = NodePath("AnimatedSprite2D")
-positionXSpawnPointOffSet = 800
+positionXSpawnPointOffSet = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-71, -143)
