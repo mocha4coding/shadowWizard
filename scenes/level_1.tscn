@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=62 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
@@ -34,6 +34,15 @@
 [ext_resource type="PackedScene" uid="uid://d0kj27bx5eu5a" path="res://scenes/verm_mushroom.tscn" id="31_2gami"]
 [ext_resource type="Texture2D" uid="uid://40qoudaeh1d5" path="res://assets/TileMaps/platform.png" id="31_ehg14"]
 [ext_resource type="PackedScene" uid="uid://p2pejanntj3u" path="res://resources/stone_two.tscn" id="32_f182e"]
+[ext_resource type="Texture2D" uid="uid://dy0nx4rsct7sl" path="res://assets/Background/platformWithWaterfall.png" id="35_50gak"]
+[ext_resource type="Texture2D" uid="uid://ism8rmba2koi" path="res://assets/Waterfall/Frame 196.png" id="36_rhsue"]
+[ext_resource type="Texture2D" uid="uid://ck7a63tw0b120" path="res://assets/Waterfall/Frame 197.png" id="37_rw86n"]
+[ext_resource type="Texture2D" uid="uid://dldlmge0v8uw7" path="res://assets/Waterfall/Frame 198.png" id="38_084q5"]
+[ext_resource type="Texture2D" uid="uid://bngaexpawrypb" path="res://assets/Waterfall/Frame 200.png" id="39_58382"]
+[ext_resource type="Texture2D" uid="uid://cyexge3caqcvi" path="res://assets/Waterfall/Frame 201.png" id="40_7yj3s"]
+[ext_resource type="Texture2D" uid="uid://mwsgkywp2bd1" path="res://assets/Waterfall/Frame 202.png" id="41_2rvq8"]
+[ext_resource type="Texture2D" uid="uid://bo5806fyamjsm" path="res://assets/Waterfall/Frame 203.png" id="42_7bfu1"]
+[ext_resource type="PackedScene" uid="uid://cgrf5vx6qotyq" path="res://resources/cube_stone.tscn" id="43_q1kiq"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -120,6 +129,38 @@ size = Vector2(1110, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bxfd"]
 size = Vector2(864, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k873p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_rhsue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rw86n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_084q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_58382")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_7yj3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_2rvq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_7bfu1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npokr"]
+size = Vector2(461, 37)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_lq41e")
@@ -671,6 +712,100 @@ position = Vector2(6995, 172)
 
 [node name="StoneTwo" parent="." instance=ExtResource("32_f182e")]
 position = Vector2(6993, 242)
+
+[node name="PlatformWithWaterfall" type="Sprite2D" parent="."]
+position = Vector2(8650, 312)
+texture = ExtResource("35_50gak")
+
+[node name="Waterfalls" type="Node2D" parent="PlatformWithWaterfall"]
+
+[node name="Waterfall" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(-149.569, 75.9445)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.472638
+
+[node name="Waterfall2" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(-103.219, 76.5135)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="Waterfall3" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(-68.2187, 76.5135)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="Waterfall4" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(-23.8974, 76.901)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="Waterfall5" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(21.1026, 75.901)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="Waterfall6" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(68.4306, 76.9445)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.472638
+
+[node name="Waterfall7" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(114.122, 76.5135)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="Waterfall8" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(149.122, 76.5135)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="Waterfall9" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(193.443, 76.901)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="Waterfall10" type="AnimatedSprite2D" parent="PlatformWithWaterfall/Waterfalls"]
+position = Vector2(238.443, 75.901)
+scale = Vector2(1.039, 1.054)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlatformWithWaterfall"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlatformWithWaterfall/StaticBody2D"]
+polygon = PackedVector2Array(-370, -35, -373, 5, -471, 3, -470, 43, 473, 44, 476, 0, 374, -1, 376, -41, 278, -40, 279, 0, -175, -2, -171, -45)
+
+[node name="DeathZone" parent="PlatformWithWaterfall" instance=ExtResource("24_vkx0q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformWithWaterfall/DeathZone"]
+position = Vector2(55.5, 8.5)
+shape = SubResource("RectangleShape2D_npokr")
+
+[node name="CubeStone" parent="." instance=ExtResource("43_q1kiq")]
+position = Vector2(8432, 235)
+scale = Vector2(0.885, 0.885)
+
+[node name="PinkMushroom" parent="." instance=ExtResource("27_xesnl")]
+position = Vector2(8714, 111)
 
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]

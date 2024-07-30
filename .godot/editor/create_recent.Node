@@ -1,13 +1,13 @@
+CollisionPolygon2D
 CollisionShape2D
-Node2D
 Area2D
+Node2D
 AnimatedSprite2D
 ShadowOfAnObject
+Sprite2D
 StaticBody2D
 Node
 CharacterBody2D
-CollisionPolygon2D
-Sprite2D
 Marker2D
 Timer
 Window

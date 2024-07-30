@@ -123,7 +123,10 @@ func decreaseHealth():
 	#print("Decreasing health to ", currentHealth)
 	healthChanged.emit()
 	
-
+func increaseHealth():
+	currentHealth = 100
+	#print("Decreasing health to ", currentHealth)
+	healthChanged.emit()
 
 func _on_lamp_lamp_state_changed():
 		print("Lamp state : ", lamp.lampState)

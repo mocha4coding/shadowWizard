@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgrf5vx6qotyq"]
+
+[ext_resource type="Script" path="res://resources/CubeStoneIbject.gd" id="1_do03g"]
+[ext_resource type="Texture2D" uid="uid://dv43a2cls257o" path="res://assets/Background/obstacles/CubeStone.png" id="2_5cycy"]
+[ext_resource type="Resource" uid="uid://c3keknn0clyr" path="res://resources/cubeStone.tres" id="2_wi557"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxin5"]
+size = Vector2(109, 58)
+
+[node name="CubeStone" type="StaticBody2D"]
+script = ExtResource("1_do03g")
+shadowableObject = ExtResource("2_wi557")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5cycy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 9)
+shape = SubResource("RectangleShape2D_yxin5")

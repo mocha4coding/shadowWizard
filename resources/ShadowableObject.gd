@@ -14,7 +14,7 @@ func _physics_process(delta):
 		print("Shadow is not null ")
 	if shadowCreated :
 		shadow.show()
-		shadow.position = Vector2(position.x + 50, position.y - 40)
+		shadow.position = Vector2(position.x + 50, position.y)
 
 
 func handleLightFall():

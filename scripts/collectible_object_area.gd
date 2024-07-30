@@ -15,4 +15,5 @@ func _on_body_entered(body):
 	#print(body.name, "entered", get_parent().name)
 	if body.name == "Player":
 		body.item_collected_audio.play()
+		body.increaseHealth()
 		get_parent().get_collected_by_player()
