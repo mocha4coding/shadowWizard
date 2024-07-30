@@ -51,3 +51,9 @@ func _on_space_for_magic_light_instruction_area_2d_body_exited(body):
 
 func _on_tutorial_bee_tree_exiting():
 	attack_instruction.hide()
+
+
+func _on_level_end_body_entered(body):
+	if body is Player:
+		const HOME_SCREEN = "res://scenes/home_screen.tscn"
+		get_tree().change_scene_to_file(HOME_SCREEN)

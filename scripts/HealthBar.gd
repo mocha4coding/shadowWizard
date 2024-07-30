@@ -16,6 +16,9 @@ func update():
 	value = (player.currentHealth * 100) / player.maxHealth
 	if value < 80 && value > 20 :
 		set_progress_texture(preload("res://assets/healthBar/HealthBarLess.png"))
-	if value <= 35 :
+	elif value <= 35 :
 		const HEALTH_BAR_LOW = preload("res://assets/healthBar/HealthBarLow.png")
 		set_progress_texture(HEALTH_BAR_LOW)
+	else :
+		const HEALTH_BAR_INSIDE_FULL = preload("res://assets/healthBar/HealthBarInsideFull.png")
+		set_progress_texture(HEALTH_BAR_INSIDE_FULL)

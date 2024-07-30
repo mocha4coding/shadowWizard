@@ -41,6 +41,7 @@ animations = [{
 }]
 
 [node name="GoldenMushroom" type="Node2D"]
+z_index = -200
 scale = Vector2(1.245, 1.245)
 script = ExtResource("1_x4np8")
 

@@ -19,3 +19,11 @@ res://scripts/collectible_object_area.gd
 res://scripts/Player.gd
 res://scenes/pink_mushroom.tscn
 res://scripts/lamp.gd
+res://resources/cylindrical_stone_object.tscn
+res://resources/cylindrical.tres
+res://scenes/key.gd
+res://scenes/key.tscn
+res://scripts/Pillar.gd
+res://scenes/golden_mushroom.tscn
+res://scripts/golden_mushroom.gd
+res://scripts/level_1.gd

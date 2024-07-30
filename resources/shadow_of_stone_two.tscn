@@ -27,7 +27,7 @@ size = Vector2(102, 49)
 [node name="ShadowOfStoneTwo" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
 script = ExtResource("1_qsl0n")
 animatedSprite = NodePath("AnimatedSprite2D")
-positionXSpawnPointOffSet = 400
+positionXSpawnPointOffSet = 250
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -31)

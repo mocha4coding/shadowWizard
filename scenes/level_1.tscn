@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=82 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://d0kj27bx5eu5a" path="res://scenes/verm_mushroom.tscn" id="31_2gami"]
 [ext_resource type="Texture2D" uid="uid://40qoudaeh1d5" path="res://assets/TileMaps/platform.png" id="31_ehg14"]
 [ext_resource type="PackedScene" uid="uid://p2pejanntj3u" path="res://resources/stone_two.tscn" id="32_f182e"]
+[ext_resource type="Script" path="res://resources/ShadowableObject.gd" id="33_vwuyb"]
 [ext_resource type="Texture2D" uid="uid://dy0nx4rsct7sl" path="res://assets/Background/platformWithWaterfall.png" id="35_50gak"]
 [ext_resource type="Texture2D" uid="uid://ism8rmba2koi" path="res://assets/Waterfall/Frame 196.png" id="36_rhsue"]
 [ext_resource type="Texture2D" uid="uid://ck7a63tw0b120" path="res://assets/Waterfall/Frame 197.png" id="37_rw86n"]
@@ -43,6 +44,18 @@
 [ext_resource type="Texture2D" uid="uid://mwsgkywp2bd1" path="res://assets/Waterfall/Frame 202.png" id="41_2rvq8"]
 [ext_resource type="Texture2D" uid="uid://bo5806fyamjsm" path="res://assets/Waterfall/Frame 203.png" id="42_7bfu1"]
 [ext_resource type="PackedScene" uid="uid://cgrf5vx6qotyq" path="res://resources/cube_stone.tscn" id="43_q1kiq"]
+[ext_resource type="Texture2D" uid="uid://ckvuv4tdbjry7" path="res://assets/Background/obstacles/FinalPlatform.png" id="45_bubtk"]
+[ext_resource type="Texture2D" uid="uid://c8oe4lgw4ev5n" path="res://assets/Background/obstacles/Pillar.png" id="46_70qis"]
+[ext_resource type="PackedScene" uid="uid://bipejivkvvswm" path="res://scenes/key.tscn" id="47_jh25s"]
+[ext_resource type="Script" path="res://scripts/Pillar.gd" id="47_pouok"]
+[ext_resource type="Texture2D" uid="uid://b2pkllpfra24k" path="res://assets/HealthInstruction.png" id="49_u7eal"]
+[ext_resource type="Texture2D" uid="uid://cxv4nxxop4jl2" path="res://assets/Background/decorations/Frame 231.png" id="50_58bl8"]
+[ext_resource type="Texture2D" uid="uid://bwmpeu508vly8" path="res://assets/Background/decorations/Frame 233.png" id="51_swdef"]
+[ext_resource type="Texture2D" uid="uid://bw5bvejxfhos5" path="res://assets/Background/decorations/Frame 232.png" id="52_vnf3b"]
+[ext_resource type="Texture2D" uid="uid://bnpavxhvcbnn8" path="res://assets/Background/decorations/Frame 237.png" id="53_nni6b"]
+[ext_resource type="Texture2D" uid="uid://cnh3ua6ybdd8m" path="res://assets/Background/decorations/Frame 234.png" id="54_x6jxq"]
+[ext_resource type="Texture2D" uid="uid://t5io03032wih" path="res://assets/Background/decorations/Frame 235.png" id="55_ksnjw"]
+[ext_resource type="Texture2D" uid="uid://tmf2o0yipgld" path="res://assets/Background/decorations/Frame 236.png" id="56_umut1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -51,14 +64,14 @@ polygon = PackedVector2Array(-298, 20, -310, -150, 142, -152, 152, -56, 142, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_x650g"]
 radius = 199.198
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k5qus"]
-radius = 319.428
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8akkp"]
+size = Vector2(542, 301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moode"]
 size = Vector2(1819, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofybv"]
-size = Vector2(296, 35)
+size = Vector2(510, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrubm"]
 atlas = ExtResource("24_d2v5n")
@@ -130,6 +143,11 @@ size = Vector2(1110, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bxfd"]
 size = Vector2(864, 49)
 
+[sub_resource type="Resource" id="Resource_xklwv"]
+resource_local_to_scene = true
+script = ExtResource("33_vwuyb")
+name = "CylindricalObject"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_k873p"]
 animations = [{
 "frames": [{
@@ -162,6 +180,54 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npokr"]
 size = Vector2(461, 37)
 
+[sub_resource type="Resource" id="Resource_p31x7"]
+resource_local_to_scene = true
+script = ExtResource("33_vwuyb")
+name = "CylindricalObject"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jb16"]
+size = Vector2(39, 179)
+
+[sub_resource type="Animation" id="Animation_3vqy0"]
+resource_name = "PillarGoesDown"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-107, 66), Vector2(-107, 313)]
+}
+
+[sub_resource type="Animation" id="Animation_m71h7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-107, 66)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_78bud"]
+_data = {
+"PillarGoesDown": SubResource("Animation_3vqy0"),
+"RESET": SubResource("Animation_m71h7")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v565x"]
+size = Vector2(32, 421)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_lq41e")
 metadata/_edit_vertical_guides_ = [-1.0]
@@ -176,7 +242,7 @@ TargetNode = NodePath("../Player")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("6_khovu")]
 z_index = 2
-position = Vector2(6727, 160)
+position = Vector2(444, 338)
 scale = Vector2(0.5, 0.5)
 currentScene = NodePath("..")
 
@@ -246,7 +312,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_g1bw8")
 
 [node name="TileMap" parent="." instance=ExtResource("9_0kfe8")]
-layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262186, 3, 0, 262185, 3, 0, 262187, 3, 0, 262188, 3, 0, 262189, 3, 0, 262190, 3, 0, 262191, 3, 0, 262192, 3, 0, 262193, 3, 0, 262194, 3, 0, 262195, 3, 0, 262196, 3, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 3, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 3, 0, 262209, 3, 0, 262210, 3, 0, 262211, 3, 0, 262212, 3, 0, 262227, 3, 0, 262228, 3, 0, 262229, 3, 0, 262230, 3, 0, 262231, 3, 0, 262232, 3, 0, 262233, 3, 0, 262234, 3, 0, 262235, 3, 0, 262236, 3, 0, 262237, 3, 0, 262238, 3, 0, 262239, 3, 0, 262240, 3, 0, 262241, 3, 0, 262242, 3, 0, 262243, 3, 0, 262244, 3, 0, 262245, 3, 0, 262246, 3, 0, 262247, 3, 0, 262248, 3, 0, 262249, 3, 0, 262250, 3, 0, 262251, 3, 0, 262252, 3, 0, 262253, 3, 0, 262254, 3, 0, 262255, 3, 0, 262256, 3, 0, 262257, 3, 0, 262258, 3, 0, 262259, 3, 0, 262260, 3, 0, 262261, 3, 0, 262262, 3, 0, 262263, 3, 0, 262264, 3, 0, 262265, 3, 0, 262266, 3, 0, 262267, 3, 0, 262268, 3, 0, 262269, 3, 0, 262270, 3, 0, 262271, 3, 0, 262272, 3, 0, 262273, 3, 0, 262274, 3, 0, 262275, 3, 0, 262225, 3, 0, 262226, 3, 0, 262224, 3, 0)
+layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262186, 3, 0, 262185, 3, 0, 262187, 3, 0, 262188, 3, 0, 262189, 3, 0, 262190, 3, 0, 262191, 3, 0, 262192, 3, 0, 262193, 3, 0, 262194, 3, 0, 262195, 3, 0, 262196, 3, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 3, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 3, 0, 262209, 3, 0, 262210, 3, 0, 262211, 3, 0, 262212, 3, 0, 262227, 3, 0, 262228, 3, 0, 262229, 3, 0, 262230, 3, 0, 262231, 3, 0, 262232, 3, 0, 262233, 3, 0, 262234, 3, 0, 262235, 3, 0, 262236, 3, 0, 262237, 3, 0, 262238, 3, 0, 262239, 3, 0, 262240, 3, 0, 262241, 3, 0, 262242, 3, 0, 262243, 3, 0, 262244, 3, 0, 262245, 3, 0, 262246, 3, 0, 262247, 3, 0, 262248, 3, 0, 262249, 3, 0, 262250, 3, 0, 262251, 3, 0, 262252, 3, 0, 262253, 3, 0, 262254, 3, 0, 262255, 3, 0, 262256, 3, 0, 262257, 3, 0, 262258, 3, 0, 262259, 3, 0, 262260, 3, 0, 262261, 3, 0, 262262, 3, 0, 262263, 3, 0, 262264, 3, 0, 262265, 3, 0, 262266, 3, 0, 262267, 3, 0, 262268, 3, 0, 262269, 3, 0, 262270, 3, 0, 262271, 3, 0, 262272, 3, 0, 262273, 3, 0, 262274, 3, 0, 262275, 3, 0, 262225, 3, 0, 262226, 3, 0, 262224, 3, 0)
 
 [node name="LevelOneUI" type="CanvasLayer" parent="."]
 
@@ -319,16 +385,15 @@ texture = ExtResource("19_61s8p")
 position = Vector2(2337, 270)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceForMagicLightInstructionArea2D"]
-position = Vector2(-171, 17)
-shape = SubResource("CircleShape2D_k5qus")
+position = Vector2(-335, 42.5)
+shape = SubResource("RectangleShape2D_8akkp")
 
 [node name="SpaceBarForMagicLightInstruction" type="Sprite2D" parent="SpaceForMagicLightInstructionArea2D"]
 visible = false
 texture = ExtResource("22_ic1hs")
 
 [node name="PushShadowInstruction" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(2961, 282)
+position = Vector2(2743, 251)
 texture = ExtResource("23_13lv6")
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -347,12 +412,60 @@ shape = SubResource("RectangleShape2D_moode")
 [node name="DeathZone" parent="FireBridge" instance=ExtResource("24_vkx0q")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireBridge/DeathZone"]
-position = Vector2(3150, 454.5)
+position = Vector2(3048, 454.5)
 shape = SubResource("RectangleShape2D_ofybv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FireBridge"]
 z_index = -1
 position = Vector2(3020, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FireBridge"]
+z_index = -1
+position = Vector2(2983, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FireBridge"]
+z_index = -1
+position = Vector2(2941, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FireBridge"]
+z_index = -1
+position = Vector2(2904, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FireBridge"]
+z_index = -1
+position = Vector2(2868, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FireBridge"]
+z_index = -1
+position = Vector2(2832, 419)
+scale = Vector2(3.43, 3.43)
+sprite_frames = SubResource("SpriteFrames_ltjpf")
+autoplay = "default"
+frame_progress = 0.0940616
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FireBridge"]
+z_index = -10
+position = Vector2(2798, 419)
 scale = Vector2(3.43, 3.43)
 sprite_frames = SubResource("SpriteFrames_ltjpf")
 autoplay = "default"
@@ -672,14 +785,8 @@ texture = ExtResource("28_tvfdc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform/StaticBody2D"]
 polygon = PackedVector2Array(-202, 8, -100, 8, -100, -41, 103, -40, 104, -31, 104, 5, 204, 4, 203, 50, -204, 54)
 
-[node name="enemy" parent="." instance=ExtResource("26_6ufor")]
-position = Vector2(5390, 114)
-
-[node name="enemy2" parent="." instance=ExtResource("26_6ufor")]
-position = Vector2(5233, 219)
-
 [node name="VerticalStoneObject" parent="." instance=ExtResource("29_srhy8")]
-position = Vector2(2692, 376)
+position = Vector2(2146, 378)
 scale = Vector2(0.35, 0.35)
 
 [node name="Platform2" type="Sprite2D" parent="."]
@@ -706,6 +813,7 @@ texture = ExtResource("31_ehg14")
 
 [node name="CylindricalStoneObject" parent="." instance=ExtResource("30_0p0yd")]
 position = Vector2(6148, 357)
+shadowableObject = SubResource("Resource_xklwv")
 
 [node name="VermMushroom" parent="." instance=ExtResource("31_2gami")]
 position = Vector2(6995, 172)
@@ -800,12 +908,413 @@ polygon = PackedVector2Array(-370, -35, -373, 5, -471, 3, -470, 43, 473, 44, 476
 position = Vector2(55.5, 8.5)
 shape = SubResource("RectangleShape2D_npokr")
 
+[node name="DeathZone2" parent="PlatformWithWaterfall" instance=ExtResource("24_vkx0q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformWithWaterfall/DeathZone2"]
+position = Vector2(55.5, 8.5)
+shape = SubResource("RectangleShape2D_npokr")
+
+[node name="DeathZone3" parent="PlatformWithWaterfall" instance=ExtResource("24_vkx0q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformWithWaterfall/DeathZone3"]
+position = Vector2(55.5, 8.5)
+shape = SubResource("RectangleShape2D_npokr")
+
+[node name="DeathZone4" parent="PlatformWithWaterfall" instance=ExtResource("24_vkx0q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformWithWaterfall/DeathZone4"]
+position = Vector2(55.5, 8.5)
+shape = SubResource("RectangleShape2D_npokr")
+
 [node name="CubeStone" parent="." instance=ExtResource("43_q1kiq")]
 position = Vector2(8432, 235)
 scale = Vector2(0.885, 0.885)
 
 [node name="PinkMushroom" parent="." instance=ExtResource("27_xesnl")]
 position = Vector2(8714, 111)
+
+[node name="VermMushroom2" parent="." instance=ExtResource("31_2gami")]
+position = Vector2(9112, 298)
+
+[node name="GoldenMushroom" parent="." instance=ExtResource("17_sckeh")]
+position = Vector2(8069, 401)
+
+[node name="GoldenMushroom3" parent="." instance=ExtResource("17_sckeh")]
+position = Vector2(7509, 228)
+
+[node name="CylindricalStoneObject2" parent="." instance=ExtResource("30_0p0yd")]
+z_index = -10
+position = Vector2(9379, 327)
+scale = Vector2(1, 1.655)
+shadowableObject = SubResource("Resource_p31x7")
+
+[node name="FinalPlatformWhole" type="Node2D" parent="."]
+z_index = -100
+position = Vector2(9902, 269)
+
+[node name="FinalPlatform" type="Sprite2D" parent="FinalPlatformWhole"]
+position = Vector2(79, 19)
+texture = ExtResource("45_bubtk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FinalPlatformWhole/FinalPlatform"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FinalPlatformWhole/FinalPlatform/StaticBody2D"]
+position = Vector2(-87, -87)
+polygon = PackedVector2Array(-137, -63, 161, -64, 162, -22, 134, -22, 137, 85, 241, 86, 241, 121, 269, 124, 313, 128, 312, 215, 108, 216, 108, 34, -116, 31, -120, -22, -139, -31)
+
+[node name="Pillar" type="Sprite2D" parent="FinalPlatformWhole" node_paths=PackedStringArray("key")]
+position = Vector2(-107, 66)
+texture = ExtResource("46_70qis")
+script = ExtResource("47_pouok")
+key = NodePath("../Key")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FinalPlatformWhole/Pillar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalPlatformWhole/Pillar/StaticBody2D"]
+position = Vector2(0.5, -12.5)
+shape = SubResource("RectangleShape2D_4jb16")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FinalPlatformWhole/Pillar"]
+libraries = {
+"": SubResource("AnimationLibrary_78bud")
+}
+
+[node name="Key" parent="FinalPlatformWhole" instance=ExtResource("47_jh25s")]
+position = Vector2(2, -221)
+
+[node name="Waterfall11" type="AnimatedSprite2D" parent="FinalPlatformWhole"]
+z_index = 2
+z_as_relative = false
+position = Vector2(257, 130)
+scale = Vector2(1, 0.945)
+sprite_frames = SubResource("SpriteFrames_k873p")
+autoplay = "default"
+frame_progress = 0.317497
+
+[node name="PinkMushroom2" parent="." instance=ExtResource("27_xesnl")]
+position = Vector2(4910, 403)
+
+[node name="HealHealthInstruction" type="Sprite2D" parent="PinkMushroom2"]
+position = Vector2(106, -75)
+texture = ExtResource("49_u7eal")
+
+[node name="PinkMushroom3" parent="." instance=ExtResource("27_xesnl")]
+position = Vector2(6062, 397)
+
+[node name="VermMushroom3" parent="." instance=ExtResource("31_2gami")]
+position = Vector2(6143, 295)
+
+[node name="GoldenMushroom4" parent="." instance=ExtResource("17_sckeh")]
+position = Vector2(9894, 408)
+
+[node name="PinkMushroom4" parent="." instance=ExtResource("27_xesnl")]
+position = Vector2(9916, 403)
+
+[node name="VermMushroom4" parent="." instance=ExtResource("31_2gami")]
+position = Vector2(9880, 403)
+
+[node name="VermMushroom5" parent="." instance=ExtResource("31_2gami")]
+position = Vector2(9941, 403)
+
+[node name="Enemies" type="Node2D" parent="."]
+visible = false
+
+[node name="enemy34" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(6988, 543)
+
+[node name="enemy35" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(7086, 543)
+
+[node name="enemy36" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(7214, 528)
+
+[node name="enemy37" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(7994, 584)
+
+[node name="enemy38" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8123, 560)
+
+[node name="enemy39" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8258, 548)
+
+[node name="enemy40" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(9005, 471)
+
+[node name="enemy41" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8933, 666)
+
+[node name="enemy42" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8844, 607)
+
+[node name="enemy43" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(9077, 586)
+
+[node name="enemy44" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(10633, -155)
+
+[node name="enemy3" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(5404, 196)
+
+[node name="enemy4" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(5309, 61)
+
+[node name="enemy5" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(5296, 145)
+
+[node name="enemy6" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(5503, 232)
+
+[node name="enemy7" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(5212, 64)
+
+[node name="enemy8" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(6294, 284)
+
+[node name="enemy9" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(6338, 176)
+
+[node name="enemy10" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(6408, 330)
+
+[node name="enemy11" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(7194, 203)
+
+[node name="enemy12" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(7362, 202)
+
+[node name="enemy13" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(7231, 88)
+
+[node name="enemy14" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(7310, 145)
+
+[node name="enemy15" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8312, 196)
+
+[node name="enemy16" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8222, 119)
+
+[node name="enemy17" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8168, 224)
+
+[node name="enemy18" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8937, 166)
+
+[node name="enemy19" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8897, 220)
+
+[node name="enemy20" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8139, 81)
+
+[node name="enemy21" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8298, 57)
+
+[node name="enemy22" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8995, 222)
+
+[node name="enemy23" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8099, -117)
+
+[node name="enemy24" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8036, -93)
+
+[node name="enemy25" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(8074, -33)
+
+[node name="enemy26" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(9581, 32)
+
+[node name="enemy27" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(9519, 72)
+
+[node name="enemy28" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(9595, 102)
+
+[node name="enemy29" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(9535, 140)
+
+[node name="enemy30" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(9481, -36)
+
+[node name="enemy31" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(10317, 370)
+
+[node name="enemy32" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(10277, 298)
+
+[node name="enemy33" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(10247, 366)
+
+[node name="enemy" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(5390, 114)
+
+[node name="enemy2" parent="Enemies" instance=ExtResource("26_6ufor")]
+position = Vector2(5233, 219)
+
+[node name="Decorations" type="Node2D" parent="."]
+z_index = -100
+scale = Vector2(0.5, 0.5)
+
+[node name="Frame234" type="Sprite2D" parent="Decorations"]
+position = Vector2(846, 770)
+scale = Vector2(2, 2)
+texture = ExtResource("50_58bl8")
+
+[node name="Frame233" type="Sprite2D" parent="Decorations"]
+position = Vector2(552, 804)
+scale = Vector2(2, 2)
+texture = ExtResource("51_swdef")
+
+[node name="Frame231" type="Sprite2D" parent="Decorations"]
+position = Vector2(112, 770)
+scale = Vector2(2, 2)
+texture = ExtResource("50_58bl8")
+
+[node name="Frame232" type="Sprite2D" parent="Decorations"]
+position = Vector2(250, 808)
+scale = Vector2(2, 2)
+texture = ExtResource("52_vnf3b")
+
+[node name="Frame236" type="Sprite2D" parent="Decorations"]
+position = Vector2(1238, 794)
+scale = Vector2(2, 2)
+texture = ExtResource("51_swdef")
+
+[node name="Frame237" type="Sprite2D" parent="Decorations"]
+position = Vector2(1289.77, 803)
+scale = Vector2(1.75385, 1.75385)
+texture = ExtResource("53_nni6b")
+
+[node name="Frame235" type="Sprite2D" parent="Decorations"]
+position = Vector2(1387, 793)
+scale = Vector2(2, 2)
+texture = ExtResource("52_vnf3b")
+
+[node name="Frame238" type="Sprite2D" parent="Decorations"]
+position = Vector2(2010, 770)
+scale = Vector2(2, 2)
+texture = ExtResource("50_58bl8")
+
+[node name="Frame239" type="Sprite2D" parent="Decorations"]
+position = Vector2(2960, 800)
+scale = Vector2(2, 2)
+texture = ExtResource("52_vnf3b")
+
+[node name="Frame240" type="Sprite2D" parent="Decorations"]
+position = Vector2(3078, 774)
+scale = Vector2(2, 2)
+texture = ExtResource("50_58bl8")
+
+[node name="Frame241" type="Sprite2D" parent="Decorations"]
+position = Vector2(3906, 762)
+scale = Vector2(2, 2)
+texture = ExtResource("50_58bl8")
+
+[node name="Frame242" type="Sprite2D" parent="Decorations"]
+position = Vector2(3778, 802)
+scale = Vector2(2, 2)
+texture = ExtResource("54_x6jxq")
+
+[node name="Frame243" type="Sprite2D" parent="Decorations"]
+position = Vector2(4688, 812)
+scale = Vector2(2, 2)
+texture = ExtResource("55_ksnjw")
+
+[node name="Frame244" type="Sprite2D" parent="Decorations"]
+position = Vector2(4584, 782)
+scale = Vector2(2.92, 2.29167)
+texture = ExtResource("56_umut1")
+
+[node name="Frame245" type="Sprite2D" parent="Decorations"]
+position = Vector2(7546, 768)
+scale = Vector2(2.58537, 2.44262)
+texture = ExtResource("52_vnf3b")
+
+[node name="Frame246" type="Sprite2D" parent="Decorations"]
+position = Vector2(7708, 788)
+scale = Vector2(2, 2)
+texture = ExtResource("53_nni6b")
+
+[node name="Frame247" type="Sprite2D" parent="Decorations"]
+position = Vector2(9792, 754)
+scale = Vector2(2, 2)
+texture = ExtResource("50_58bl8")
+
+[node name="Frame248" type="Sprite2D" parent="Decorations"]
+position = Vector2(9660, 800)
+scale = Vector2(2, 2)
+texture = ExtResource("51_swdef")
+
+[node name="Frame249" type="Sprite2D" parent="Decorations"]
+position = Vector2(10274, 800)
+scale = Vector2(2, 2)
+texture = ExtResource("54_x6jxq")
+
+[node name="Frame250" type="Sprite2D" parent="Decorations"]
+position = Vector2(11290, 796)
+scale = Vector2(2, 2)
+texture = ExtResource("56_umut1")
+
+[node name="Frame251" type="Sprite2D" parent="Decorations"]
+position = Vector2(11336, 810)
+scale = Vector2(2, 2)
+texture = ExtResource("55_ksnjw")
+
+[node name="Frame252" type="Sprite2D" parent="Decorations"]
+position = Vector2(11878, 798)
+scale = Vector2(2, 2)
+texture = ExtResource("56_umut1")
+
+[node name="Frame253" type="Sprite2D" parent="Decorations"]
+position = Vector2(13562, 796)
+scale = Vector2(2, 2)
+texture = ExtResource("53_nni6b")
+
+[node name="Frame233" type="Sprite2D" parent="Decorations/Frame253"]
+position = Vector2(56, -173)
+texture = ExtResource("51_swdef")
+
+[node name="Frame254" type="Sprite2D" parent="Decorations"]
+position = Vector2(14790, 446)
+scale = Vector2(2, 2)
+texture = ExtResource("54_x6jxq")
+
+[node name="Frame255" type="Sprite2D" parent="Decorations"]
+position = Vector2(14844, 448)
+scale = Vector2(2, 2)
+texture = ExtResource("55_ksnjw")
+
+[node name="Frame256" type="Sprite2D" parent="Decorations"]
+position = Vector2(16686, 802)
+scale = Vector2(2, 2)
+texture = ExtResource("51_swdef")
+
+[node name="Frame257" type="Sprite2D" parent="Decorations"]
+position = Vector2(17970, 494)
+scale = Vector2(2, 2)
+texture = ExtResource("54_x6jxq")
+
+[node name="Frame258" type="Sprite2D" parent="Decorations"]
+position = Vector2(19698, 230)
+scale = Vector2(2, 2)
+texture = ExtResource("51_swdef")
+
+[node name="Frame259" type="Sprite2D" parent="Decorations"]
+position = Vector2(20788, 764)
+scale = Vector2(2, 2)
+texture = ExtResource("50_58bl8")
+
+[node name="Frame260" type="Sprite2D" parent="Decorations"]
+position = Vector2(20926, 792)
+scale = Vector2(2, 2)
+texture = ExtResource("53_nni6b")
+
+[node name="LevelEnd" type="Area2D" parent="."]
+position = Vector2(10754, 237)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+position = Vector2(-6, -30.5)
+shape = SubResource("RectangleShape2D_v565x")
 
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]
@@ -814,3 +1323,5 @@ position = Vector2(8714, 111)
 [connection signal="body_entered" from="SpaceForMagicLightInstructionArea2D" to="." method="_on_space_for_magic_light_instruction_area_2d_body_entered"]
 [connection signal="body_exited" from="SpaceForMagicLightInstructionArea2D" to="." method="_on_space_for_magic_light_instruction_area_2d_body_exited"]
 [connection signal="tree_exiting" from="TutorialBee" to="." method="_on_tutorial_bee_tree_exiting"]
+[connection signal="keyCollected" from="FinalPlatformWhole/Key" to="FinalPlatformWhole/Pillar" method="_on_key_key_collected"]
+[connection signal="body_entered" from="LevelEnd" to="." method="_on_level_end_body_entered"]
