@@ -64,7 +64,7 @@ func handle_collision_with_objects():
 			collisionObject.lightFell = true
 		
 		elif "shadowableObject" in collisionObject  && object_detector_2.get_collider() == collisionObject:
-			print("Collision detected with shadowable object")
+			#print("Collision detected with shadowable object")
 			collisionObject.updateLightFallToTrue()
 		
 

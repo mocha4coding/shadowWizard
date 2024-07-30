@@ -17,9 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dr8po1mcnxehl" path="res://assets/wizardAnimations/wizardHit/Hit 2.png" id="10_66w3h"]
 [ext_resource type="Script" path="res://scripts/Area2D.gd" id="10_agepm"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="13_d06j2"]
-[ext_resource type="Texture2D" uid="uid://bf83u12cr2vn4" path="res://assets/wizardAnimations/lightRay.png" id="13_meq6i"]
 [ext_resource type="Texture2D" uid="uid://cj846aicsixh6" path="res://assets/wizardAnimations/wizardPushAnimation/Push 1.png" id="13_tc33n"]
 [ext_resource type="Texture2D" uid="uid://dbjq7b4y3hlxf" path="res://assets/wizardAnimations/wizardPushAnimation/Push 2.png" id="14_u1ca1"]
+[ext_resource type="Texture2D" uid="uid://d1mxjv86ufa2s" path="res://assets/lamp/LightFinal.png" id="23_dmmwa"]
 [ext_resource type="PackedScene" uid="uid://bwlp7kcqfynt8" path="res://scenes/lamp.tscn" id="42_nkt64"]
 [ext_resource type="AudioStream" uid="uid://b4vskakjdf58p" path="res://assets/sounds/GrassFootstep.mp3" id="45_31vv3"]
 [ext_resource type="AudioStream" uid="uid://bo0ftbm5407g" path="res://assets/sounds/DirtWalk.mp3" id="46_fjp0r"]
@@ -147,7 +147,7 @@ position = Vector2(120, -540)
 energy = 0.0
 shadow_enabled = true
 shadow_item_cull_mask = 2
-texture = ExtResource("13_meq6i")
+texture = ExtResource("23_dmmwa")
 offset = Vector2(740, 0)
 texture_scale = 0.8
 script = ExtResource("9_axib0")
@@ -159,20 +159,21 @@ script = ExtResource("10_agepm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/PointLight2D/Area2D"]
 position = Vector2(2665.06, -14855)
-polygon = PackedVector2Array(334.94, -1145, 17584.9, -7395, 17334.9, 6105, 584.94, -145.001)
+polygon = PackedVector2Array(334.94, -1145, 41584.9, -18145, 41334.9, 16855, 584.94, -145.001)
 
 [node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(1780, -760)
-target_position = Vector2(20.0002, 1500)
+position = Vector2(3280, -2100)
+target_position = Vector2(-20, 4380)
 
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(1800, -740)
-target_position = Vector2(20, 1480)
+position = Vector2(3060, -2040)
+target_position = Vector2(-40, 4160)
 
 [node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]
 z_index = -2
-position = Vector2(900, 0)
-texture = ExtResource("13_meq6i")
+position = Vector2(2160, -40.0001)
+scale = Vector2(0.639054, 0.639054)
+texture = ExtResource("23_dmmwa")
 
 [node name="LampRightFacingPosition" type="Marker2D" parent="."]
 position = Vector2(100, -15)
@@ -183,7 +184,8 @@ position = Vector2(-70, -15)
 [node name="BackgroundTemp2" type="Sprite2D" parent="."]
 visible = false
 z_index = -100
-position = Vector2(170, -125)
+position = Vector2(575, -155)
+scale = Vector2(1.76215, 2.12963)
 texture = ExtResource("13_d06j2")
 
 [node name="BulletSpawnPointRight" type="Marker2D" parent="."]
