@@ -21,3 +21,6 @@ res://scripts/level_1.gd
 res://scenes/home_screen.tscn
 res://resources/cube_stone.tscn
 res://resources/cylindrical_stone_object.tscn
+res://scripts/Pillar.gd
+res://scripts/LampScript.gd
+res://scenes/lamp.tscn

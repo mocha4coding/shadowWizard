@@ -109,6 +109,7 @@ playerCollectibleManager = ExtResource("2_pre05")
 metadata/_edit_vertical_guides_ = [20.0, -14.0, -8.0, -8.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(10, -15)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_pj0av")
@@ -143,7 +144,7 @@ scale = Vector2(0.25, 0.25)
 player = NodePath("..")
 
 [node name="PointLight2D" type="PointLight2D" parent="Lamp"]
-position = Vector2(120, -540)
+position = Vector2(3.05176e-05, -520)
 energy = 0.0
 shadow_enabled = true
 shadow_item_cull_mask = 2
@@ -153,12 +154,12 @@ texture_scale = 0.8
 script = ExtResource("9_axib0")
 
 [node name="Area2D" type="Area2D" parent="Lamp/PointLight2D"]
-position = Vector2(-260, 1240)
+position = Vector2(-3.43323e-05, 40)
 scale = Vector2(0.08, 0.08)
 script = ExtResource("10_agepm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/PointLight2D/Area2D"]
-position = Vector2(2665.06, -14855)
+position = Vector2(-1000, 500)
 polygon = PackedVector2Array(334.94, -1145, 41584.9, -18145, 41334.9, 16855, 584.94, -145.001)
 
 [node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
@@ -171,7 +172,7 @@ target_position = Vector2(3260, 1360)
 
 [node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]
 z_index = -2
-position = Vector2(2060, 20)
+position = Vector2(2140, 20)
 scale = Vector2(0.639054, 0.639054)
 texture = ExtResource("23_dmmwa")
 

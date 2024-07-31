@@ -35,6 +35,8 @@ func _physics_process(delta):
 			animated_sprite_2d.play("hit")
 		else :
 			animated_sprite_2d.play("dead")
+			playerChase = false
+			
 	if attackModeOn:
 		player.decreaseHealth()
 
@@ -88,11 +90,13 @@ func _on_animated_sprite_2d_animation_finished():
 		gotHit = false
 	if enemyHealth <= 0:
 		queue_free()
+		const HOME_SCREEN = "res://scenes/home_screen.tscn"
+		get_tree().change_scene_to_file(HOME_SCREEN)
 
 
 
 
 func _on_timer_timeout():
-	if player.currentHealth > 0 :
+	if player.currentHealth > 0 && playerChase :
 		shoot()
 		timer.start(0.7)

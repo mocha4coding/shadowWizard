@@ -1,8 +1,10 @@
 extends Sprite2D
 
 
-@export var key: Key = null
 @onready var animation_player = $AnimationPlayer
+
+@export var key: Key = null
+
 var isAnimationPlayed : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():

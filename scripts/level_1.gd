@@ -6,6 +6,7 @@ extends Node2D
 @onready var push_shadow_instruction = $PushShadowInstruction
 @onready var object_original = $Object_original
 @onready var attack_instruction = $AttackInstruction
+@onready var animation_player = $FinalPlatformWhole/Pillar/AnimationPlayer
 
 
 @onready var golden_mushroom_tutorial = $GoldenMushroomTutorial
@@ -57,3 +58,8 @@ func _on_level_end_body_entered(body):
 	if body is Player:
 		const CUTSCENE = "res://scenes/cutscene.tscn"
 		get_tree().change_scene_to_file(CUTSCENE)
+
+
+func _on_final_mushroom_collected_body_entered(body):
+	if body is Player:
+		animation_player.play("cyinderStoneUp")
