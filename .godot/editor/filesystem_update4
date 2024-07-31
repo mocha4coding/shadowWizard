@@ -14,3 +14,10 @@ res://scripts/EvilWizard.gd
 res://scenes/enemy_bee.tscn
 res://scenes/bullet.tscn
 res://scripts/bullet.gd
+res://scripts/Player.gd
+res://scenes/cutscene.tscn
+res://scripts/cutscene.gd
+res://scripts/level_1.gd
+res://scenes/home_screen.tscn
+res://resources/cube_stone.tscn
+res://resources/cylindrical_stone_object.tscn

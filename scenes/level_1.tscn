@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=84 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://cnh3ua6ybdd8m" path="res://assets/Background/decorations/Frame 234.png" id="54_x6jxq"]
 [ext_resource type="Texture2D" uid="uid://t5io03032wih" path="res://assets/Background/decorations/Frame 235.png" id="55_ksnjw"]
 [ext_resource type="Texture2D" uid="uid://tmf2o0yipgld" path="res://assets/Background/decorations/Frame 236.png" id="56_umut1"]
+[ext_resource type="Texture2D" uid="uid://d0w57pgigyh2i" path="res://assets/Background/obstacles/CylindricalStone.png" id="57_xdl2l"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -228,6 +229,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v565x"]
 size = Vector2(32, 421)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmpkk"]
+size = Vector2(95, 109)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_lq41e")
 metadata/_edit_vertical_guides_ = [-1.0]
@@ -242,7 +246,7 @@ TargetNode = NodePath("../Player")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("6_khovu")]
 z_index = 2
-position = Vector2(444, 338)
+position = Vector2(4615, 232)
 scale = Vector2(0.5, 0.5)
 currentScene = NodePath("..")
 
@@ -325,6 +329,7 @@ texture = ExtResource("11_sdy01")
 wait_time = 3.0
 
 [node name="Settings" type="Sprite2D" parent="LevelOneUI"]
+visible = false
 position = Vector2(1029, 46)
 texture = ExtResource("16_5vwuo")
 
@@ -944,7 +949,7 @@ position = Vector2(7509, 228)
 
 [node name="CylindricalStoneObject2" parent="." instance=ExtResource("30_0p0yd")]
 z_index = -10
-position = Vector2(9379, 327)
+position = Vector2(9265, 327)
 scale = Vector2(1, 1.655)
 shadowableObject = SubResource("Resource_p31x7")
 
@@ -1017,7 +1022,6 @@ position = Vector2(9880, 403)
 position = Vector2(9941, 403)
 
 [node name="Enemies" type="Node2D" parent="."]
-visible = false
 
 [node name="enemy34" parent="Enemies" instance=ExtResource("26_6ufor")]
 position = Vector2(6988, 543)
@@ -1315,6 +1319,16 @@ position = Vector2(10754, 237)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
 position = Vector2(-6, -30.5)
 shape = SubResource("RectangleShape2D_v565x")
+
+[node name="CylindricalStone" type="Sprite2D" parent="."]
+position = Vector2(9630, 300)
+texture = ExtResource("57_xdl2l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CylindricalStone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CylindricalStone/StaticBody2D"]
+position = Vector2(-9.5, 63.5)
+shape = SubResource("RectangleShape2D_vmpkk")
 
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]

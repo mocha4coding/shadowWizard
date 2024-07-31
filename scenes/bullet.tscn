@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://buyoa1huthkha"]
+[gd_scene load_steps=10 format=3 uid="uid://buyoa1huthkha"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_0kgn6"]
 [ext_resource type="Texture2D" uid="uid://b57qebupxd0rr" path="res://assets/wizardAnimations/bullets/Bullet 1.png" id="1_6y7er"]
 [ext_resource type="Texture2D" uid="uid://c5v4wjx8mp8ve" path="res://assets/wizardAnimations/bullets/Bullet 2.png" id="2_lodp2"]
+[ext_resource type="Texture2D" uid="uid://bv3b1xh3sht20" path="res://assets/wizardAnimations/bullets/EvilBullet/Evil Bullet 1.png" id="4_8y5n4"]
+[ext_resource type="Texture2D" uid="uid://bqdy66fyuf1wp" path="res://assets/wizardAnimations/bullets/EvilBullet/Evil Bullet 2.png" id="5_aerjf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a6kq6"]
 animations = [{
@@ -17,7 +19,13 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8y5n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aerjf")
+}],
 "loop": true,
 "name": &"evilBullet",
 "speed": 5.0
@@ -28,6 +36,9 @@ radius = 39.6232
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wtldh"]
 radius = 76.4853
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qthh"]
+radius = 129.692
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource("1_0kgn6")
@@ -53,5 +64,17 @@ shape = SubResource("CircleShape2D_wtldh")
 debug_color = Color(0.448586, 0.58991, 0.259066, 0.42)
 
 [node name="Timer" type="Timer" parent="CharacterBody2D"]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="EvilBulletDamageArea" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/EvilBulletDamageArea"]
+shape = SubResource("CircleShape2D_4qthh")
 
 [connection signal="body_entered" from="CharacterBody2D/BulletDamangeArea" to="." method="_on_bullet_damange_area_body_entered"]
+[connection signal="timeout" from="CharacterBody2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="CharacterBody2D/EvilBulletDamageArea" to="." method="_on_evil_bullet_damage_area_body_entered"]

@@ -117,9 +117,9 @@ func _on_walk_audio_finished():
 func _on_jump_audio_finished():
 	jump_audio_play_finished = true
 
-func decreaseHealth():
+func decreaseHealth(hitAmount: float = 0.05):
 	isHit = true
-	currentHealth -= 0.05
+	currentHealth -= hitAmount
 	#print("Decreasing health to ", currentHealth)
 	healthChanged.emit()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://chlwpnv2qinkd"]
+[gd_scene load_steps=18 format=3 uid="uid://chlwpnv2qinkd"]
 
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_qj6ue"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="3_6x82d"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://beignqr8f63we" path="res://assets/UI/PlayButton.png" id="9_yatob"]
 [ext_resource type="Texture2D" uid="uid://dmd131op67ng0" path="res://assets/UI/Title.png" id="11_kxm1k"]
 [ext_resource type="Texture2D" uid="uid://ckg7mun815g0k" path="res://assets/UI/Settings.png" id="12_4vslv"]
+[ext_resource type="Texture2D" uid="uid://cxv4nxxop4jl2" path="res://assets/Background/decorations/Frame 231.png" id="13_ric50"]
+[ext_resource type="Texture2D" uid="uid://bwmpeu508vly8" path="res://assets/Background/decorations/Frame 233.png" id="14_srh66"]
+[ext_resource type="Texture2D" uid="uid://bw5bvejxfhos5" path="res://assets/Background/decorations/Frame 232.png" id="15_roj53"]
+[ext_resource type="Texture2D" uid="uid://bnpavxhvcbnn8" path="res://assets/Background/decorations/Frame 237.png" id="16_ji8yh"]
 [ext_resource type="Texture2D" uid="uid://blkgfxrph44am" path="res://assets/wizardAnimations/Idle/Idle 1.png" id="18_2deq3"]
 [ext_resource type="Texture2D" uid="uid://dygsk1fda16ys" path="res://assets/wizardAnimations/Idle/Idle 2.png" id="19_lfyt0"]
 
@@ -94,6 +98,7 @@ position = Vector2(105, 33)
 texture = ExtResource("9_yatob")
 
 [node name="Settings" type="Sprite2D" parent="LevelOneUI"]
+visible = false
 position = Vector2(1029, 46)
 texture = ExtResource("12_4vslv")
 
@@ -106,5 +111,49 @@ autoplay = "default"
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(524, 107)
 texture = ExtResource("11_kxm1k")
+
+[node name="Decorations" type="Node2D" parent="."]
+z_index = -100
+scale = Vector2(0.5, 0.5)
+
+[node name="Frame234" type="Sprite2D" parent="Decorations"]
+position = Vector2(846, 770)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ric50")
+
+[node name="Frame233" type="Sprite2D" parent="Decorations"]
+position = Vector2(552, 804)
+scale = Vector2(2, 2)
+texture = ExtResource("14_srh66")
+
+[node name="Frame231" type="Sprite2D" parent="Decorations"]
+position = Vector2(112, 770)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ric50")
+
+[node name="Frame232" type="Sprite2D" parent="Decorations"]
+position = Vector2(250, 808)
+scale = Vector2(2, 2)
+texture = ExtResource("15_roj53")
+
+[node name="Frame236" type="Sprite2D" parent="Decorations"]
+position = Vector2(1238, 794)
+scale = Vector2(2, 2)
+texture = ExtResource("14_srh66")
+
+[node name="Frame237" type="Sprite2D" parent="Decorations"]
+position = Vector2(1289.77, 803)
+scale = Vector2(1.75385, 1.75385)
+texture = ExtResource("16_ji8yh")
+
+[node name="Frame235" type="Sprite2D" parent="Decorations"]
+position = Vector2(1387, 793)
+scale = Vector2(2, 2)
+texture = ExtResource("15_roj53")
+
+[node name="Frame238" type="Sprite2D" parent="Decorations"]
+position = Vector2(2010, 770)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ric50")
 
 [connection signal="button_down" from="LevelOneUI/TextureButton" to="LevelOneUI" method="_on_texture_button_button_down"]

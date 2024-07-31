@@ -162,12 +162,12 @@ position = Vector2(2665.06, -14855)
 polygon = PackedVector2Array(334.94, -1145, 41584.9, -18145, 41334.9, 16855, 584.94, -145.001)
 
 [node name="ObjectDetector1" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(3260, 1020)
-target_position = Vector2(-2240, -940)
+position = Vector2(3280, 1360)
+target_position = Vector2(-3180, -1220)
 
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(900, 420)
-target_position = Vector2(2360, 940)
+position = Vector2(3.05176e-05, 40)
+target_position = Vector2(3260, 1360)
 
 [node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]
 z_index = -2

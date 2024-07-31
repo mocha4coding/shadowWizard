@@ -55,5 +55,5 @@ func _on_tutorial_bee_tree_exiting():
 
 func _on_level_end_body_entered(body):
 	if body is Player:
-		const HOME_SCREEN = "res://scenes/home_screen.tscn"
-		get_tree().change_scene_to_file(HOME_SCREEN)
+		const CUTSCENE = "res://scenes/cutscene.tscn"
+		get_tree().change_scene_to_file(CUTSCENE)
