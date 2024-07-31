@@ -1,33 +1,32 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxwny15qjify1"]
+[gd_scene load_steps=15 format=3 uid="uid://bxwny15qjify1"]
 
-[ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_fj34a"]
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="2_shh7t"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="3_2m6hx"]
 [ext_resource type="Texture2D" uid="uid://r0u3wtw4onp3" path="res://assets/Background/-2_4x.png" id="4_72ftu"]
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="5_l8nka"]
-[ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="6_3u58i"]
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="7_tsmuc"]
 [ext_resource type="Texture2D" uid="uid://ckg7mun815g0k" path="res://assets/UI/Settings.png" id="8_8winq"]
 [ext_resource type="Texture2D" uid="uid://d3n2qexa7jrab" path="res://assets/healthBar/HealthBarInsideFull.png" id="9_dh0pb"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="10_kpxyd"]
 [ext_resource type="Texture2D" uid="uid://y4fy0uotvp3m" path="res://assets/healthBar/Frame 65.png" id="11_3iavd"]
+[ext_resource type="Script" path="res://scripts/MushroomSpawner.gd" id="12_ftoa1"]
+[ext_resource type="PackedScene" uid="uid://c5vm6w78gdpd4" path="res://scenes/evil_wizard.tscn" id="12_g0bml"]
 [ext_resource type="Texture2D" uid="uid://ddw1mergi83pk" path="res://assets/healthBar/Frame 64.png" id="12_tcsl2"]
 
-[node name="FinalScene" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgtt0"]
+size = Vector2(127, 573)
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
-position = Vector2(-5, 0)
-scale = Vector2(0.2, 0.2)
-offset = Vector2(530.5, 237)
-limit_left = -530
-script = ExtResource("1_fj34a")
-TargetNode = NodePath("")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljs3n"]
+size = Vector2(1074, 120)
+
+[node name="FinalScene" type="Node2D"]
+metadata/_edit_vertical_guides_ = [1061.0, 1.0]
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("2_shh7t")]
 z_index = 2
-position = Vector2(444, 338)
+position = Vector2(122, 348)
 scale = Vector2(0.5, 0.5)
-currentScene = NodePath("")
+currentScene = NodePath("..")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -63,16 +62,6 @@ position = Vector2(530.5, 237)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_l8nka")
 
-[node name="hut_-3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.4, 0.1)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/hut_-3"]
-visible = false
-z_index = -1
-position = Vector2(219, 247)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_3u58i")
-
 [node name="TileMap" parent="." instance=ExtResource("7_tsmuc")]
 layer_1/tile_data = PackedInt32Array(262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262186, 3, 0, 262185, 3, 0, 262187, 3, 0, 262188, 3, 0, 262189, 3, 0, 262190, 3, 0, 262191, 3, 0, 262192, 3, 0, 262193, 3, 0, 262194, 3, 0, 262195, 3, 0, 262196, 3, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262201, 3, 0, 262202, 3, 0, 262203, 3, 0, 262204, 3, 0, 262205, 3, 0, 262206, 3, 0, 262207, 3, 0, 262208, 3, 0, 262209, 3, 0, 262210, 3, 0, 262211, 3, 0, 262212, 3, 0, 262227, 3, 0, 262228, 3, 0, 262229, 3, 0, 262230, 3, 0, 262231, 3, 0, 262232, 3, 0, 262233, 3, 0, 262234, 3, 0, 262235, 3, 0, 262236, 3, 0, 262237, 3, 0, 262238, 3, 0, 262239, 3, 0, 262240, 3, 0, 262241, 3, 0, 262242, 3, 0, 262243, 3, 0, 262244, 3, 0, 262245, 3, 0, 262246, 3, 0, 262247, 3, 0, 262248, 3, 0, 262249, 3, 0, 262250, 3, 0, 262251, 3, 0, 262252, 3, 0, 262253, 3, 0, 262254, 3, 0, 262255, 3, 0, 262256, 3, 0, 262257, 3, 0, 262258, 3, 0, 262259, 3, 0, 262260, 3, 0, 262261, 3, 0, 262262, 3, 0, 262263, 3, 0, 262264, 3, 0, 262265, 3, 0, 262266, 3, 0, 262267, 3, 0, 262268, 3, 0, 262269, 3, 0, 262270, 3, 0, 262271, 3, 0, 262272, 3, 0, 262273, 3, 0, 262274, 3, 0, 262275, 3, 0, 262225, 3, 0, 262226, 3, 0, 262224, 3, 0)
 
@@ -97,7 +86,7 @@ grow_horizontal = 0
 scale = Vector2(0.25, 0.25)
 texture_progress = ExtResource("9_dh0pb")
 script = ExtResource("10_kpxyd")
-player = NodePath("")
+player = NodePath("../../../Player")
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthbarEmpty" type="Sprite2D" parent="LevelOneUI/HealthBar"]
@@ -110,3 +99,34 @@ texture = ExtResource("11_3iavd")
 position = Vector2(870, 45)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_tcsl2")
+
+[node name="MushroomSpawner" type="Node2D" parent="."]
+script = ExtResource("12_ftoa1")
+
+[node name="EvilWizard" parent="." instance=ExtResource("12_g0bml")]
+position = Vector2(893, 274)
+scale = Vector2(0.14, 0.14)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(530.5, 237)
+limit_right = 1061
+
+[node name="WorldBoundaries" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WorldBoundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/StaticBody2D"]
+position = Vector2(-73.5, 276.5)
+shape = SubResource("RectangleShape2D_sgtt0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="WorldBoundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/StaticBody2D2"]
+position = Vector2(1125, 276.5)
+shape = SubResource("RectangleShape2D_sgtt0")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="WorldBoundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries/StaticBody2D3"]
+position = Vector2(529, 533)
+shape = SubResource("RectangleShape2D_ljs3n")
