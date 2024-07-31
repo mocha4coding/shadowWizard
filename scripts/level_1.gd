@@ -60,6 +60,4 @@ func _on_level_end_body_entered(body):
 		get_tree().change_scene_to_file(CUTSCENE)
 
 
-func _on_final_mushroom_collected_body_entered(body):
-	if body is Player:
-		animation_player.play("cyinderStoneUp")
+

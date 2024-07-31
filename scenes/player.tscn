@@ -109,7 +109,6 @@ playerCollectibleManager = ExtResource("2_pre05")
 metadata/_edit_vertical_guides_ = [20.0, -14.0, -8.0, -8.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(10, -15)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_pj0av")
@@ -167,8 +166,8 @@ position = Vector2(3280, 1360)
 target_position = Vector2(-3180, -1220)
 
 [node name="ObjectDetector2" type="RayCast2D" parent="Lamp/PointLight2D"]
-position = Vector2(3.05176e-05, 40)
-target_position = Vector2(3260, 1360)
+position = Vector2(60, 60)
+target_position = Vector2(3180, -1440)
 
 [node name="Sprite2D" type="Sprite2D" parent="Lamp/PointLight2D"]
 z_index = -2

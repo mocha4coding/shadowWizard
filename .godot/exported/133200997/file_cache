@@ -28,8 +28,8 @@ res://scenes/final_scene.tscn::815e508a197e027204edb0ad8c7bd2aa::1722414227::res
 res://scenes/golden_mushroom.tscn::a2b3b98aef88e4293175448efdbba38d::1722403955::res://.godot/exported/133200997/export-238c819159d0531558c8a4993831be11-golden_mushroom.scn
 res://scenes/home_screen.tscn::a5e1570191091d04428be3012cdc2613::1722413677::res://.godot/exported/133200997/export-329caa5f5d208b6b016b2714123075e5-home_screen.scn
 res://scenes/key.tscn::2b797dad69055d659d2d8533ac692f75::1722365661::res://.godot/exported/133200997/export-6abd909df14327bc0bd961849d92c0a4-key.scn
-res://scenes/lamp.tscn::01d04c3fb1413648fbf2623c3164037a::1722359809::res://.godot/exported/133200997/export-672cb7eae09703fe596f4ad8ac995533-lamp.scn
-res://scenes/level_1.tscn::135197ce52f70d8f7fea5798ab86f0ec::1722416828::res://.godot/exported/133200997/export-6887eba858c6ae48b5ca13a7525fa2f9-level_1.scn
+res://scenes/lamp.tscn::01d04c3fb1413648fbf2623c3164037a::1722419670::res://.godot/exported/133200997/export-672cb7eae09703fe596f4ad8ac995533-lamp.scn
+res://scenes/level_1.tscn::135197ce52f70d8f7fea5798ab86f0ec::1722419670::res://.godot/exported/133200997/export-6887eba858c6ae48b5ca13a7525fa2f9-level_1.scn
 res://scenes/level_1_tile_map.tscn::4dc4455aebb5fc18b0155b5adf5c06d3::1721811547::res://.godot/exported/133200997/export-65f857b13c3fb061dde7e51f5576cf36-level_1_tile_map.scn
 res://scenes/level_platform_tile_map.tscn::c5b02fe5f8507f1ef8b0d0c14f7eaf75::1721644568::res://.godot/exported/133200997/export-ed915a7a9684f8db226c6f88d2a33dd8-level_platform_tile_map.scn
 res://scenes/object1.tscn::0bde668dc1d324e0da6b76a77e7211e0::1721811547::res://.godot/exported/133200997/export-b47d742845a42cd53fcca4fc4391f58f-object1.scn
@@ -37,8 +37,8 @@ res://scenes/object_original.tscn::2c14cde13e8ca19d025ac31c514e6ddb::1722325292:
 res://scenes/object_shadow_rigid_body.tscn::e13f023a39b4987bfb304900715a459f::1722325292::res://.godot/exported/133200997/export-035a4be0458e87dd0ccec905f94d189a-object_shadow_rigid_body.scn
 res://scenes/parallax_background.tscn::58e242433b7515890b7589b954a29d5c::1721644568::res://.godot/exported/133200997/export-28a5d3ea6b3c3faa0faa2e2aea9d06f9-parallax_background.scn
 res://scenes/pink_mushroom.tscn::34b59ca1b0ca2496118b4fb01c4322a3::1722403955::res://.godot/exported/133200997/export-e65aab42001eebc11069e9772817d107-pink_mushroom.scn
-res://scenes/player.tscn::2179da8b499be429791d1cd6de586eb1::1722413676::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
-res://scenes/playground.tscn::8739403fc7036293b6c826a8cc4a976d::1722331419::res://.godot/exported/133200997/export-ce525993ae81e245f0ec934d3b6576e8-playground.scn
+res://scenes/player.tscn::bf374e0a75b5796903cce8703d79a1ce::1722419670::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/playground.tscn::07354f335e10129f01821843a2513bbb::1722419670::res://.godot/exported/133200997/export-ce525993ae81e245f0ec934d3b6576e8-playground.scn
 res://scenes/evil_wizard.tscn::bb4c56975fbaa7085758ace165430b11::1722409564::res://.godot/exported/133200997/export-8bfb88f3eb6963ac2d6813e3df61e12f-evil_wizard.scn
 res://scenes/cutscene.tscn::9719ddd370e700b406f2a6f27faf2ab9::1722413677::res://.godot/exported/133200997/export-8fb50c155b3d8e8bc22dadc931832e8e-cutscene.scn
 res://scenes/verm_mushroom.tscn::eba78643bd5d31a703c6ed4d5b76f78d::1721924910::res://.godot/exported/133200997/export-9ff64510c4e7524e56353b384e055d26-verm_mushroom.scn

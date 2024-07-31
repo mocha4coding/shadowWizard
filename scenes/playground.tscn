@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c3w20x6uksake"]
+[gd_scene load_steps=25 format=3 uid="uid://c3w20x6uksake"]
 
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="1_q82iv"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_kagkj"]
@@ -21,10 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://cmjn51hvpeexj" path="res://scenes/enemy_bee.tscn" id="19_j1e0l"]
 [ext_resource type="PackedScene" uid="uid://gxk6i8egfd0g" path="res://resources/vertical_stone_object.tscn" id="20_v7tbs"]
 [ext_resource type="PackedScene" uid="uid://4uwgdce0wrqb" path="res://resources/cylindrical_stone_object.tscn" id="21_60w65"]
+[ext_resource type="Script" path="res://resources/ShadowableObject.gd" id="22_bsjp0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ak4wf"]
 cull_mode = 2
 polygon = PackedVector2Array(-298, 20, -310, -150, 142, -152, 152, -56, 142, 20)
+
+[sub_resource type="Resource" id="Resource_5tfv8"]
+resource_local_to_scene = true
+script = ExtResource("22_bsjp0")
+name = "CylindricalObject"
 
 [node name="Playground" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [32.0]
@@ -196,7 +202,7 @@ position = Vector2(589, 140)
 
 [node name="VerticalStoneObject" parent="." instance=ExtResource("20_v7tbs")]
 position = Vector2(1967, 392)
-scale = Vector2(0.25, 0.25)
 
 [node name="CylindricalStoneObject" parent="." instance=ExtResource("21_60w65")]
 position = Vector2(2728, 356)
+shadowableObject = SubResource("Resource_5tfv8")

@@ -24,3 +24,5 @@ res://resources/cylindrical_stone_object.tscn
 res://scripts/Pillar.gd
 res://scripts/LampScript.gd
 res://scenes/lamp.tscn
+res://scripts/lamp.gd
+res://scenes/playground.tscn
