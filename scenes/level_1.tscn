@@ -288,7 +288,7 @@ TargetNode = NodePath("../Player")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentScene") instance=ExtResource("6_khovu")]
 z_index = 2
-position = Vector2(9374, 347)
+position = Vector2(440, 347)
 scale = Vector2(0.5, 0.5)
 currentScene = NodePath("..")
 
@@ -1059,7 +1059,6 @@ position = Vector2(9880, 403)
 position = Vector2(9941, 403)
 
 [node name="Enemies" type="Node2D" parent="."]
-position = Vector2(0, -2314)
 
 [node name="enemy34" parent="Enemies" instance=ExtResource("26_6ufor")]
 position = Vector2(6988, 543)

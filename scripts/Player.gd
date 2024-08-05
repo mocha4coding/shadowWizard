@@ -4,7 +4,7 @@ class_name Player
 
 signal healthChanged
 const SPEED = 300.0
-const JUMP_VELOCITY = -450.0
+var JUMP_VELOCITY: int = -450.0
 
 var currentHealth = 100
 var maxHealth = 100
@@ -38,6 +38,10 @@ func _ready():
 	lamp.global_position = lamp_right_facing_position.global_position
 
 func _physics_process(delta):
+	if currentHealth <= 0:
+		const HOME_SCREEN = "res://scenes/home_screen.tscn"
+		get_tree().change_scene_to_file(HOME_SCREEN)
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -159,4 +163,6 @@ func _on_animated_sprite_2d_animation_finished():
 	if isHit : 
 		isHit = false
 	if currentHealth <= 0:
-		queue_free()
+		JUMP_VELOCITY = 0
+		
+
