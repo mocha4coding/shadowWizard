@@ -7,13 +7,14 @@ extends Node2D
 @onready var object_original = $Object_original
 @onready var attack_instruction = $AttackInstruction
 @onready var animation_player = $FinalPlatformWhole/Pillar/AnimationPlayer
+@onready var player: Player = $Player
 
 
 @onready var golden_mushroom_tutorial = $GoldenMushroomTutorial
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	collect_mushroom_instruction.hide()
-
+	player.resetPlayerStats()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -58,6 +59,3 @@ func _on_level_end_body_entered(body):
 	if body is Player:
 		const CUTSCENE = "res://scenes/cutscene.tscn"
 		get_tree().change_scene_to_file(CUTSCENE)
-
-
-

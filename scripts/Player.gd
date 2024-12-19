@@ -38,10 +38,6 @@ func _ready():
 	lamp.global_position = lamp_right_facing_position.global_position
 
 func _physics_process(delta):
-	if currentHealth <= 0:
-		const HOME_SCREEN = "res://scenes/home_screen.tscn"
-		get_tree().change_scene_to_file(HOME_SCREEN)
-		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -160,9 +156,29 @@ func shoot():
 	
 
 func _on_animated_sprite_2d_animation_finished():
+	print("Animation that finished playing : ", animated_sprite_2d.animation)
 	if isHit : 
 		isHit = false
 	if currentHealth <= 0:
 		JUMP_VELOCITY = 0
-		
+	if animated_sprite_2d.animation == "death":
+		resetPlayerStats()
+		const HOME_SCREEN = "res://scenes/home_screen.tscn"
+		get_tree().change_scene_to_file(HOME_SCREEN)
 
+
+func resetPlayerStats():
+	currentHealth = maxHealth
+	playerCollectibleManager.items[0].count = 0
+	playerCollectibleManager.items[1].count = 0
+	playerCollectibleManager.items[2].count = 0
+	#const HOME_SCREEN = "res://scenes/home_screen.tscn"
+	#get_tree().change_scene_to_file(HOME_SCREEN)
+	
+
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	print("Animation thatis looping : ", animated_sprite_2d.animation)
+	
+	if animated_sprite_2d.animation == "death":
+		resetPlayerStats()

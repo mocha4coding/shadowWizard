@@ -71,5 +71,3 @@ func handle_collision_with_objects():
 		if ("shadowableObject" in collisionObject2) :
 			collisionObject2.updateLightFallToTrue()
 		
-
-

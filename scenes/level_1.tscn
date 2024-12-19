@@ -1,13 +1,18 @@
-[gd_scene load_steps=88 format=3 uid="uid://bmxi35ilssf4o"]
+[gd_scene load_steps=95 format=3 uid="uid://bmxi35ilssf4o"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_lq41e"]
 [ext_resource type="Script" path="res://scripts/CustomeCamera.gd" id="1_u27cq"]
 [ext_resource type="Texture2D" uid="uid://b612h8q2v3k1y" path="res://assets/Background_temp.png" id="3_5i6dg"]
 [ext_resource type="Texture2D" uid="uid://5ftuga636gc8" path="res://assets/Background/-3_4x.png" id="4_e0o58"]
+[ext_resource type="Script" path="res://collectibleManagement/items/collectible.gd" id="4_uebol"]
 [ext_resource type="Texture2D" uid="uid://r0u3wtw4onp3" path="res://assets/Background/-2_4x.png" id="5_3xv6e"]
+[ext_resource type="Resource" uid="uid://b1q7i8l8pcvxp" path="res://collectibleManagement/items/goldenMushroom.tres" id="5_fqxal"]
 [ext_resource type="Texture2D" uid="uid://682b4iepfs2h" path="res://scenes/objects/woods.PNG" id="5_yt4p5"]
 [ext_resource type="Texture2D" uid="uid://cs0q7bbrmmk82" path="res://assets/Background/-1_4x.png" id="6_88r37"]
 [ext_resource type="PackedScene" uid="uid://bj4e3616laere" path="res://scenes/player.tscn" id="6_khovu"]
+[ext_resource type="Resource" uid="uid://dw0i6y4o52xyp" path="res://collectibleManagement/items/pinkMushroom.tres" id="6_uwxgk"]
+[ext_resource type="Resource" uid="uid://drgwtybe7072j" path="res://collectibleManagement/items/vermMushroom.tres" id="7_una4w"]
+[ext_resource type="Script" path="res://collectible_manager.gd" id="8_0s4t5"]
 [ext_resource type="PackedScene" path="res://scenes/level_1_tile_map.tscn" id="9_0kfe8"]
 [ext_resource type="PackedScene" uid="uid://rw1eei2dilc5" path="res://collectibleManagement/collectible_ui.tscn" id="11_63hif"]
 [ext_resource type="Texture2D" uid="uid://e7jb2i7ph4xa" path="res://assets/Background/wizardhut/treehouse_4x.png" id="11_g1bw8"]
@@ -57,6 +62,11 @@
 [ext_resource type="Texture2D" uid="uid://t5io03032wih" path="res://assets/Background/decorations/Frame 235.png" id="55_ksnjw"]
 [ext_resource type="Texture2D" uid="uid://tmf2o0yipgld" path="res://assets/Background/decorations/Frame 236.png" id="56_umut1"]
 [ext_resource type="Texture2D" uid="uid://d0w57pgigyh2i" path="res://assets/Background/obstacles/CylindricalStone.png" id="57_xdl2l"]
+
+[sub_resource type="Resource" id="Resource_mnd27"]
+resource_local_to_scene = true
+script = ExtResource("8_0s4t5")
+items = Array[ExtResource("4_uebol")]([ExtResource("5_fqxal"), ExtResource("6_uwxgk"), ExtResource("7_una4w")])
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u8on"]
 cull_mode = 2
@@ -274,6 +284,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_n032x"]
 radius = 48.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdpl8"]
+size = Vector2(227, 699)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_lq41e")
 metadata/_edit_vertical_guides_ = [-1.0]
@@ -290,6 +303,7 @@ TargetNode = NodePath("../Player")
 z_index = 2
 position = Vector2(440, 347)
 scale = Vector2(0.5, 0.5)
+playerCollectibleManager = SubResource("Resource_mnd27")
 currentScene = NodePath("..")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -1381,6 +1395,12 @@ position = Vector2(9887, 427)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalMushroomCollected"]
 position = Vector2(23, -28)
 shape = SubResource("CircleShape2D_n032x")
+
+[node name="WorldBoundaryLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaryLeft"]
+position = Vector2(-105.5, 339.5)
+shape = SubResource("RectangleShape2D_rdpl8")
 
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelOneUI/CollectMushroomUiBoardInstruction/Timer" to="CollectMushroomInstructionDetector" method="_on_timer_timeout"]

@@ -47,4 +47,3 @@ func obstacle_shadow_show():
 	add_child(shadow)
 	shadow.position = Vector2(position.x + 500, position.y - 40)
 	
-
