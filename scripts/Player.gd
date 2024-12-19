@@ -53,7 +53,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("shoot"):
 			shoot()
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() && currentHealth > 0:
 		velocity.y = JUMP_VELOCITY
 		didJump = true
 		jump_audio_play_finished = false
